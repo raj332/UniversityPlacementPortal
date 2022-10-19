@@ -1,0 +1,194 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+//  Colors
+$primary: #00004d;
+$gray: #808080;
+$dark: #0000;
+$green: #28a745;
+$red: #ff0000;
+$white: #ffff;
+$yellow: #f3b600;
+$light-gray: #8080807d;
+$dark-gray: #6c757d;
+$blue: #007bff;
+
+
+$btnfontsize: 14px;
+$btnpadding: 2px 35px;
+$filepadding: 2px 12px;
+$primaryfont: "Josefin Sans", sans-serif;
+
+
+
+// New Colors
+$--color-primary: #00004d;
+$--color-light-primary: hsla(37, 41, 57, 0.5);
+$--color-gray: #808080;
+$--color-dark: #000;
+$--color-green: hsla(152, 69, 31, 1);
+$--color-light-green: hsla(152, 69, 31, 0.5);
+$--color-red: hsla(354, 70, 54, 1);
+$--color-light-red: hsla(354, 70, 54, 0.5);
+$--color-white: #fff;
+$--color-light: #f5f5f5;
+$--color-yellow: hsla(45, 100, 51, 1);
+$--color-light-yellow: hsla(45, 100, 51, 0.5);
+$--color-light-gray: #8080807d;
+$--color-dark-gray: #6c757d;
+$--color-blue: hsla(216, 98, 52,1);
+$--color-light-blue: hsla(216, 98, 52,0.1);
+
+// font-size
+$--font-size-xl: 1.5rem;
+$--font-size-lg: 1.25rem;
+$--font-size-md: 1rem;
+$--font-size-sm: 0.875rem;
+
+// font-family
+$--font-family-primary: "Josefin Sans", sans-serif;
+$--font-family-secondary: "Roboto", sans-serif;
+
+//min-width
+$--min-height: 65vh;
+
+// Input
+$--input-line-height: 25px;
+$--input-padding:7px 14px;
+
+$--box-shadow-gray : 0 4px 8px 0 rgb(0 0 0 / 20%);
+
+//  Buttons
+@mixin --filled-button($color: $--color-primary) {
+  padding: 2px 30px;
+  background-color: $color ;
+  border: 1px solid;
+  border-color: transparent;
+  border-radius: 5px;
+  color: $white ;
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: $--font-family-primary;
+
+  &:hover {
+    border-color: $color;
+    color: $color ;
+    background-color: $white ;
+  }
+
+  &:disabled {
+    border-color: $--color-dark-gray ;
+    background-color: $--color-dark-gray ;
+    color: $white ;
+    cursor: not-allowed;
+  }
+}
+
+@mixin --outlined-button($color: $--color-primary) {
+  padding: 2px 30px;
+  background-color: $white ;
+  border: 1px solid;
+  border-color: $color;
+  border-radius: 5px;
+  color: $color ;
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: $--font-family-primary;
+
+
+  &:hover {
+    background-color: $--color-light ;
+  }
+
+  &:disabled {
+    border-color: $--color-dark-gray ;
+    background-color: $--color-dark-gray ;
+    color: $white ;
+    cursor: not-allowed;
+  }
+}
+
+@mixin flexbox-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@mixin flexbox-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Input
+@mixin input-group {
+  margin-top: 16px;
+  height: 40px;
+  position: relative;
+  border: 1px solid $--color-gray;
+  border-radius: 8px;
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+@mixin input-field {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  color: $--color-dark-gray;
+  font-size: 14px;
+  line-height: $--input-line-height;
+  outline: none;
+  font-family: $--font-family-primary;
+}
+
+@mixin input-label {
+  position: absolute;
+  background-color: transparent;
+  padding: $--input-padding;
+  line-height: $--input-line-height;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  color: $--color-dark-gray;
+  font-size: 13px;
+  cursor: text;
+  transition: 0.35s;
+  font-family: $--font-family-primary;
+}
+
+@mixin input-icon {
+  position: absolute;
+  margin-right: 5px;
+  line-height: 15px;
+  right: 0;
+  bottom: 0;
+  color: $--color-dark-gray;
+  font-size: 20px;
+}
+
+@mixin input-placeholder-focus {
+  padding: 0px 6px;
+  top: -12px;
+  left: 10px;
+  bottom: auto;
+  background-color: $--color-white;
+  color: $--color-primary;
+  font-family: $--font-family-primary;
+}
+
+@mixin item-box($border-color) {
+  padding: 5px 15px 4px 15px;
+  min-width: 100px;
+  border: 1px solid $border-color;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 50px;
+  color: $--color-gray;
+}

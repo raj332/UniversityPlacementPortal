@@ -1,0 +1,1092 @@
+@import "./variables.scss";
+
+// Background color
+
+.--bg-primary {
+  background-color: $--color-primary !important;
+}
+
+.--bg-light-primary {
+  background-color: $--color-light-primary !important;
+}
+
+.--bg-gray {
+  background-color: $--color-gray !important;
+}
+
+.--bg-dark {
+  background-color: $--color-dark !important;
+}
+
+.--bg-green {
+  background-color: $--color-green !important;
+}
+
+.--bg-light-green {
+  background-color: $--color-light-green !important;
+}
+
+.--bg-red {
+  background-color: $--color-red !important;
+}
+
+.--bg-light-red {
+  background-color: $--color-light-red !important;
+}
+
+.--bg-white {
+  background-color: $--color-white !important;
+}
+
+.--bg-yellow {
+  background-color: $--color-yellow !important;
+}
+
+.--bg-light-yellow {
+  background-color: $--color-light-yellow !important;
+}
+
+.--bg-light-gray {
+  background-color: $--color-light-gray !important;
+}
+
+.--bg-dark-gray {
+  background-color: $--color-dark-gray !important;
+}
+
+.--bg-blue {
+  background-color: $--color-blue !important;
+}
+
+.--bg-light-blue {
+  background-color: $--color-light-blue !important;
+}
+
+.--bg-light {
+  background-color: $--color-light !important;
+}
+
+// Text color
+.--text-primary {
+  color: $--color-primary !important;
+}
+
+.--text-light-primary {
+  color: $--color-light-primary !important;
+}
+
+.--text-gray {
+  color: $--color-gray !important;
+}
+
+.--text-dark {
+  color: $--color-dark !important;
+}
+
+.--text-green {
+  color: $--color-green !important;
+}
+
+.--text-light-green {
+  color: $--color-light-green !important;
+}
+
+.--text-red {
+  color: $--color-red !important;
+}
+
+.--text-light-red {
+  color: $--color-light-red !important;
+}
+
+.--text-white {
+  color: $--color-white !important;
+}
+
+.--text-yellow {
+  color: $--color-yellow !important;
+}
+
+.--text-light-yellow {
+  color: $--color-light-yellow !important;
+}
+
+.--text-light-gray {
+  color: $--color-light-gray !important;
+}
+
+.--text-dark-gray {
+  color: $--color-dark-gray !important;
+}
+
+.--text-blue {
+  color: $--color-blue !important;
+}
+
+//Border
+.--border-primary {
+  border: 1px solid $--color-primary !important;
+}
+
+.--border-2-primary {
+  border: 2px solid $--color-primary !important;
+}
+
+.--border-light-primary {
+  border: 1px solid $--color-light-primary !important;
+}
+
+.--border-2-light-primary {
+  border: 2px solid $--color-light-primary !important;
+}
+
+.--border-gray {
+  border: 1px solid $--color-gray !important;
+}
+
+.--border-2-gray {
+  border: 2px solid $--color-gray !important;
+}
+
+.--border-dark {
+  border: 1px solid $--color-dark !important;
+}
+
+.--border-2-dark {
+  border: 2px solid $--color-dark !important;
+}
+
+.--border-green {
+  border: 1px solid $--color-green !important;
+}
+
+.--border-2-green {
+  border: 2px solid $--color-green !important;
+}
+
+.--border-light-green {
+  border: 1px solid $--color-light-green !important;
+}
+
+.--border-2-light-green {
+  border: 2px solid $--color-light-green !important;
+}
+
+.--border-red {
+  border: 1px solid $--color-red !important;
+}
+
+.--border-2-red {
+  border: 2px solid $--color-red !important;
+}
+
+.--border-light-red {
+  border: 1px solid $--color-light-red !important;
+}
+
+.--border-2-light-red {
+  border: 2px solid $--color-light-red !important;
+}
+
+.--border-white {
+  border: 1px solid $--color-white !important;
+}
+
+.--border-2-white {
+  border: 2px solid $--color-white !important;
+}
+
+.--border-yellow {
+  border: 1px solid $--color-yellow !important;
+}
+
+.--border-2-yellow {
+  border: 2px solid $--color-yellow !important;
+}
+
+.--border-light-yellow {
+  border: 1px solid $--color-light-yellow !important;
+}
+
+.--border-2-light-yellow {
+  border: 2px solid $--color-light-yellow !important;
+}
+
+.--border-light-gray {
+  border: 1px solid $--color-light-gray !important;
+}
+
+.--border-2-light-gray {
+  border: 2px solid $--color-light-gray !important;
+}
+
+.--border-dark-gray {
+  border: 1px solid $--color-dark-gray !important;
+}
+
+.--border-2-dark-gray {
+  border: 2px solid $--color-dark-gray !important;
+}
+
+.--border-blue {
+  border: 1px solid $--color-blue !important;
+}
+
+.--border-2-blue {
+  border: 2px solid $--color-blue !important;
+}
+
+.--border-1-top-primary {
+  border-top: 1px solid $--color-primary !important;
+}
+
+.--border-2-top-primary {
+  border-top: 2px solid $--color-primary !important;
+}
+
+.--border-1-top-light-primary {
+  border-top: 1px solid $--color-light-primary !important;
+}
+
+.--border-2-top-light-primary {
+  border-top: 2px solid $--color-light-primary !important;
+}
+
+.--border-1-top-gray {
+  border-top: 1px solid $--color-gray !important;
+}
+
+.--border-2-top-gray {
+  border-top: 2px solid $--color-gray !important;
+}
+
+.--border-1-top-dark {
+  border-top: 1px solid $--color-dark !important;
+}
+
+.--border-2-top-dark {
+  border-top: 2px solid $--color-dark !important;
+}
+
+.--border-1-top-green {
+  border-top: 1px solid $--color-green !important;
+}
+
+.--border-2-top-green {
+  border-top: 2px solid $--color-green !important;
+}
+
+.--border-1-top-light-green {
+  border-top: 1px solid $--color-light-green !important;
+}
+
+.--border-2-top-light-green {
+  border-top: 2px solid $--color-light-green !important;
+}
+
+.--border-1-top-red {
+  border-top: 1px solid $--color-red !important;
+}
+
+.--border-2-top-red {
+  border-top: 2px solid $--color-red !important;
+}
+
+.--border-1-top-light-red {
+  border-top: 1px solid $--color-light-red !important;
+}
+
+.--border-2-top-light-red {
+  border-top: 2px solid $--color-light-red !important;
+}
+
+.--border-1-top-light-gray {
+  border-top: 1px solid $--color-light-gray !important;
+}
+
+.--border-2-top-light-gray {
+  border-top: 2px solid $--color-light-gray !important;
+}
+
+.--border-1-top-dark-gray {
+  border-top: 1px solid $--color-dark-gray !important;
+}
+
+.--border-2-top-blue {
+  border-top: 2px solid $--color-blue !important;
+}
+
+.--border-1-top-blue {
+  border-top: 1px solid $--color-blue !important;
+}
+
+.--border-2-top-dark-gray {
+  border-top: 2px solid $--color-dark-gray !important;
+}
+
+.--border-1-bottom-primary {
+  border-bottom: 1px solid $--color-primary !important;
+}
+
+.--border-2-bottom-primary {
+  border-bottom: 2px solid $--color-primary !important;
+}
+
+.--border-1-bottom-light-primary {
+  border-bottom: 1px solid $--color-light-primary !important;
+}
+
+.--border-2-bottom-light-primary {
+  border-bottom: 2px solid $--color-light-primary !important;
+}
+
+.--border-1-bottom-gray {
+  border-bottom: 1px solid $--color-gray !important;
+}
+
+.--border-2-bottom-gray {
+  border-bottom: 2px solid $--color-gray !important;
+}
+
+.--border-1-bottom-dark {
+  border-bottom: 1px solid $--color-dark !important;
+}
+
+.--border-2-bottom-dark {
+  border-bottom: 2px solid $--color-dark !important;
+}
+
+.--border-1-bottom-green {
+  border-bottom: 1px solid $--color-green !important;
+}
+
+.--border-2-bottom-green {
+  border-bottom: 2px solid $--color-green !important;
+}
+
+.--border-1-bottom-light-green {
+  border-bottom: 1px solid $--color-light-green !important;
+}
+
+.--border-2-bottom-light-green {
+  border-bottom: 2px solid $--color-light-green !important;
+}
+
+.--border-1-bottom-red {
+  border-bottom: 1px solid $--color-red !important;
+}
+
+.--border-2-bottom-red {
+  border-bottom: 2px solid $--color-red !important;
+}
+
+.--border-1-bottom-light-red {
+  border-bottom: 1px solid $--color-light-red !important;
+}
+
+.--border-2-bottom-light-red {
+  border-bottom: 2px solid $--color-light-red !important;
+}
+
+.--border-1-bottom-light-gray {
+  border-bottom: 1px solid $--color-light-gray !important;
+}
+
+.--border-2-bottom-light-gray {
+  border-bottom: 2px solid $--color-light-gray !important;
+}
+
+.--border-1-bottom-dark-gray {
+  border-bottom: 1px solid $--color-dark-gray !important;
+}
+
+.--border-2-bottom-blue {
+  border-bottom: 2px solid $--color-blue !important;
+}
+
+.--border-1-bottom-blue {
+  border-bottom: 1px solid $--color-blue !important;
+}
+
+.--border-2-bottom-dark-gray {
+  border-bottom: 2px solid $--color-dark-gray !important;
+}
+
+// Border radius
+
+.--border-radius-3 {
+  border-radius: 3px !important;
+}
+
+.--border-radius-5 {
+  border-radius: 5px !important;
+}
+
+.--border-radius-10 {
+  border-radius: 10px !important;
+}
+
+
+// Button
+
+.--btn-filled-primary {
+  @include --filled-button($color: $--color-primary);
+}
+
+.--btn-outlined-primary {
+  @include --outlined-button($color: $--color-primary);
+}
+.--btn-filled-gray {
+  @include --filled-button($color: $--color-gray);
+}
+
+.--btn-outlined-gray {
+  @include --outlined-button($color: $--color-gray);
+}
+.--btn-filled-dark {
+  @include --filled-button($color: $--color-dark);
+}
+
+.--btn-outlined-dark {
+  @include --outlined-button($color: $--color-dark);
+}
+.--btn-filled-green {
+  @include --filled-button($color: $--color-green);
+}
+
+.--btn-outlined-green {
+  @include --outlined-button($color: $--color-green);
+}
+
+.--btn-filled-red {
+  @include --filled-button($color: $--color-red);
+}
+
+.--btn-outlined-red {
+  @include --outlined-button($color: $--color-red);
+}
+
+.--btn-filled-white {
+  @include --filled-button($color: $--color-white);
+}
+
+.--btn-outlined-white {
+  @include --outlined-button($color: $--color-white);
+}
+
+.--btn-filled-yellow {
+  @include --filled-button($color: $--color-yellow);
+}
+
+.--btn-outlined-yellow {
+  @include --outlined-button($color: $--color-yellow);
+}
+
+.--btn-filled-light-gray {
+  @include --filled-button($color: $--color-light-gray);
+}
+
+.--btn-outlined-light-gray {
+  @include --outlined-button($color: $--color-light-gray);
+}
+
+.--btn-filled-dark-gray {
+  @include --filled-button($color: $--color-dark-gray);
+}
+
+.--btn-outlined-dark-gray {
+  @include --outlined-button($color: $--color-dark-gray);
+}
+
+.--btn-filled-blue {
+  @include --filled-button($color: $--color-blue);
+}
+
+.--btn-outlined-blue {
+  @include --outlined-button($color: $--color-blue);
+}
+
+//small button
+.--btn-sm-filled-primary {
+  @include --filled-button($color: $--color-primary);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-outlined-primary {
+  @include --outlined-button($color: $--color-primary);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-filled-gray {
+  @include --filled-button($color: $--color-gray);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-outlined-gray {
+  @include --outlined-button($color: $--color-gray);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-filled-dark {
+  @include --filled-button($color: $--color-dark);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-outlined-dark {
+  @include --outlined-button($color: $--color-dark);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-filled-green {
+  @include --filled-button($color: $--color-green);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-outlined-green {
+  @include --outlined-button($color: $--color-green);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-filled-red {
+  @include --filled-button($color: $--color-red);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-outlined-red {
+  @include --outlined-button($color: $--color-red);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-filled-white {
+  @include --filled-button($color: $--color-white);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-outlined-white {
+  @include --outlined-button($color: $--color-white);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-filled-yellow {
+  @include --filled-button($color: $--color-yellow);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-outlined-yellow {
+  @include --outlined-button($color: $--color-yellow);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-filled-light-gray {
+  @include --filled-button($color: $--color-light-gray);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-outlined-light-gray {
+  @include --outlined-button($color: $--color-light-gray);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-filled-dark-gray {
+  @include --filled-button($color: $--color-dark-gray);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-outlined-dark-gray {
+  @include --outlined-button($color: $--color-dark-gray);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-filled-blue {
+  @include --filled-button($color: $--color-blue);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+.--btn-sm-outlined-blue {
+  @include --outlined-button($color: $--color-blue);
+    padding: 1px 10px;
+      font-size: 12px;
+}
+
+//Width
+
+.--width-full{
+  width:100% !important
+}
+
+.--width-half{
+  width:50% !important
+}
+
+.--width-third{
+  width:33.33% !important
+}
+
+.--width-5{
+  width:5% !important
+}
+
+.--width-10{
+  width:10% !important
+}
+
+.--width-15{
+  width:15% !important
+}
+
+.--width-20{
+  width:20% !important
+}
+
+.--width-25{
+  width:25% !important
+}
+
+.--width-30{
+  width:30% !important
+}
+
+.--width-35{
+  width:35% !important
+}
+
+.--width-40{
+  width:40% !important
+}
+
+.--width-45{
+  width:45% !important
+}
+
+.--width-50{
+  width:50% !important
+}
+
+.--width-55{
+  width:55% !important
+}
+
+.--width-60{
+  width:60% !important
+}
+
+.--width-65{
+  width:65% !important
+}
+
+.--width-70{
+  width:70% !important
+}
+
+.--width-75{
+  width:75% !important
+}
+
+.--width-80{
+  width:80% !important
+}
+
+.--width-85{
+  width:85% !important
+}
+
+.--width-90{
+  width:90% !important
+}
+
+.--width-95{
+  width:95% !important
+}
+
+//width in px
+
+.--w-10{
+  width:10px !important
+}
+
+.--w-15{
+  width:15px !important
+}
+
+.--w-20{
+  width:20px !important
+}
+
+.--w-25{
+  width:25px !important
+}
+
+.--w-30{
+  width:30px !important
+}
+
+//Image
+.--image-size-full{
+  width:100% !important;
+  height:100% !important;
+}
+
+.--image-size-half{
+  width:50% !important;
+  height:50% !important;
+}
+
+.--image-thumbnail{
+  width:50px !important;
+  height:50px !important;
+}
+
+.--image-card{
+  width: 250px !important;
+  height: 250px !important;
+}
+
+
+// Font Size
+
+.--box-heading{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.--box-shadow-gray {
+  box-shadow: $--box-shadow-gray;
+}
+
+.--font-size-10 {
+  font-size: 10px !important;
+}
+
+.--font-size-12 {
+  font-size: 12px !important;
+}
+
+.--font-size-14 {
+  font-size: 14px !important;
+}
+
+.--font-size-16 {
+  font-size: 16px !important;
+}
+
+.--font-size-18 {
+  font-size: 18px !important;
+}
+
+//Other
+
+.--primary-font{
+  font-family: $--font-family-primary !important;
+  margin: 0;
+}
+
+.--secondary-font{
+  font-family: $--font-family-secondary !important;
+  margin: 0;
+}
+
+.--heading-josefin{
+  font-size: $--font-size-xl !important;
+  font-family: $--font-family-primary !important;
+  margin: 0;
+}
+
+.--sub-heading-josefin{
+  font-size: $--font-size-lg !important;
+  font-family: $--font-family-primary !important;
+  margin: 0;
+}
+
+.--description-josefin{
+  font-size: $--font-size-md !important;
+  font-family: $--font-family-primary !important;
+  margin: 0;
+}
+
+.--heading-roboto{
+  font-size: $--font-size-xl !important;
+  font-family: $--font-family-secondary !important;
+  margin: 0;
+}
+
+.--sub-heading-roboto{
+  font-size: $--font-size-lg !important;
+  font-family: $--font-family-secondary !important;
+  margin: 0;
+}
+
+.--description-roboto{
+  font-size: $--font-size-md !important;
+  font-family: $--font-family-secondary !important;
+  margin: 0;
+}
+
+//Opacity
+
+.--opacity-0{
+  opacity: 0 !important;
+}
+
+.--opacity-1{
+  opacity: 1 !important;
+}
+
+.--opacity-2{
+  opacity: 0.2 !important;
+}
+
+.--opacity-3{
+  opacity: 0.3 !important;
+}
+
+.--opacity-4{
+  opacity: 0.4 !important;
+}
+
+.--opacity-5{
+  opacity: 0.5 !important;
+}
+
+.--opacity-6{
+  opacity: 0.6 !important;
+}
+
+.--opacity-7{
+  opacity: 0.7 !important;
+}
+
+.--opacity-8{
+  opacity: 0.8 !important;
+}
+
+//Cursor
+
+.--cursor-pointer{
+  cursor: pointer !important;
+}
+
+.--cursor-default{
+  cursor: default !important;
+}
+
+.--cursor-move{
+  cursor: move !important;
+}
+
+.--cursor-wait{
+  cursor: wait !important;
+}
+
+.--cursor-text{
+  cursor: text !important;
+}
+
+.--cursor-crosshair{
+  cursor: crosshair !important;
+}
+
+.--cursor-pointer-grab{
+  cursor: grabbing !important;
+}
+
+.--cursor-not-allowed{
+  cursor: not-allowed !important;
+}
+
+.--pointer-events-none{
+  pointer-events: none !important;
+}
+
+
+// Table
+.--table-container{
+  max-height: 65vh !important;
+  overflow-y: auto !important;
+}
+
+.--table-scroll-full{
+  overflow: auto !important;
+}
+
+.--table-scroll-x{
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+
+.--table-scroll-y{
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.--sticky-header{
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1 !important;
+}
+
+//// Input
+
+// Without Icon
+
+.--input-group {
+  @include input-group;
+}
+.--input-group input {
+  @include input-field;
+  padding: 10px;
+}
+
+.--input-group label {
+  @include input-label;
+}
+
+.--input-group input::placeholder{
+  color: $--color-white;
+}
+
+.--input-group:focus-within input::placeholder{
+  color: $--color-light-gray;
+}
+
+.--input-group:hover,
+.--input-group:focus-within,
+.--input-group:hover label {
+  border-color: $--color-primary;
+  color: $--color-primary !important;
+}
+
+.--input-group:focus-within label {
+  @include input-placeholder-focus;
+}
+
+.--input-group input:not(:placeholder-shown) ~ label {
+  padding: 0px 6px;
+  background-color: $--color-white;
+  top: -12px;
+  left: 10px;
+  bottom: auto;
+}
+
+.--input--filled{
+  padding: 0px 6px !important;
+  top: -12px !important;
+  left: 10px !important;
+  bottom: auto !important;
+  background-color: $--color-white !important;
+  color: $--color-gray !important;
+}
+
+// With Icon
+
+.--input-icon-group {
+  @include input-group;
+}
+.--input-icon-group input {
+  @include input-field;
+  padding: 10px 35px 10px 10px;
+}
+
+.--input-icon-group input::placeholder{
+  color: $--color-white;
+}
+
+.--input-icon-group:focus-within input::placeholder{
+  color: $--color-light-gray;
+}
+
+.--input-icon-group label {
+  @include input-label;
+}
+.--input-icon-group:hover,
+.--input-icon-group:focus-within,
+.--input-icon-group:hover label {
+  border-color: $--color-primary;
+  color: $--color-primary !important;
+}
+
+.--input-icon-group:focus-within label{
+  @include input-placeholder-focus;
+}
+
+.--input-icon-group input:not(:placeholder-shown) ~ label {
+  padding: 0px 6px;
+  background-color: $--color-white;
+  top: -12px;
+  left: 10px;
+  bottom: auto;
+}
+
+.--input-icon-group .mat-icon {
+  @include input-icon;
+}
+
+// Stone Item Select
+
+.--item-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.default-shape{
+ @include item-box($--color-light-gray);
+ border-radius: 10px;
+ min-width: 80px;
+}
+
+.selected-shape{
+ @include item-box($--color-primary);
+ border-radius: 10px;
+ min-width: 80px;
+   background-color: $--color-light;
+}
+
+.default-item {
+  @include item-box($--color-light-gray);
+}
+
+.selected-item {
+   @include item-box($--color-primary);
+     background-color: $--color-light;
+}
+
+.custom-footer {
+  height: 47px;
+  border-top: 1px solid $--color-light-gray;
+  z-index: 1;
+  background-color: $--color-white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.--center-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity:1 ;
+  width: 100%;
+}

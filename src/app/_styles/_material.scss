@@ -1,0 +1,134 @@
+@import "variables.scss";
+
+// Form Field outline
+
+// :host {
+//   ::ng-deep {
+//     .mat-focused .mat-form-field-label {
+//       color: $--color-primary ;
+//     }
+
+//     .mat-form-field-underline {
+//       background-color: $--color-primary ;
+//     }
+
+//     .mat-form-field-ripple {
+//       background-color: $--color-primary ;
+//     }
+
+//     .mat-form-field-appearance-outline.mat-focused {
+//       .mat-form-field-outline {
+//           color: $--color-primary;
+//         }
+//     }
+//   }
+// }
+
+
+.--mat-input-font-size {
+  font-size: 13px;
+}
+
+th.mat-header-cell {
+  color: $--color-dark;
+  font-size: 13px;
+  font-family: $--font-family-primary;
+  background-color: #d7d7d7 !important;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+}
+
+:host ::ng-deep {
+  .mat-radio-container {
+    transform: scale(0.8);
+  }
+
+  // Mat-select zindex
+  .cdk-overlay-connected-position-bounding-box { z-index: 9999 !important; }
+
+  .--tab-container {
+    .mat-tab-link {
+      height: 40px;
+    }
+
+    .mat-tab-link, .mat-tab-label, .mat-tab-label-active{
+      min-width: 97px!important;
+    }
+
+    a:hover {
+      color: $--color-primary;
+    }
+  }
+
+  .mat-progress-bar-fill::after {
+    background-color: $--color-primary;
+  }
+
+  .mat-progress-bar-buffer {
+    background: $--color-light;
+  }
+
+  .mat-ink-bar {
+    background-color:  $--color-primary !important;
+  }
+
+  .mat-tab-label-active {
+    color: $--color-primary;
+    font-weight: bold;
+  }
+
+  .--inner-mat-tab .mat-tab-label {
+    height: 35px;
+  }
+}
+
+// :host {
+//   ::ng-deep {
+//     .mat-cell {
+//       &td{
+//         font-size: 12px;
+//       }
+//     }
+//   }
+// }
+
+td, th {
+    text-align: left !important;
+    vertical-align: middle !important;
+}
+
+.mat-sort-header-container {
+    justify-content: left !important;
+}
+
+
+
+// Mat-select zindex
+
+::ng-deep .cdk-overlay-connected-position-bounding-box { z-index: 9999 !important; }
+
+
+// Checkbox
+
