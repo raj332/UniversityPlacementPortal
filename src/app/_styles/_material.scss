@@ -24,7 +24,33 @@
 //   }
 // }
 
+.mat-accordion .mat-expansion-panel:last-of-type {
+  border-radius: 0px;
 
+}
+
+.mat-expansion-panel {
+  width: 14vw;
+  box-shadow: none;
+  background-color: #1D1919;
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgb(78, 76, 76);
+
+}
+
+.mat-expansion-panel-header-title {
+  color: rgba(245, 245, 245, 0.74) !important;
+}
+
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+  background: #1D1919;
+}
+
+.mat-expansion-panel-header-description,
+.mat-expansion-indicator::after {
+  color: rgba(245, 245, 245, 0.74) !important;
+}
 .--mat-input-font-size {
   font-size: 13px;
 }
