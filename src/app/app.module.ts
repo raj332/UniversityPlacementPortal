@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DashboardMasterComponent } from './dashboard-master/dashboard-master.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatSidenavModule
+    MatSidenavModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

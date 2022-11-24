@@ -1,15 +1,17 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <div class="mainNavDiv">
-      <mat-accordion *ngFor="let menu of MenuList">
+      <h6 routerLink="/dashboard/student">Dashboard</h6>
+      <mat-accordion *ngFor="let menu of MenuList ">
+
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              {{menu}}
+              {{menu.heading}}
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <ul *ngFor="let item of SubMenuList">
-            <li>{{item}}</li>
+          <ul *ngFor="let item of menu.links">
+            <li routerLink="{{item.url}}" style="color: white;">{{item.title}}</li>
           </ul>
         </mat-expansion-panel>
       </mat-accordion>
@@ -20,7 +22,7 @@
   </button>
   <hr class="mx-3">
   <div class="example-sidenav-content ">
-
+    <router-outlet></router-outlet>
   </div>
 
 </mat-drawer-container>
