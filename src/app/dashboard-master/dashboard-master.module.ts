@@ -9,9 +9,13 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { dashboardRoutingModule } from './dashboard-master-routing.module';
+import { CompanyDashboardComponent } from './company-dashboard/company-dashboard.component';
+import { JobProfileComponent } from './student-dashboard/job-profile/job-profile.component';
 @NgModule({
   declarations: [
-    StudentDashboardComponent
+    StudentDashboardComponent,
+    CompanyDashboardComponent,
+    JobProfileComponent
   ],
   imports: [
     CommonModule,

@@ -18,3 +18,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .bg-dark-blue{
   background-color: #00004d;
 }
+li{
+  list-style-type: none;
+  color: $white;
+}

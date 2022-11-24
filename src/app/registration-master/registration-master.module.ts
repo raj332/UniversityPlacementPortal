@@ -8,11 +8,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { StudentLoginComponent } from './student-login/student-login.component';
-
+import { CommiteeLoginComponent } from './commitee-login/commitee-login.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     StudentRegistrationComponent,
-    StudentLoginComponent
+    StudentLoginComponent,
+    CommiteeLoginComponent
   ],
   imports: [
     registrationRoutingModule,
@@ -21,7 +23,8 @@ import { StudentLoginComponent } from './student-login/student-login.component';
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [],

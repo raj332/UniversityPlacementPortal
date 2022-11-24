@@ -78,6 +78,10 @@
           <label for="confirmPassword" class="form-label --text-Primary">Confirm Password</label>
           <input type="text" class="form-control" id="confirmPassword">
         </div>
+        <div class="col-md-12">
+          <img *ngIf="isPreview" [src]="url" alt="" srcset="" height="150px" width="150px" class="mb-2">
+          <input type="file" class="form-control" id="files" (change)="onFileChange($event)" />
+        </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary --text-Primary">Register</button>
         </div>
