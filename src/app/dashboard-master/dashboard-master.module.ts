@@ -11,11 +11,21 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { dashboardRoutingModule } from './dashboard-master-routing.module';
 import { CompanyDashboardComponent } from './company-dashboard/company-dashboard.component';
 import { JobProfileComponent } from './student-dashboard/job-profile/job-profile.component';
+
+import { UploaderModule } from "angular-uploader";
+import {MatCardModule} from '@angular/material/card';
+import { AddExperienceComponent } from './student-dashboard/job-profile/add-experience/add-experience.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatChipsModule } from '@angular/material/chips';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     StudentDashboardComponent,
     CompanyDashboardComponent,
-    JobProfileComponent
+    JobProfileComponent,
+    AddExperienceComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +37,14 @@ import { JobProfileComponent } from './student-dashboard/job-profile/job-profile
     MatButtonModule,
     MatExpansionModule,
     MatSidenavModule,
-    dashboardRoutingModule
+    dashboardRoutingModule,
+    UploaderModule,
+    MatCardModule,
+    MatDialogModule,
+    MatChipsModule,
+    MatPaginatorModule,
+    MatTableModule,
+    NgbAlertModule
   ],
   providers: [],
   bootstrap: [],

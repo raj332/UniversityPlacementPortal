@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { DashboardMasterComponent } from './dashboard-master/dashboard-master.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
+import { UploaderModule } from "angular-uploader";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatFormFieldModule,
     MatSidenavModule,
-    CommonModule
+    CommonModule,
+    UploaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

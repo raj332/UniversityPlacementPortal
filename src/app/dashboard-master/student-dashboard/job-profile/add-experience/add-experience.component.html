@@ -1,0 +1,24 @@
+<mat-dialog-content>
+  <div class="col-md-6 form-group">
+    <label for="company">Company Name</label>
+    <input type="text" class="form-control" id="company">
+  </div>
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <label for="startdate">Start Date</label>
+      <input type="date" class="form-control" id="startdate">
+    </div>
+    <div class="col-md-6 form-group">
+      <label for="enddate">End Date</label>
+      <input type="date" class="form-control" id="enddate">
+    </div>
+    <div class="col-md-6 form-group">
+      <!-- <mat-chip-listbox aria-label="technology selection">
+        <mat-chip-option *ngFor="let item of technology">{{item}}</mat-chip-option>
+      </mat-chip-listbox> -->
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button class="--width-20 btn btn-warning my-2" mat-button mat-dialog-close>Add</button>
+</mat-dialog-actions>

@@ -1,8 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
-@import 'bootstrap/scss/bootstrap';
 @import './app/_styles/common';
 @import './app/_styles/material';
 @import './app/_styles/variables.scss';
@@ -12,13 +10,25 @@
   border: 0;
   color: black;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.bg-dark-blue{
-  background-color: #00004d;
-}
+body { margin: 0; font-family: "Josefin Sans" !important; }
 li{
   list-style-type: none;
   color: $white;
 }
+.my-btn {
+  outline: none !important;
+  border: 0;
+  color: black;
+}
+
+html,
+body {
+  height: auto;
+  overflow: hidden;
+}
+
+.bg-dark-blue {
+  background-color: #00004d;
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
