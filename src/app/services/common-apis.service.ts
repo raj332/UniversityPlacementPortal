@@ -11,4 +11,7 @@ export class CommonApisService {
   getCourses(){
     return this.http.get("https://localhost:7212/api/Course") ;
   }
+  loginCommitee(user:any){
+    return this.http.post("https://localhost:7212/api/CommiteeMember/Login",user)
+  }
 }
