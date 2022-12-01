@@ -11,18 +11,18 @@
       <img src="../../../assets/imgs/undraw_access_account_re_8spm.svg" alt="" class="imgs">
     </div>
     <div class=" d-flex justify-content-center --50vw">
-      <form class="row g-3 d-flex flex-column align-item-center --width-50 mt-5">
+      <form class="row g-3 d-flex flex-column align-item-center --width-50 mt-5" (ngSubmit)="handleSubmit()">
         <h1 class="--text-dark">
           Student Login
         </h1>
         <hr>
         <div class="col-md-12">
           <label for="spid" class="form-label --text-Primary">SPID</label>
-          <input type="number" class="form-control" id="spid">
+          <input type="number" class="form-control" id="spid" name="spid" [(ngModel)]="spid">
         </div>
         <div class="col-md-12">
           <label for="password" class="form-label --text-Primary">Password</label>
-          <input type="password" class="form-control" id="password">
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary --text-Primary">Login</button>

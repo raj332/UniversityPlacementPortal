@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http'
+import {FormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { RegistrationMasterComponent } from './registration-master/registration-master.component';
@@ -22,12 +23,14 @@ import { UploaderModule } from "angular-uploader";
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatSidenavModule,
     CommonModule,
-    UploaderModule
+    UploaderModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
