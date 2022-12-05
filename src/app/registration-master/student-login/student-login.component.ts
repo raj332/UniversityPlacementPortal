@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentApisService } from 'src/app/services/student-apis.service';
 
 @Component({
   selector: 'app-student-login',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-login.component.scss']
 })
 export class StudentLoginComponent implements OnInit {
-
-  constructor() { }
+  spid!:Number;
+  password!:String
+  constructor(private services: StudentApisService) { }
 
   ngOnInit(): void {
   }
-
+ handleSubmit(){
+  let user ={
+    spid:this.spid,
+    password:this.password
+  }
+  this.services.loginStudent(user).subscribe((data)=>{
+    console.log(data)
+    alert("logedin")
+  })
+ }
 }

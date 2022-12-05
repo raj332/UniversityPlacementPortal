@@ -1,21 +1,119 @@
-<div class="container">
+<div class="container parent-div">
   <form>
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
-          .col-md-8
+        <div class="col-md-6 --border-2-right-light-gray">
+
+          <div class="col-md-6 form-group my-2">
+            <label for="JobprofileID">Job Profile ID</label>
+            <input type="number" class="form-control" id="JobprofileID" readonly>
+          </div>
+          <div class="col-md-6 form-group my-2">
+            <label for="SPID">Spid</label>
+            <input type="number" class="form-control" id="SPID" readonly>
+          </div>
+
+          <h4 class="my-5">
+            <mat-icon>post_add</mat-icon> 1. Add Document Links
+          </h4>
+
+          <div class="col-md-6 form-group my-2">
+            <label for="website">Portfolio Website </label>
+            <input type="text" class="form-control" id="website">
+          </div>
+          <div class="col-md-6 form-group my-2">
+            <label for="linkedin">linkedin Profiel Url</label>
+            <input type="text" class="form-control" id="linkedin">
+          </div>
+
+          <div class="col-md-6 form-group my-2">
+            <label for="resume">Resume Link</label>
+            <input type="text" class="form-control" id="resume">
+          </div>
+
+          <h4 class="my-5">
+            <mat-icon>work_outlined</mat-icon> 2. Add Work Experience
+          </h4>
+
+          <div class="col-md-12 form-group">
+            <mat-card class="--width-full">
+              <mat-card-header class="--width-full">
+                <mat-card-title class="--width-full d-flex flex-row justify-content-between ">
+                  <p>Experience</p>
+                  <div class="d-flex justify-content-between --width-10">
+                    <mat-icon>edit</mat-icon>
+                    <mat-icon (click)="openDialog()">add</mat-icon>
+                  </div>
+                </mat-card-title>
+                <mat-card-subtitle>
+
+                </mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-actions>
+
+              </mat-card-actions>
+            </mat-card>
+          </div>
+
+
+
+
+
+        </div>
+        <div class="col-md-6 ">
           <div class="row">
-            <div class="col-md-6 form-group">
-              <label for="JobprofileID">JobP rofile ID</label>
-              <input type="number" class="form-control" id="JobprofileID" readonly>
+            <h4>3.Results Details</h4>
+            <div class="d-flex justify-content-between --width-full my-4">
+              <div class="col-md-6 dropdown my-4">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Select semester CGPA
+                </button>
+                <div class="dropdown-menu --width-45" aria-labelledby="dropdownMenuButton">
+                  <a *ngFor="let item of MenuList" class="dropdown-item --width-full" href="#">{{item}}</a>
+                </div>
+              </div>
+
+
             </div>
             <div class="col-md-6 form-group">
-              <label for="SPID">Spid</label>
-              <input type="number" class="form-control" id="SPID" readonly>
+              <label for="JobprofileID" class="my-2">Upload Drive Link</label>
+              <input type="text" class="form-control" id="JobprofileID">
             </div>
+            <p class="my-2 d-flex justify-content-center">
+              <mat-icon>swap_vert</mat-icon>
+            </p>
+            <div>
+              <upload-dropzone [uploader]="uploader" (uploadComplete)="uploadComplete" [options]="uploadOptions"
+                [width]="width" [height]="height">
+              </upload-dropzone>
+            </div>
+
+
           </div>
         </div>
-        <div class="col-md-4">.col-md-4</div>
+      </div>
+      <div class="row my-2">
+        <h4 class="my-4">Internships List</h4>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </form>
