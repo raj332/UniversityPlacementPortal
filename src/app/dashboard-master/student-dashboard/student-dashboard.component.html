@@ -28,7 +28,7 @@
 </mat-drawer-container> -->
 
 <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened>
     <div class="mainNavDiv">
       <div class="d-flex justify-content-center align-items-center my-3">
         <img src="../../../assets/imgs/Screenshot 2022-10-22 133010.png" height="100h" width="100vw"
@@ -36,7 +36,7 @@
       </div>
       <p class="--text-yellow">Welcome, JaiminKumar </p>
       <mat-accordion *ngFor="let menu of MenuList">
-        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" >
           <mat-expansion-panel-header>
             <mat-panel-title>
               {{menu.heading}}
@@ -49,7 +49,7 @@
       </mat-accordion>
     </div>
   </mat-drawer>
-  <div class="d-flex mt-4">
+  <div class="d-flex mt-3 --border-1-bottom-primary">
     <button type="button" class="--btn-outlined-primary mx-2" mat-button (click)="toggle(drawer)">
       <mat-icon>{{isMenuOpne?'clear':'apps'}}</mat-icon>
     </button>
@@ -69,18 +69,18 @@
     </div>
   </div>
 
-
-  <hr class="mx-3">
-  <div class="example-sidenav-content mx-4">
-    <div class="--width-full --height-full">
-      <router-outlet></router-outlet>
-      <mat-form-field appearance="standard" class="--width-20">
+ 
+  <div class="example-sidenav-content" >
+    <router-outlet></router-outlet>
+    <div class="--width-full --height-full" *ngIf="false">
+      
+      <mat-form-field appearance="standard" class="--width-20" >
         <mat-label>Search</mat-label>
 
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
       </mat-form-field>
-      <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 --width-full">
+      <div  class="mat-elevation-z8">
+        <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8 --width-full">
 
           <!-- Name Column -->
           <ng-container matColumnDef="name">

@@ -1,24 +1,36 @@
 <mat-dialog-content>
   <div class="col-md-6 form-group">
     <label for="company">Company Name</label>
-    <input type="text" class="form-control" id="company">
+    <input type="text" class="form-control" id="company" name="company" [(ngModel)]="companyName">
   </div>
-  <div class="row">
-    <div class="col-md-6 form-group">
+  <div class="row d-flex ">
+    <div class="col-md-6 form-group my-3">
       <label for="startdate">Start Date</label>
-      <input type="date" class="form-control" id="startdate">
+      <input type="date" class="form-control" id="startdate" name="startdate" [(ngModel)]="startDate">
     </div>
-    <div class="col-md-6 form-group">
+    <div class="col-md-6 form-group my-3">
       <label for="enddate">End Date</label>
-      <input type="date" class="form-control" id="enddate">
+      <input type="date" class="form-control" id="enddate" name="enddate" [(ngModel)]="endDate">
     </div>
-    <div class="col-md-6 form-group">
-      <!-- <mat-chip-listbox aria-label="technology selection">
-        <mat-chip-option *ngFor="let item of technology">{{item}}</mat-chip-option>
-      </mat-chip-listbox> -->
+    <div class="col-md-12 form-group my-3">
+      <label for="">Add Skills</label>
+      <mat-form-field class="example-chip-list " appearance="fill" >
+        
+        <mat-chip-list #chipList aria-label="technology selection">
+          <mat-chip *ngFor="let tech of technology"  (click)="OnClick(tech.name,$event)">
+            {{tech.name}}
+           
+          </mat-chip>
+          <input
+                 [matChipInputFor]="chipList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+      </mat-form-field>
     </div>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button class="--width-20 btn btn-warning my-2" mat-button mat-dialog-close>Add</button>
+  <button class="--width-20 btn btn-warning my-2" mat-button mat-dialog-close (click)="AddExperience()">Add</button>
 </mat-dialog-actions>

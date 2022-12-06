@@ -2,7 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Uploader, UploaderOptions, UploaderResult } from "uploader";
 import { AddExperienceComponent } from './add-experience/add-experience.component';
-
+interface result{
+  sem:string;
+  cgpa:number;
+}
 @Component({
   selector: 'app-job-profile',
   templateUrl: './job-profile.component.html',
@@ -11,7 +14,9 @@ import { AddExperienceComponent } from './add-experience/add-experience.componen
 export class JobProfileComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
-
+  isCgpaSelected=false;
+  sem='';
+  cgpa=0;
   ngOnInit(): void {
   }
 //dialog
@@ -48,11 +53,9 @@ export class JobProfileComponent implements OnInit {
     "SEM 8 CGPA",
     "SEM 9 CGPA",
     "SEM 10 CGPA",
-
-
   ]
 
-
+  resultArray:result[]=[];
   onFileAdd(file: any) {
     this.file = file;
   }
@@ -60,6 +63,32 @@ export class JobProfileComponent implements OnInit {
   onFileRemove() {
     this.file = null;
   }
+  addResult(){
+    
+      const result = this.resultArray.filter(f=>
+      f.sem === this.sem &&
+        f.cgpa === this.cgpa 
+      )
+      if(result.length>0){
+        alert("allready added");
+      }
+      else{
+        this.resultArray.push(
+          {
+            sem:this.sem,
+            cgpa:this.cgpa
+          });
+          console.log(this.resultArray);
+      }
+      
+    this.sem='';
+    this.cgpa=0;
+  }
   width = "600px";
   height = "375px";
+
+  toggleBTN(){
+    
+  }
 }
+

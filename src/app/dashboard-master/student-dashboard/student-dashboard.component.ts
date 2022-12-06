@@ -85,7 +85,7 @@ export class StudentDashboardComponent implements OnInit {
   ]
 
 
-  isMenuOpne: boolean = false;
+  isMenuOpne: boolean = true;
   TotalCompanys:number=0;
   Eligible:number=0;
   Applied:number=0;

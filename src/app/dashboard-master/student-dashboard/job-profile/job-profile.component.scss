@@ -3,9 +3,23 @@
   width: 85vw;
 }
 .parent-div{
-height: 85vh;
+  height: 83vh;
   width: 85vw;
 }
 .mat-card-title{
-  width: 29vw !important;
+  width: 65vw !important;
+}
+
+.mat-card{
+  border-radius: 10px;
+  -webkit-box-shadow: 13px 16px 37px -11px rgba(0, 0, 0, 0.123);
+  -moz-box-shadow: 13px 16px 37px -11px rgba(0, 0, 0, 0.124);
+  box-shadow: 13px 16px 37px -11px rgba(0, 0, 0, 0.117);
+
+}
+.mat-select{
+height: 15px !important;
+}
+.--height-5{
+height: 35px;
 }
