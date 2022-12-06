@@ -1,42 +1,12 @@
-<!-- <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <div class="mainNavDiv">
-      <h6 routerLink="/dashboard/student">Dashboard</h6>
-      <mat-accordion *ngFor="let menu of MenuList ">
-
-        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{menu.heading}}
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <ul *ngFor="let item of menu.links">
-            <li routerLink="{{item.url}}" style="color: white;">{{item.title}}</li>
-          </ul>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </div>
-  </mat-drawer>
-  <button type="button" class="--btn-outlined-primary mx-4" mat-button (click)="toggle(drawer)">
-    <mat-icon>{{isMenuOpne?'clear':'apps'}}</mat-icon>
-  </button>
-  <hr class="mx-3">
-  <div class="example-sidenav-content">
-    <router-outlet></router-outlet>
-  </div>
-
-</mat-drawer-container> -->
-
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side" opened>
     <div class="mainNavDiv">
       <div class="d-flex justify-content-center align-items-center my-3">
-        <img src="../../../assets/imgs/Screenshot 2022-10-22 133010.png" height="100h" width="100vw"
-          style="clip-path: circle(50%);" alt="">
+        <img src="../../../assets/img/logo.png" height="100h" width="100vw" style="clip-path: circle(50%);" alt="">
       </div>
       <p class="--text-yellow">Welcome, JaiminKumar </p>
       <mat-accordion *ngFor="let menu of MenuList">
-        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" >
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
               {{menu.heading}}
@@ -49,59 +19,183 @@
       </mat-accordion>
     </div>
   </mat-drawer>
-  <div class="d-flex mt-3 --border-1-bottom-primary">
-    <button type="button" class="--btn-outlined-primary mx-2" mat-button (click)="toggle(drawer)">
-      <mat-icon>{{isMenuOpne?'clear':'apps'}}</mat-icon>
-    </button>
-    <div class="d-flex justify-content-around --width-50">
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1" type="primary">
-        <strong>Total Company : {{TotalCompanys}}</strong>
-      </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1" type="primary">
-        <strong>Eligible In :</strong> {{Eligible}}
-      </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1" type="primary">
-        <strong>Applied :</strong> {{Applied}}
-      </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1 " type="success">
-        <strong>Status :</strong> {{status}}
-      </ngb-alert>
+  <main id="main" class="main --width-full">
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
     </div>
-  </div>
+    <section class="section dashboard">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row ">
+            <div class="col-xxl-4 col-md-3 ">
+              <div class="card info-card sales-card" style="height: 90px;">
+                <div class="filter" style="height: 90px;">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                </div>
+                <div class="card-body" style="height: 90px;">
+                  <h5 class="card-title">Total Company </h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i
+                        class="bi bi-list"></i></div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                      <span class="text-success small pt-1 fw-bold">12%</span> <span
+                        class="text-muted small pt-2 ps-1">increase</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Applied</h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i
+                        class="bi bi-application"></i></div>
+                    <div class="ps-3">
+                      <h6>13</h6>
+                      <span class="text-success small pt-1 fw-bold">8%</span> <span
+                        class="text-muted small pt-2 ps-1">increase</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-4 col-xl-12">
+              <div class="card info-card customers-card">
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Pending </h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i
+                        class="bi bi-people"></i></div>
+                    <div class="ps-3">
+                      <h6>0</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="row ">
+            <div class="col-xxl-4 col-md-3 ">
+              <div class="card info-card customers-card">
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Shortlisted </h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i
+                        class="bi bi-people"></i></div>
+                    <div class="ps-3">
+                      <h6>0</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-4 col-md-6 ">
+              <div class="card info-card customers-card">
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Selected <span>| This Year</span></h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i
+                        class="bi bi-people"></i></div>
+                    <div class="ps-3">
+                      <h6>0</h6>
 
- 
-  <div class="example-sidenav-content" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-4 col-md-12 ">
+              <div class="card info-card customers-card">
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Status </h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i
+                        class="bi bi-people"></i></div>
+                    <div class="ps-3">
+                      <h6>In Procress</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+              <div class="activity">
+                <div class="activity-item d-flex">
+                  <div class="activite-label">32 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                  <div class="activity-content"> Pre Placemnet Talk Sheduled for NJ Technologies <a href="#"
+                      class="fw-bold text-dark">6/12/2022</a> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="example-sidenav-content">
     <router-outlet></router-outlet>
-    <div class="--width-full --height-full" *ngIf="false">
-      
-      <mat-form-field appearance="standard" class="--width-20" >
+    <div class="--width-90 --height-full" *ngIf="true">
+
+      <mat-form-field appearance="standard" class="--width-20">
         <mat-label>Search</mat-label>
 
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
       </mat-form-field>
-      <div  class="mat-elevation-z8">
-        <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8 --width-full">
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 --width-full">
 
-          <!-- Name Column -->
+
           <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef class="--bg-green"> Company </th>
             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
           </ng-container>
 
-          <!-- Position Column -->
+
           <ng-container matColumnDef="position">
             <th mat-header-cell *matHeaderCellDef> Position </th>
             <td mat-cell *matCellDef="let element"> {{element.position}} </td>
           </ng-container>
 
 
-          <!-- Weight Column -->
+
           <ng-container matColumnDef="weight">
             <th mat-header-cell *matHeaderCellDef> CTC </th>
             <td mat-cell *matCellDef="let element"> <b>{{element.CTC}}</b> </td>
           </ng-container>
 
-          <!-- Symbol Column -->
+
           <ng-container matColumnDef="symbol">
             <th mat-header-cell *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let element"> <button class="--btn-filled-green">Apply</button> </td>
@@ -110,7 +204,7 @@
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-          <!-- Row shown when there is no matching data. -->
+
           <tr class="mat-row" *matNoDataRow>
             <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
           </tr>

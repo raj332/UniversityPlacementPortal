@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef } from '@angular/core';
 import { DataSource } from '@angular/cdk/table';
 
 import {MatTableDataSource} from '@angular/material/table';
@@ -22,9 +22,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class StudentDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
   showFiller = false;
-  panelOpenState = false;
+  panelOpenState = true;
 //side navigation menu options
   MenuList: any = [
 
@@ -91,10 +91,22 @@ export class StudentDashboardComponent implements OnInit {
   Applied:number=0;
   status: string = 'In Process';
 
+  pending: number = 0;
+  Shortlisted: number = 0;
+  Selected: number = 0;
+  defaultcontent = true;
+  changeDefaultContent() {
+    this.defaultcontent == true ? this.defaultcontent = false : this.defaultcontent = true;
+  }
 
 
   ngOnInit(): void {
     console.log(this.MenuList[0]);
+
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.src = "../assets/js/main.js";
+    this.elementRef.nativeElement.appendChild(s);
   }
   toggle(drawer:any) {
     this.isMenuOpne === false ? this.isMenuOpne = true : this.isMenuOpne = false;
