@@ -49,31 +49,31 @@
       </mat-accordion>
     </div>
   </mat-drawer>
-  <div class="d-flex mt-4">
-    <button type="button" class="--btn-outlined-primary mx-2" mat-button (click)="toggle(drawer)">
+  <div class="d-flex  mt-4">
+    <button type="button" class="--btn-outlined-primary mx-2 " mat-button (click)="toggle(drawer)" style="height: 50px">
       <mat-icon>{{isMenuOpne?'clear':'apps'}}</mat-icon>
     </button>
-    <div class="d-flex justify-content-around --width-70">
-      <ngb-alert [dismissible]="false" class="--width-50 mx-1 --border-" type="light">
+    <div class="d-flex justify-content-between --width-80 me-4">
+      <ngb-alert [dismissible]="false" class="--width-50 mx-1 --border- mat-elevation-z8" type="light">
         <img src="https://img.icons8.com/fluency/48/null/permanent-job.png" height="35px" width="35px" />
-        <strong>Total Company : {{TotalCompanys}}</strong>
+        <strong class="sub-heading">Total Company : {{TotalCompanys}}</strong>
       </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1 --border-yellow" type="light">
+      <ngb-alert [dismissible]="false" class="--width-35 mx-1  mat-elevation-z8" type="light">
         <img src="https://img.icons8.com/fluency/48/null/find-matching-job.png" height="35px" width="35px" />
-        <strong>Applied :</strong> {{Applied}}
+        <strong class="sub-heading">Applied :</strong> {{Applied}}
       </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1 --border-yellow" type="light">
+      <ngb-alert [dismissible]="false" class="--width-35 mx-1 mat-elevation-z8" type="light">
         <img src="https://img.icons8.com/fluency/48/null/hourglass--v1.png" height="35px" width="35px" />
-        <strong>Pending :</strong> {{pending}}
+        <strong class="sub-heading">Pending :</strong> {{pending}}
       </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1" type="primary">
-        <strong>Shortlisted :</strong> {{Shortlisted}}
+      <ngb-alert [dismissible]="false" class="--width-35 mx-1 mat-elevation-z8" type="light">
+        <strong class="sub-heading">Shortlisted :</strong> {{Shortlisted}}
       </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1" type="primary">
-        <strong>Selected :</strong> {{Selected}}
+      <ngb-alert [dismissible]="false" class="--width-35 mx-1 mat-elevation-z8" type="light">
+        <strong class="sub-heading">Selected :</strong> {{Selected}}
       </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1 " type="success">
-        <strong>Status :</strong> {{status}}
+      <ngb-alert [dismissible]="false" class="--width-35 mx-1 mat-elevation-z8" type="success">
+        <strong class="sub-heading">Status :</strong> {{status}}
       </ngb-alert>
     </div>
   </div>

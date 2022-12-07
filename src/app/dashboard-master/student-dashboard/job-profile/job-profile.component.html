@@ -3,12 +3,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 -light-gray">
-          
+
           <mat-card class="mb-4 ">
             <h4 class="my-1">
               <mat-icon>post_add</mat-icon> 1. Add Document Links
             </h4>
-  
+
             <div class="col-md-6 form-group my-2">
               <label for="website">Portfolio Website </label>
               <input type="text" class="form-control" id="website">
@@ -17,63 +17,95 @@
               <label for="linkedin">linkedin Profiel Url</label>
               <input type="text" class="form-control" id="linkedin">
             </div>
-  
+
             <div class="col-md-6 form-group my-2">
               <label for="resume">Resume Link</label>
               <input type="text" class="form-control" id="resume">
             </div>
-          </mat-card>     
+          </mat-card>
           <mat-card class="--width-full my-5">
-              <div class="col-md-12 form-group">
+            <div class="col-md-12 form-group">
               <h4 class="my-1">
                 <mat-icon>work_outlined</mat-icon> 2. Add Work Experience
               </h4>
               <mat-card-header class="--width-full">
                 <mat-card-title class="d-flex flex-row justify-content-between ">
                   <p></p>
-                  <div class="d-flex justify-content-between --width-5">
+                  <div class="d-flex justify-content-around --width-15">
                     <mat-icon>edit</mat-icon>
                     <mat-icon (click)="openDialog()">add</mat-icon>
                   </div>
                 </mat-card-title>
-                <mat-card-subtitle>
-
-                </mat-card-subtitle>
               </mat-card-header>
-              <mat-card-actions>
+              <div class="row">
+                <div class="d-flex flex-column justify-content-around --width-90 --border-0-bottom-gray "
+                  *ngFor="let internship of InternshipData">
 
-              </mat-card-actions>
-            </div>
-            </mat-card>
-            <mat-card class="--width-full my-5">
-              
-                <div class="row">
-                   <h4 class="my-1"><mat-icon>grade</mat-icon>  3.Results Details</h4>
-                  <div class="d-flex justify-content-around col-md-12 my-4">
-                    <mat-form-field appearance="outline" class="--width-25">
-                      <mat-label>Select CGPA</mat-label>
-                      <mat-select class="--width-45 select-tag" name="sem" [(ngModel)]="sem">
-                        <mat-option *ngFor="let item of MenuList"  [value]="item" (click)="isCgpaSelected=true;" >
-                          {{item}}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-    
-                    <div class="--width-25 form-group">
-                     
-                      <input type="number" class="form-control" id="cgpa" name="cgpa" [(ngModel)]="cgpa">
-                    </div>
-                    <button [disabled]="!isCgpaSelected" mat-button class=" --height-5 btn btn-primary" (click)="addResult()">Add</button>
+                  <h4><img src="../../../../assets/imgs/logo6.svg" alt="" style="clip-path: circle(50%);" height="100px"
+                      width="50px">{{internship.CompanyName}}</h4>
+                  <p> From - {{internship.startDate}} To - {{internship.endDate}}</p>
+                  <div class="d-flex flex-row">
+                    <p *ngFor="let techs of internship.technology" class="--width-15">{{techs.name}}</p>
                   </div>
-                  <mat-list role="list" *ngFor="let item of resultArray">
-                    <mat-list-item role="listitem">{{item.sem}}  =   {{item.cgpa}}</mat-list-item>
-                    
-                  </mat-list>
+                </div>
               </div>
-            </mat-card>
+            </div>
+          </mat-card>
+          <mat-card class="--width-full my-5">
+
+            <div class="row d-flex flex-column justify-content-between" style="height: 210px;">
+              <h4 class="my-1">
+                <mat-icon>grade</mat-icon> 3.Results Details
+              </h4>
+              <div class="row col-xl-10 col-md-10 col-sm-10 col-10">
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 1 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 2 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 3 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 4 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 5 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+              </div>
+              <div class="row col-xl-10 col-md-10 col-sm-10 col-10">
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 6 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 7 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 8 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 9 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 10 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" value="0.0" readonly>
+                </div>
+              </div>
+            </div>
+          </mat-card>
         </div>
       </div>
-    
+
     </div>
   </form>
 </div>
