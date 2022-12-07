@@ -5,17 +5,14 @@ import { PlacementMasterRoutingModule } from './placement-master-routing.module'
 import { AddPlacementDriveComponent } from './add-placement-drive/add-placement-drive.component';
 import { PrePlacementTalkListComponent } from './pre-placement-talk-list/pre-placement-talk-list.component';
 import { PrePlacementVotingComponent } from './pre-placement-voting/pre-placement-voting.component';
-
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
     AddPlacementDriveComponent,
     PrePlacementTalkListComponent,
-    PrePlacementVotingComponent
+    PrePlacementVotingComponent,
   ],
-  imports: [
-    CommonModule,
-    PlacementMasterRoutingModule
-  ]
+  imports: [CommonModule, PlacementMasterRoutingModule, MatTableModule],
 })
-export class PlacementMasterModule { }
+export class PlacementMasterModule {}

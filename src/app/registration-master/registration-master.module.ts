@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { StudentLoginComponent } from './student-login/student-login.component';
 import { CommiteeLoginComponent } from './commitee-login/commitee-login.component';
 import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
     StudentRegistrationComponent,
