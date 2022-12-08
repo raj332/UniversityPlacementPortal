@@ -1,51 +1,51 @@
 <div class="container mt-3">
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-  <!--- Note that these columns can be defined in any order.
+    <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="Companyid">
-    <th mat-header-cell *matHeaderCellDef> Companyid. </th>
-    <td mat-cell *matCellDef="let element"> {{element.Companyid}} </td>
-  </ng-container>
-
-  <!-- Name Column -->
-  <ng-container matColumnDef="CompanyName">
-    <th mat-header-cell *matHeaderCellDef> CompanyName </th>
-    <td mat-cell *matCellDef="let element"> {{element.CompanyName}} </td>
-  </ng-container>
-
-  <!-- Weight Column -->
-  <ng-container matColumnDef="Date">
-    <th mat-header-cell *matHeaderCellDef> Date </th>
-    <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
-  </ng-container>
-
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="Venue">
-    <th mat-header-cell *matHeaderCellDef> Venue </th>
-    <td mat-cell *matCellDef="let element"> {{element.Venue}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Min Ctc">
-    <th mat-header-cell *matHeaderCellDef> Min Ctc </th>
-    <td mat-cell *matCellDef="let element"> {{element.Min_Ctc}}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="Max Ctc">
-    <th mat-header-cell *matHeaderCellDef> Max CTC </th>
-    <td mat-cell *matCellDef="let element"> {{element.Max_Ctc}} </td>
-  </ng-container>
-
-    <ng-container matColumnDef="action">
-    <th mat-header-cell *matHeaderCellDef> ACTION</th>
-    <td mat-cell *matCellDef="let element">
-        <button mat-button>Vote</button>
-       </td>
+    <!-- Position Column -->
+    <ng-container matColumnDef="Companyid">
+      <th mat-header-cell *matHeaderCellDef> Companyid </th>
+      <td mat-cell *matCellDef="let element"> {{element.Companyid}} </td>
     </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <!-- Name Column -->
+    <ng-container matColumnDef="CompanyName">
+      <th mat-header-cell *matHeaderCellDef> CompanyName </th>
+      <td mat-cell *matCellDef="let element"> {{element.CompanyName}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Venue">
+      <th mat-header-cell *matHeaderCellDef> Venue </th>
+      <td mat-cell *matCellDef="let element"> {{element.Venue}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Min Ctc">
+      <th mat-header-cell *matHeaderCellDef> Min Ctc </th>
+      <td mat-cell *matCellDef="let element"> {{element.Min_Ctc}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Max Ctc">
+      <th mat-header-cell *matHeaderCellDef> Max CTC </th>
+      <td mat-cell *matCellDef="let element"> {{element.Max_Ctc}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> ACTION</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button>Vote</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </div>
