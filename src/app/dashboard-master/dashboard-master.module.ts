@@ -5,15 +5,17 @@ import { CommonModule } from '@angular/common';
 import { dashboardRoutingModule } from './dashboard-master-routing.module';
 import { CompanyDashboardComponent } from './company-dashboard/company-dashboard.component';
 import { JobProfileComponent } from './student-dashboard/job-profile/job-profile.component';
+import { UploaderModule } from "angular-uploader";
 import { MaterialDesignModuleModule } from '../material-design-module/material-design-module.module';
-import { UploaderModule } from 'angular-uploader';
 import { AddExperienceComponent } from './student-dashboard/job-profile/add-experience/add-experience.component';
+import { OfferFormComponent } from './company-dashboard/offer-form/offer-form.component';
 @NgModule({
   declarations: [
     StudentDashboardComponent,
     CompanyDashboardComponent,
     JobProfileComponent,
     AddExperienceComponent,
+    OfferFormComponent,
   ],
   imports: [
     CommonModule,

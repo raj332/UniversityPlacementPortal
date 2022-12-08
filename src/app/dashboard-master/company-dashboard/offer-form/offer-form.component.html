@@ -1,0 +1,39 @@
+<form class=" g-3 d-flex flex-column align-item-center --width-50 " (ngSubmit)="handleSubmit()">
+    <h1 class="--text-dark">
+      Create Offer
+    </h1>
+    <hr>
+    <div class="col-md-12">
+      <label for="position" class="form-label --text-Primary">Position</label>
+      <input type="text" class="form-control" id="position" name="position" [(ngModel)]="position">
+    </div>
+    <div class="col-md-12">
+      <label for="technology" class="form-label --text-Primary">Technology</label>
+      <input type="text" class="form-control" id="technology" name="technology" [(ngModel)]="technology">
+    </div>
+    <div class="col-md-12" >
+      <label for="jobDescription" class="form-label --text-Primary">Description</label>
+      <textarea  class="form-control" id="jobDescription" rows="3" name="jobDescription" [(ngModel)]="jobDescription"></textarea>
+    </div>
+    <div class="col-md-12">
+      <label for="openings" class="form-label --text-Primary">No of Openings</label>
+      <input type="text" class="form-control" id="openings" name="openings" [(ngModel)]="openings">
+    </div>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Criterias</mat-label>
+      <mat-select multiple name="criterias"  [(ngModel)]="criterias">
+        <mat-option *ngFor="let item of criteriaList" [value]="item.criteriaName">{{item.criteriaName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="col-md-12">
+      <label for="minctc" class="form-label --text-Primary">Minimum CTC</label>
+      <input type="text" class="form-control" id="minctc" name="minCTC" [(ngModel)]="minCTC">
+    </div>
+    <div class="col-md-12">
+      <label for="maxctc" class="form-label --text-Primary">Maximum CTC</label>
+      <input type="text" class="form-control" id="maxctc" name="maxCTC" [(ngModel)]="maxCTC">
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary --text-Primary">Create</button>
+    </div>
+  </form>
