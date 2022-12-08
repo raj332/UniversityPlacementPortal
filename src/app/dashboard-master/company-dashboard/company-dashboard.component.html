@@ -1,1 +1,36 @@
-<p>company-dashboard works!</p>
+
+
+
+<mat-drawer-container class="example-container " autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <div class="mainNavDiv">
+        <div class="d-flex justify-content-center align-items-center my-3">
+          <img src="../../../assets/imgs/Screenshot 2022-10-22 133010.png" height="100h" width="100vw"
+            style="clip-path: circle(50%);" alt="">
+        </div>
+        <p class="--text-yellow">Welcome, JaiminKumar </p>
+        <mat-accordion *ngFor="let menu of MenuList">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{menu.heading}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul *ngFor="let item of menu.links">
+              <li routerLink="{{item.url}}">{{item.title}}</li>
+            </ul>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </mat-drawer>
+    <div class="d-flex mt-4 ">
+      <button type="button" class="--btn-outlined-primary mx-2" mat-button (click)="toggle(drawer)">
+        <mat-icon>{{isMenuOpne?'clear':'apps'}}</mat-icon>
+      </button>
+      
+    </div>
+    
+    <router-outlet></router-outlet>
+  
+  </mat-drawer-container>
+  

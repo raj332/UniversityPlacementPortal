@@ -1,0 +1,47 @@
+import { Component, OnInit } from '@angular/core';
+import {FormControl, NgModel} from '@angular/forms'
+import { CompanyApisService } from 'src/app/services/company-apis.service';
+import { CriteriaApisService } from 'src/app/services/criteria-apis.service';
+
+@Component({
+  selector: 'app-offer-form',
+  templateUrl: './offer-form.component.html',
+  styleUrls: ['./offer-form.component.scss']
+})
+export class OfferFormComponent implements OnInit {
+
+  companyID !:Number;
+  position!:String;
+  technology!:String;
+  jobDescription!:String;
+  openings!:Number;
+  minCTC!:Number;
+  maxCTC!:Number;
+  isDisclose!:Number;
+  criterias!:NgModel;
+  criteriaList:any = []
+  constructor(private cservices:CriteriaApisService ,private offerservice: CompanyApisService) {
+    cservices.getCriteriaList().subscribe((data)=>{
+      this.criteriaList=data;
+    })
+   }
+
+  ngOnInit(): void {
+  }
+
+handleSubmit(){
+ this.offerservice.createOffer({
+  companyID : sessionStorage.getItem('companyID') ,
+  position : this.position ,
+  technology : this.technology,
+  jobDescription : this.jobDescription ,
+  noOfPositions : this.openings,
+  minCTC :this.minCTC ,
+  maxCTC:this.maxCTC ,
+  isDisclose : (this.minCTC==0 && this.maxCTC==0)?false:true,
+  criterias: this.criteriaList
+ }).subscribe((data)=>{
+  alert(" offer created")
+ })
+}
+}
