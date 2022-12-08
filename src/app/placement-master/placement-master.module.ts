@@ -5,7 +5,8 @@ import { PlacementMasterRoutingModule } from './placement-master-routing.module'
 import { AddPlacementDriveComponent } from './add-placement-drive/add-placement-drive.component';
 import { PrePlacementTalkListComponent } from './pre-placement-talk-list/pre-placement-talk-list.component';
 import { PrePlacementVotingComponent } from './pre-placement-voting/pre-placement-voting.component';
-import { MatTableModule } from '@angular/material/table';
+
+import { MaterialDesignModuleModule } from '../material-design-module/material-design-module.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,10 @@ import { MatTableModule } from '@angular/material/table';
     PrePlacementTalkListComponent,
     PrePlacementVotingComponent,
   ],
-  imports: [CommonModule, PlacementMasterRoutingModule, MatTableModule],
+  imports: [
+    CommonModule,
+    PlacementMasterRoutingModule,
+    MaterialDesignModuleModule,
+  ],
 })
 export class PlacementMasterModule {}

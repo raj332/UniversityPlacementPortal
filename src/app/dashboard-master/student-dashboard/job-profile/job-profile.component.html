@@ -1,120 +1,111 @@
-<div class="container parent-div">
+<div class="container parent-div mt-4">
   <form>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 --border-2-right-light-gray">
+        <div class="col-md-12 -light-gray">
 
-          <div class="col-md-6 form-group my-2">
-            <label for="JobprofileID">Job Profile ID</label>
-            <input type="number" class="form-control" id="JobprofileID" readonly>
-          </div>
-          <div class="col-md-6 form-group my-2">
-            <label for="SPID">Spid</label>
-            <input type="number" class="form-control" id="SPID" readonly>
-          </div>
+          <mat-card class="mb-4 ">
+            <h4 class="my-1">
+              <mat-icon>post_add</mat-icon> 1. Add Document Links
+            </h4>
 
-          <h4 class="my-5">
-            <mat-icon>post_add</mat-icon> 1. Add Document Links
-          </h4>
+            <div class="col-md-6 form-group my-2">
+              <label for="website">Portfolio Website </label>
+              <input type="text" class="form-control" id="website">
+            </div>
+            <div class="col-md-6 form-group my-2">
+              <label for="linkedin">linkedin Profiel Url</label>
+              <input type="text" class="form-control" id="linkedin">
+            </div>
 
-          <div class="col-md-6 form-group my-2">
-            <label for="website">Portfolio Website </label>
-            <input type="text" class="form-control" id="website">
-          </div>
-          <div class="col-md-6 form-group my-2">
-            <label for="linkedin">linkedin Profiel Url</label>
-            <input type="text" class="form-control" id="linkedin">
-          </div>
-
-          <div class="col-md-6 form-group my-2">
-            <label for="resume">Resume Link</label>
-            <input type="text" class="form-control" id="resume">
-          </div>
-
-          <h4 class="my-5">
-            <mat-icon>work_outlined</mat-icon> 2. Add Work Experience
-          </h4>
-
-          <div class="col-md-12 form-group">
-            <mat-card class="--width-full">
+            <div class="col-md-6 form-group my-2">
+              <label for="resume">Resume Link</label>
+              <input type="text" class="form-control" id="resume">
+            </div>
+          </mat-card>
+          <mat-card class="--width-full my-5">
+            <div class="col-md-12 form-group">
+              <h4 class="my-1">
+                <mat-icon>work_outlined</mat-icon> 2. Add Work Experience
+              </h4>
               <mat-card-header class="--width-full">
-                <mat-card-title class="--width-full d-flex flex-row justify-content-between ">
-                  <p>Experience</p>
-                  <div class="d-flex justify-content-between --width-10">
+                <mat-card-title class="d-flex flex-row justify-content-between ">
+                  <p></p>
+                  <div class="d-flex justify-content-around --width-15">
                     <mat-icon>edit</mat-icon>
                     <mat-icon (click)="openDialog()">add</mat-icon>
                   </div>
                 </mat-card-title>
-                <mat-card-subtitle>
-
-                </mat-card-subtitle>
               </mat-card-header>
-              <mat-card-actions>
+              <div class="row">
+                <div class="d-flex flex-column justify-content-around --width-90 --border-0-bottom-gray "
+                  *ngFor="let internship of InternshipData">
 
-              </mat-card-actions>
-            </mat-card>
-          </div>
-
-
-
-
-
-        </div>
-        <div class="col-md-6 ">
-          <div class="row">
-            <h4>3.Results Details</h4>
-            <div class="d-flex justify-content-between --width-full my-4">
-              <div class="col-md-6 dropdown my-4">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Select semester CGPA
-                </button>
-                <div class="dropdown-menu --width-45" aria-labelledby="dropdownMenuButton">
-                  <a *ngFor="let item of MenuList" class="dropdown-item --width-full" href="#">{{item}}</a>
+                  <h4><img src="../../../../assets/imgs/logo6.svg" alt="" style="clip-path: circle(50%);" height="100px"
+                      width="50px">{{internship.CompanyName}}</h4>
+                  <p> From - {{internship.startDate}} To - {{internship.endDate}}</p>
+                  <div class="d-flex flex-row">
+                    <p *ngFor="let techs of internship.technology" class="--width-15">{{techs.name}}</p>
+                  </div>
                 </div>
               </div>
-
-
             </div>
-            <div class="col-md-6 form-group">
-              <label for="JobprofileID" class="my-2">Upload Drive Link</label>
-              <input type="text" class="form-control" id="JobprofileID">
-            </div>
-            <p class="my-2 d-flex justify-content-center">
-              <mat-icon>swap_vert</mat-icon>
-            </p>
-            <div>
-              <upload-dropzone [uploader]="uploader" (uploadComplete)="uploadComplete" [options]="uploadOptions"
-                [width]="width" [height]="height">
-              </upload-dropzone>
-            </div>
+          </mat-card>
+          <mat-card class="--width-full my-5">
 
-
-          </div>
+            <div class="row d-flex flex-column justify-content-between" style="height: 210px;">
+              <h4 class="my-1">
+                <mat-icon>grade</mat-icon> 3.Results Details
+              </h4>
+              <div class="row col-xl-10 col-md-10 col-sm-10 col-10">
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 1 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 2 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 3 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 4 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 5 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+              </div>
+              <div class="row col-xl-10 col-md-10 col-sm-10 col-10">
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 6 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 7 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 8 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 9 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" readonly>
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                  <label for="sem1">SEM 10 CGPA : </label>
+                  <input type="text" class="form-control" id="linkedin" value="0.0" readonly>
+                </div>
+              </div>
+            </div>
+          </mat-card>
         </div>
       </div>
-      <div class="row my-2">
-        <h4 class="my-4">Internships List</h4>
 
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
   </form>
 </div>

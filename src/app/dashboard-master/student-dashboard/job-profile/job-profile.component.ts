@@ -3,6 +3,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { Uploader, UploaderOptions, UploaderResult } from "uploader";
 import { AddExperienceComponent } from './add-experience/add-experience.component';
 
+export interface  DialogData{
+  CompanyName: string;
+  StartDate: string;
+  EndDate: string;
+  technology: [];
+}
 @Component({
   selector: 'app-job-profile',
   templateUrl: './job-profile.component.html',
@@ -11,31 +17,23 @@ import { AddExperienceComponent } from './add-experience/add-experience.componen
 export class JobProfileComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
-
+  isCgpaSelected=false;
+  sem='';
+  cgpa = 0;
+  InternshipData:any=[];
   ngOnInit(): void {
   }
 //dialog
   openDialog() {
-     this.dialog.open(AddExperienceComponent, {restoreFocus: false});
+   const dialogRef=this.dialog.open(AddExperienceComponent, {restoreFocus: false});
+    dialogRef.afterClosed().subscribe(result => {
+      this.InternshipData.push(result);
+    console.log(this.InternshipData);
 
-    // Manually restore focus to the menu trigger since the element that
-    // opens the dialog won't be in the DOM any more when the dialog closes.
+    });
+
 
   }
-
-  uploader = new Uploader({
-    apiKey: "free" // <-- Get production-ready API keys from Upload.io
-  })
-
-  uploadOptions: UploaderOptions = ({
-    multi: true,
-    showFinishButton: true,
-     mimeTypes: ["image/jpeg", "image/pdf", "image/png"],
-      maxFileCount: 10,
-  });
-  uploadComplete = (files: UploaderResult[]) => {
-    console.log(files.map(x => x.fileUrl));
-  };
   file: any;
   MenuList: any = [
     "SEM 1 CGPA",
@@ -48,11 +46,7 @@ export class JobProfileComponent implements OnInit {
     "SEM 8 CGPA",
     "SEM 9 CGPA",
     "SEM 10 CGPA",
-
-
   ]
-
-
   onFileAdd(file: any) {
     this.file = file;
   }
@@ -60,6 +54,11 @@ export class JobProfileComponent implements OnInit {
   onFileRemove() {
     this.file = null;
   }
+
   width = "600px";
   height = "375px";
+
+  toggleBTN(){
+
+  }
 }

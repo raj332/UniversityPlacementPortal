@@ -7,3 +7,8 @@
   border: 0;
   color: black;
 }
+
+.form-control input:focus,
+.form-control:active {
+  outline-color: white !important;
+}

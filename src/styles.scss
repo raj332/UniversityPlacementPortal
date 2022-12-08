@@ -10,7 +10,8 @@
   border: 0;
   color: black;
 }
-body { margin: 0; font-family: "Josefin Sans" !important; }
+body { margin: 0; font-family: "Josefin Sans" !important;
+ }
 li{
   list-style-type: none;
   color: $white;
@@ -32,3 +33,7 @@ body {
 }
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+.form-control:focus,.form-control:active{
+  outline: none !important;
+}
