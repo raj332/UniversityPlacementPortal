@@ -9,6 +9,7 @@ import { DashboardMasterComponent } from './dashboard-master/dashboard-master.co
 import { CommonModule } from '@angular/common';
 import { UploaderModule } from 'angular-uploader';
 import { MaterialDesignModuleModule } from './material-design-module/material-design-module.module';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, DashboardMasterComponent],
   imports: [
@@ -16,7 +17,7 @@ import { MaterialDesignModuleModule } from './material-design-module/material-de
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-   // HttpClientModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     UploaderModule,
     MaterialDesignModuleModule,

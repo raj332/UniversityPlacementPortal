@@ -1,18 +1,16 @@
-
 .example-container {
   width: 100vw;
   height: 100vh;
 }
-.example-sidenav{
+.example-sidenav {
   width: 15vw;
-  background-color: #1D1919;
+  background-color: #1d1919;
 }
 .example-sidenav-content {
   display: flex;
-  height: auto;
-  align-items: center;
-  justify-content: center;
-  background-color: #f3f2ef !important;
+  height: 100vh;
+  // align-items: center;
+  // justify-content: center;
   overflow-y: scroll;
 }
 .example-sidenav-content::-webkit-scrollbar {
@@ -27,24 +25,28 @@
 .example-sidenav {
   padding: 20px;
 }
-.mat-drawer{
+.mat-drawer {
   margin: 0;
   padding: 0;
 }
-.mainNavDiv{
-
+.mainNavDiv {
   display: flex;
   flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-.--height-full{
+.--height-full {
   height: 100%;
 }
-.sub-heading{
+.sub-heading {
   font-size: 20px;
 }
-.mat-expansion-panel-content{
-  border-top:1px soild rgb(247, 200, 48) !important;
-  border-bottom: 1px soild rgb(247, 200, 48)!important;
+.mat-expansion-panel-content {
+  border-top: 1px soild rgb(247, 200, 48) !important;
+  border-bottom: 1px soild rgb(247, 200, 48) !important;
+}
+.links,
+.mat-panel-title {
+  font-size: 1vw;
+  width: fit-content;
 }

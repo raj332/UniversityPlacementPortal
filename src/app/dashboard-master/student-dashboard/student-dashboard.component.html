@@ -38,12 +38,12 @@
       <mat-accordion *ngFor="let menu of MenuList">
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
-            <mat-panel-title>
+            <mat-panel-title class="links">
               {{menu.heading}}
             </mat-panel-title>
           </mat-expansion-panel-header>
           <ul *ngFor="let item of menu.links">
-            <li routerLink="{{item.url}}">{{item.title}}</li>
+            <li class="links" routerLink="{{item.url}}">{{item.title}}</li>
           </ul>
         </mat-expansion-panel>
       </mat-accordion>
