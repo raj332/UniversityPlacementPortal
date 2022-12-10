@@ -17,4 +17,8 @@ export class CompanyApisService {
   loginCompany(user:any){
     return this.http.post("https://localhost:7212/api/Company/login",user)
   }
+  getCompanylist(){
+     return this.http.get("https://localhost:7212/api/CompanyOffers/ppt")
+  }
+  
 }

@@ -14,4 +14,13 @@ export class CommonApisService {
   loginCommitee(user:any){
     return this.http.post("https://localhost:7212/api/CommiteeMember/Login",user)
   }
+  getPptlist(){
+    return this.http.get("https://localhost:7212/api/PrePlacementTalk")
+  }
+  insertPptlist(company:any){
+    return this.http.post("https://localhost:7212/api/PrePlacementTalk",company)
+  }
+  updatePptlist(company:any){
+    return this.http.put("https://localhost:7212/api/PrePlacementTalk",company)
+  }
 }
