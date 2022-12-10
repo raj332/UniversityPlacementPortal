@@ -18,14 +18,16 @@
         <hr>
         <div class="col-md-12">
           <label for="spid" class="form-label --text-Primary">SPID</label>
-          <input type="number" class="form-control" id="spid" name="spid" [(ngModel)]="spid">
+          <input type="number" class="form-control" id="spid" name="spid" [(ngModel)]="spid" #spidField="ngModel" required>
+          <div class="error" *ngIf="(spidField.touched||spidField.dirty) && spidField.invalid" style="color: red; font-size:12px">Spid Is Required.</div>
         </div>
         <div class="col-md-12">
           <label for="password" class="form-label --text-Primary">Password</label>
-          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required>
+         <div class="error" *ngIf="(passwordField.touched||passwordField.dirty) && passwordField.invalid" style="color: red; font-size:12px">password Is Required.</div>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary --text-Primary">Login</button>
+          <button type="submit" class="btn btn-primary --text-Primary" [disabled]="!(spidField.valid && passwordField.valid)">Login</button>
         </div>
       </form>
     </div>

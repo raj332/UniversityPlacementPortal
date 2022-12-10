@@ -9,6 +9,7 @@ import { UploaderModule } from "angular-uploader";
 import { MaterialDesignModuleModule } from '../material-design-module/material-design-module.module';
 import { AddExperienceComponent } from './student-dashboard/job-profile/add-experience/add-experience.component';
 import { OfferFormComponent } from './company-dashboard/offer-form/offer-form.component';
+import { CommiteeDashboardComponent } from './commitee-dashboard/commitee-dashboard.component';
 @NgModule({
   declarations: [
     StudentDashboardComponent,
@@ -16,6 +17,7 @@ import { OfferFormComponent } from './company-dashboard/offer-form/offer-form.co
     JobProfileComponent,
     AddExperienceComponent,
     OfferFormComponent,
+    CommiteeDashboardComponent,
   ],
   imports: [
     CommonModule,

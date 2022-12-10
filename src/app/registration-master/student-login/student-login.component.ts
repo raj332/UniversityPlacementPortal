@@ -9,6 +9,7 @@ import { StudentApisService } from 'src/app/services/student-apis.service';
 export class StudentLoginComponent implements OnInit {
   spid!:Number;
   password!:String
+  disabled!:boolean;
   constructor(private services: StudentApisService) { }
 
   ngOnInit(): void {

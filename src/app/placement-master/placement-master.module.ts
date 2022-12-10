@@ -7,12 +7,14 @@ import { PrePlacementTalkListComponent } from './pre-placement-talk-list/pre-pla
 import { PrePlacementVotingComponent } from './pre-placement-voting/pre-placement-voting.component';
 
 import { MaterialDesignModuleModule } from '../material-design-module/material-design-module.module';
+import { CompanyVotingComponent } from './company-voting/company-voting.component';
 
 @NgModule({
   declarations: [
     AddPlacementDriveComponent,
     PrePlacementTalkListComponent,
     PrePlacementVotingComponent,
+    CompanyVotingComponent,
   ],
   imports: [
     CommonModule,

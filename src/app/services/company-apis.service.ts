@@ -12,4 +12,5 @@ export class CompanyApisService {
     return this.http.post("https://localhost:7212/api/CompanyOffers",offer)
   }
 
+
 }
