@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { read } from '@popperjs/core';
 import { CommonApisService } from 'src/app/services/common-apis.service';
 import { StudentApisService } from 'src/app/services/student-apis.service';
@@ -19,10 +20,10 @@ password!:String;
 photo!:String;
 courseList!:any[] ;
 
-  constructor(private service:StudentApisService, private cservices :CommonApisService) { 
+  constructor(private service:StudentApisService, private cservices :CommonApisService ,private router:Router) { 
        cservices.getCourses().subscribe((data:any)=>{
             this.courseList = data ;
-            console.log(this.courseList)
+    
        })
   }
 
@@ -43,7 +44,7 @@ photo:this.photo
  }
 
   this.service.registerStudent(stu).subscribe((data)=>{
-alert(data);
+    this.router.navigate(['registration/companylogin'])
   })
 }
 

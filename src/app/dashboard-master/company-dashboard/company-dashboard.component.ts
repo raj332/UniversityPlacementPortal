@@ -81,7 +81,6 @@ export class CompanyDashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.MenuList[0]);
   }
   toggle(drawer:any) {
     this.isMenuOpne === false ? this.isMenuOpne = true : this.isMenuOpne = false;

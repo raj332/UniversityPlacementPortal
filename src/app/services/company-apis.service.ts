@@ -11,5 +11,10 @@ export class CompanyApisService {
   createOffer(offer:any){
     return this.http.post("https://localhost:7212/api/CompanyOffers",offer)
   }
-
+  registerCompany(company:any){
+    return this.http.post("https://localhost:7212/api/Company",company)
+  }
+  loginCompany(user:any){
+    return this.http.post("https://localhost:7212/api/Company/login",user)
+  }
 }

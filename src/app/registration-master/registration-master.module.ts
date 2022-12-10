@@ -6,11 +6,15 @@ import { StudentLoginComponent } from './student-login/student-login.component';
 import { CommiteeLoginComponent } from './commitee-login/commitee-login.component';
 import { CommonModule } from '@angular/common';
 import { MaterialDesignModuleModule } from '../material-design-module/material-design-module.module';
+import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
+import { CompanyLoginComponent } from './company-login/company-login.component';
 @NgModule({
   declarations: [
     StudentRegistrationComponent,
     StudentLoginComponent,
     CommiteeLoginComponent,
+    CompanyRegistrationComponent,
+    CompanyLoginComponent,
   ],
   imports: [
     registrationRoutingModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StudentApisService } from 'src/app/services/student-apis.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { StudentApisService } from 'src/app/services/student-apis.service';
 export class StudentLoginComponent implements OnInit {
   spid!:Number;
   password!:String
-  constructor(private services: StudentApisService) { }
+  constructor(private services: StudentApisService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,8 +20,7 @@ export class StudentLoginComponent implements OnInit {
     password:this.password
   }
   this.services.loginStudent(user).subscribe((data)=>{
-    console.log(data)
-    alert("logedin")
+  this.router.navigate(['dashboard/student'])
   })
  }
 }
