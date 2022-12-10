@@ -18,7 +18,7 @@ export class OfferFormComponent implements OnInit {
   minCTC!:Number;
   maxCTC!:Number;
   isDisclose!:Number;
-  criterias!:NgModel;
+  criterias!:String[];
   criteriaList:any = []
   constructor(private cservices:CriteriaApisService ,private offerservice: CompanyApisService) {
     cservices.getCriteriaList().subscribe((data)=>{
@@ -28,7 +28,13 @@ export class OfferFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+handleSelChange(data:any){
 
+  this.criterias=[]
+  data.forEach((element:any )=> {
+  this.criterias.push(element)
+  });
+}
 handleSubmit(){
  this.offerservice.createOffer({
   companyID : sessionStorage.getItem('companyID') ,
@@ -39,7 +45,7 @@ handleSubmit(){
   minCTC :this.minCTC ,
   maxCTC:this.maxCTC ,
   isDisclose : (this.minCTC==0 && this.maxCTC==0)?false:true,
-  criterias: this.criteriaList
+  criterias: this.criterias
  }).subscribe((data)=>{
   alert(" offer created")
  })
