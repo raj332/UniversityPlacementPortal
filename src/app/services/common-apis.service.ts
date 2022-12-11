@@ -23,4 +23,7 @@ export class CommonApisService {
   updatePptlist(company:any){
     return this.http.put("https://localhost:7212/api/PrePlacementTalk",company)
   }
+  getResultData(spid:any){
+    return this.http.get("https://localhost:7212/api/StudentResultData/"+spid)
+  }
 }

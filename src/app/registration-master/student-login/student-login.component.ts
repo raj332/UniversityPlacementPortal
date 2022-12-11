@@ -20,6 +20,7 @@ export class StudentLoginComponent implements OnInit {
     password:this.password
   }
   this.services.loginStudent(user).subscribe((data)=>{
+  localStorage.setItem("spid",this.spid.toString()) 
   this.router.navigate(['dashboard/student'])
   })
  }

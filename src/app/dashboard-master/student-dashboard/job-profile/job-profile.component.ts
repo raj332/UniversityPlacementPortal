@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CommonApisService } from 'src/app/services/common-apis.service';
 import { Uploader, UploaderOptions, UploaderResult } from "uploader";
 import { AddExperienceComponent } from './add-experience/add-experience.component';
 
@@ -15,8 +16,16 @@ export interface  DialogData{
   styleUrls: ['./job-profile.component.scss']
 })
 export class JobProfileComponent implements OnInit {
+   
+  resultData!:any;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog ,private services : CommonApisService) { 
+   let spid = localStorage.getItem("spid");
+   this.services.getResultData(spid).subscribe((data)=>{
+    this.resultData =data;
+   })
+
+  }
   isCgpaSelected=false;
   sem='';
   cgpa = 0;
