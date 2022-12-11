@@ -17,15 +17,15 @@
       <mat-form-field class="example-chip-list " appearance="fill" >
         
         <mat-chip-list #chipList aria-label="technology selection">
-          <mat-chip *ngFor="let tech of technology"  (click)="OnClick(tech.name,$event)">
-            {{tech.name}}
+          <mat-chip *ngFor="let tech of technology"  (click)="OnClick(tech,$event)">
+            {{tech}}
            
           </mat-chip>
           <input
                  [matChipInputFor]="chipList"
                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                  [matChipInputAddOnBlur]="addOnBlur"
-                 (matChipInputTokenEnd)="add($event)">
+                 >
         </mat-chip-list>
       </mat-form-field>
     </div>

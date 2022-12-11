@@ -7,7 +7,7 @@ export interface  DialogData{
   CompanyName: string;
   StartDate: string;
   EndDate: string;
-  technology: [];
+  technology: any[];
 }
 @Component({
   selector: 'app-job-profile',
@@ -21,14 +21,18 @@ export class JobProfileComponent implements OnInit {
   sem='';
   cgpa = 0;
   InternshipData:any=[];
+  technology:any[]=[];
   ngOnInit(): void {
   }
 //dialog
   openDialog() {
    const dialogRef=this.dialog.open(AddExperienceComponent, {restoreFocus: false});
     dialogRef.afterClosed().subscribe(result => {
-      this.InternshipData.push(result);
-    console.log(this.InternshipData);
+
+      if(result!=undefined){
+        result.technology=result.technology.split(',');
+        this.InternshipData.push(result);
+        };
 
     });
 
