@@ -6,6 +6,8 @@ export interface CompanyDetails {
   Venue: string;
   Min_Ctc: number;
   Max_Ctc: number;
+  IntrestedStudents:number;
+
 }
 
 const ELEMENT_DATA: CompanyDetails[] = [
@@ -16,6 +18,7 @@ const ELEMENT_DATA: CompanyDetails[] = [
     Venue: 'H',
     Min_Ctc: 200000,
     Max_Ctc: 300000,
+    IntrestedStudents:35
   },
 ];
 @Component({
@@ -25,16 +28,22 @@ const ELEMENT_DATA: CompanyDetails[] = [
 })
 export class PrePlacementTalkListComponent implements OnInit {
   constructor() {}
-  displayedColumns: string[] = [
+  IsCommiteeLogin=true;
+
+  displayedColumns = [
     'Companyid',
     'CompanyName',
-    'Date',
-    'Venue',
     'Min Ctc',
     'Max Ctc',
+    'Date',
+    'IntrestedStudents',
+    'Venue',
     'action',
   ];
   dataSource = ELEMENT_DATA;
 
+  onShedule(){
+
+  }
   ngOnInit(): void {}
 }

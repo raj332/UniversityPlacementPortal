@@ -1,3 +1,4 @@
+@import "../../../_styles/variables.scss";
 .ng-star-inserted {
   height: 100%;
   width: 85vw;
@@ -24,4 +25,17 @@
 }
 mat-chip-list {
   width: 20rem;
+}
+
+.--tech-style{
+  text-align: center;
+  border-radius: 8px;
+  border:1px dashed $primary;
+  color: $primary;
+  letter-spacing: 2px;
+}
+.--internship-date{
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-left: 1rem;
 }

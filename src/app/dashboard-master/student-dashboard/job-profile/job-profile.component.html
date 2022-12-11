@@ -41,11 +41,10 @@
                 <div class="d-flex flex-column justify-content-around --width-90 --border-0-bottom-gray "
                   *ngFor="let internship of InternshipData">
 
-                  <h4><img src="../../../../assets/imgs/logo6.svg" alt="" style="clip-path: circle(50%);" height="100px"
-                      width="50px">{{internship.CompanyName}}</h4>
-                  <p> From - {{internship.startDate}} To - {{internship.endDate}}</p>
+                  <h3 class=" ms-2 ">{{internship.CompanyName}}</h3>
+                  <p class="mx-2 --internship-date --text-gray"> From - {{internship.startDate}} To - {{internship.endDate}}</p>
                   <div class="d-flex flex-row">
-                    <p *ngFor="let techs of internship.technology" class="--width-15">{{techs.name}}</p>
+                    <p  *ngFor="let ele of internship.technology" class="--width-10 --tech-style mx-2">{{ele}}</p>
                   </div>
                 </div>
               </div>
