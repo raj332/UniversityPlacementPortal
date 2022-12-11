@@ -38,7 +38,6 @@
         <th mat-header-cell *matHeaderCellDef> ACTION</th>
         <td mat-cell *matCellDef="let row">
           <button  class="--btn-filled-green" [hidden]="Status==='Shedule'" (click)="onVoting(row)">Start Voting</button>
-          <button  class="--btn-outlined-primary" [hidden]="Status==='Voting'" (click)="onShedule()">Shedule</button>
         </td>
       </ng-container>
   

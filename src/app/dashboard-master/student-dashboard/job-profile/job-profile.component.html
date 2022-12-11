@@ -11,16 +11,16 @@
 
             <div class="col-md-6 form-group my-2">
               <label for="website">Portfolio Website </label>
-              <input type="text" class="form-control" id="website">
+              <input type="text" class="form-control" id="website" name="websiteLink" [(ngModel)]="websiteLink">
             </div>
             <div class="col-md-6 form-group my-2">
               <label for="linkedin">linkedin Profiel Url</label>
-              <input type="text" class="form-control" id="linkedin">
+              <input type="text" class="form-control" id="linkedin" name="linkedinLink" [(ngModel)]="linkedinLink">
             </div>
 
             <div class="col-md-6 form-group my-2">
               <label for="resume">Resume Link</label>
-              <input type="text" class="form-control" id="resume">
+              <input type="text" class="form-control" id="resume" name="resumeLink" [(ngModel)]="resumeLink">
             </div>
           </mat-card>
           <mat-card class="--width-full my-5">
@@ -41,7 +41,7 @@
                 <div class="d-flex flex-column justify-content-around --width-90 --border-0-bottom-gray "
                   *ngFor="let internship of InternshipData">
 
-                  <h3 class=" ms-2 ">{{internship.CompanyName}}</h3>
+                  <h3 class=" ms-2 ">{{internship.companyName}}</h3>
                   <p class="mx-2 --internship-date --text-gray"> From - {{internship.startDate}} To - {{internship.endDate}}</p>
                   <div class="d-flex flex-row">
                     <p  *ngFor="let ele of internship.technology" class="--width-10 --tech-style mx-2">{{ele}}</p>
@@ -103,8 +103,7 @@
             </div>
           </mat-card>
           <div class="col-12 d-flex justify-content-end" >
-            <button class="btn btn-danger --width-10 me-2">Reset</button>
-            <button class="btn btn-success --width-10">Submit</button>
+            <button class="btn btn-success --width-10" (click)="onSubmit()">Submit</button>
           </div>
         </div>
       </div>

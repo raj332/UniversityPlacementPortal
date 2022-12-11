@@ -14,4 +14,16 @@ export class StudentApisService {
   loginStudent(user: any) {
     return this.http.post('https://localhost:7212/api/StudentLogin', user);
   }
+  addInternship(item:any){
+    return this.http.post("https://localhost:7212/api/InternshipMaster",item)
+  }
+  addJobProfile(item:any){
+    return this.http.post("https://localhost:7212/api/JobProfileMaster",item)
+  }
+  getOneJobProfile(spid:any){
+    return this.http.get("https://localhost:7212/api/JobProfileMaster/"+spid)
+  }
+  getInternship(spid:any){
+    return this.http.get("https://localhost:7212/api/InternshipMaster/"+spid)
+  }
 }

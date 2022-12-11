@@ -3,6 +3,7 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import{DialogData} from"../job-profile.component"
+import { StudentApisService } from 'src/app/services/student-apis.service';
 // export interface  Technology{
 //   name: string;
 // }
@@ -14,7 +15,7 @@ import{DialogData} from"../job-profile.component"
 export class AddExperienceComponent implements OnInit {
 
 constructor(public dialogRef: MatDialogRef<AddExperienceComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,) { }
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,private services : StudentApisService) { }
  //technology:Technology[]= [{name:'HTML'},{name:"CSS"},{name:"JavaScript"},{name:"Angular"},{name:"React"},{name:"ASP.NET"},{name:".NET CORE"},{name:"JAVA"},{name:"PYTHON"},{name:"SQL"},{name:"MongoDB"},{name:"Node.JS"},{name:"Express"},{name:"Android"},{name:"IOS"}];
  technology= ["HTML","CSS","JavaScript","Angular","React","ASP.NET",".NET CORE","JAVA","PYTHON","SQL","MongoDB","Node.JS","Express","Android","IOS"];
  
@@ -49,14 +50,16 @@ constructor(public dialogRef: MatDialogRef<AddExperienceComponent>,
   }
 
   AddExperience(){
+    let spid = localStorage.getItem('spid');
     var newExperience= new Experience();
-    newExperience.spid = 2019008852//sessionStorage.getItem('SPID');
+    newExperience.spid =parseInt(localStorage.getItem('spid') || '');
     newExperience.CompanyName = this.companyName;
     newExperience.startDate=this.startDate;
     newExperience.endDate=this.endDate;
     newExperience.technology=this.selectedTechnology.toString();
-
-    this.dialogRef.close(newExperience);
+    this.services.addInternship(newExperience).subscribe((data)=>alert("experiance added"))
+    this.dialogRef.close();
+    
     // write api subscription code here pass newExperience object as parameter!
   }
 }

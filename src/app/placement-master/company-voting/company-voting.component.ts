@@ -43,40 +43,40 @@ export class CompanyVotingComponent implements OnInit {
       this.tempList = data;
       //       this.dataSource.data = data;
       // this.show = true;
+      this.commonService.getPptlist().subscribe((data: any) => {
+        let tempArrray: any[] = [];
+  
+        this.pptList = data;
+        if (this.pptList.length == 0) {
+          this.dataSource.data = this.tempList;
+          this.show=true
+        } else {
+          console.log("inloop")
+          this.tempList.forEach(async(element: any) => {
+            let obj = this.pptList.find(
+              (o: any) => o.companyId == element.companyId
+            );
+            if (!obj) {
+              tempArrray.push(element);
+              this.changeDetectorRef.detectChanges();
+            }
+  
+          });
+          setTimeout(() => {
+            this.dataSource.data =  tempArrray;
+            this.show = true;
+          }, 1000);
+      
+         
+        }
+      });
+
     });
 
-    this.fetchData();
+   
   }
 
-  fetchData() {
-    this.commonService.getPptlist().subscribe((data: any) => {
-      console.log(data);
-      let tempArrray: any[] = [];
-
-      this.pptList = data;
-      if (this.pptList.length == 0) {
-        this.dataSource.data = this.tempList;
-        
-        console.log('datasource ' + this.dataSource);
-      } else {
-        this.tempList.forEach((element: any) => {
-          console.log('still in loop');
-          let obj = this.pptList.find(
-            (o: any) => o.companyId == element.companyId
-          );
-          console.log('obj from else =' + obj);
-          if (!obj) {
-            console.log('Element');
-            console.log(element);
-            tempArrray.push(element);
-            this.changeDetectorRef.detectChanges();
-          }
-        });
-        this.dataSource.data = tempArrray;
-        this.show = true;
-      }
-    });
-  }
+ 
 
   onVoting(data: any) {
     this.Status = 'Shedule';
