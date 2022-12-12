@@ -1,27 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { DataSource } from '@angular/cdk/table';
 
-import { MatTableDataSource } from '@angular/material/table';
-export interface PeriodicElement {
-  name: string;
-  position: string;
-  CTC: string;
-}
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 'Web developer', name: 'herald logic', CTC: '7 LPA to 10 LPA' },
-  {
-    position: 'IOS developer',
-    name: 'NJ Technologies',
-    CTC: '7 LPA to 10 LPA',
-  },
-  { position: 'react developer', name: 'Riversand', CTC: '7 LPA to 10 LPA' },
-  {
-    position: 'java developer',
-    name: 'Responscity Systems',
-    CTC: '7 LPA to 10 LPA',
-  },
-  { position: 'Network Engineer', name: 'IBM', CTC: '7 LPA to 10 LPA' },
-];
+
 @Component({
   selector: 'app-student-dashboard',
   templateUrl: './student-dashboard.component.html',
@@ -93,12 +73,7 @@ export class StudentDashboardComponent implements OnInit {
   pending: number = 0;
   Shortlisted: number = 0;
   Selected: number = 0;
-  defaultcontent = true;
-  changeDefaultContent() {
-    this.defaultcontent == true
-      ? (this.defaultcontent = false)
-      : (this.defaultcontent = true);
-  }
+
 
   ngOnInit(): void {
     console.log(this.MenuList[0]);
@@ -114,11 +89,7 @@ export class StudentDashboardComponent implements OnInit {
       : (this.isMenuOpne = false);
     drawer.toggle();
   }
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+
+
 }
