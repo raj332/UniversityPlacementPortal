@@ -37,10 +37,6 @@ export class CompanyDashboardComponent implements OnInit {
          url:'/dashboard/company/Shortlisted'
         },
         {
-          title: 'Sheduled Interviews',
-           url:'/dashboard/company/Interviews'
-        },
-        {
           title: 'Selected Candidates',
            url:'/dashboard/company/Selected'
         },

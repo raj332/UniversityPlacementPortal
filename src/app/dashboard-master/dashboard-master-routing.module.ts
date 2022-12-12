@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CompanyDashboardComponent } from './company-dashboard/company-dashboard.component';
 import { OfferFormComponent } from './company-dashboard/offer-form/offer-form.component';
@@ -9,6 +9,17 @@ import { PrePlacementTalkListComponent } from '../placement-master/pre-placement
 import { CommiteeDashboardComponent } from './commitee-dashboard/commitee-dashboard.component';
 import { CompanyVotingComponent } from '../placement-master/company-voting/company-voting.component';
 import { CompanyRegistrationComponent } from '../registration-master/company-registration/company-registration.component';
+import { ViewOpeningsComponent } from './student-dashboard/view-openings/view-openings.component';
+import { CheckStatusComponent } from './student-dashboard/check-status/check-status.component';
+import { MyProfileComponent } from './student-dashboard/my-profile/my-profile.component';
+import { SheduledPPTListComponent } from './commitee-dashboard/sheduled-pptlist/sheduled-pptlist.component';
+import { CompanyListComponent } from './commitee-dashboard/company-list/company-list.component';
+import { CommiteeProfileComponent } from './commitee-dashboard/commitee-profile/commitee-profile.component';
+import { ViewApplicationComponent } from './company-dashboard/view-application/view-application.component';
+import { ViewJobProfileComponent } from './company-dashboard/view-job-profile/view-job-profile.component';
+import { ShortlistedApplicationComponent } from './company-dashboard/shortlisted-application/shortlisted-application.component';
+import { SelectedApplicationComponent } from './company-dashboard/selected-application/selected-application.component';
+import { CompanyStatasticsComponent } from './company-dashboard/company-statastics/company-statastics.component';
 
 const routes: Routes = [
   { path: '', component: StudentDashboardComponent },
@@ -18,6 +29,9 @@ const routes: Routes = [
     children: [
       { path: 'AddJobProfile', component: JobProfileComponent },
       { path: 'prePlacementVoting', component: PrePlacementVotingComponent },
+      { path: 'ViewOpenings' ,component:ViewOpeningsComponent},
+      {path: 'CheckStatus' ,component:CheckStatusComponent},
+      {path:'ViewProfile',component:MyProfileComponent}
     ],
   },
   {
@@ -26,13 +40,24 @@ const routes: Routes = [
     children: [
       { path: 'CompanyVoting', component: CompanyVotingComponent },
       {path:'VotingResults',component:PrePlacementTalkListComponent},
-      { path: 'AddCompany', component: CompanyRegistrationComponent }
+      { path: 'AddCompany', component: CompanyRegistrationComponent },
+      {path:'SheduledPPTList',component:SheduledPPTListComponent},
+      {path:'ViewCompany',component:CompanyListComponent},
+      {path:'MyProfile',component:CommiteeProfileComponent}
     ],
   },
   {
     path: 'company',
     component: CompanyDashboardComponent,
-    children: [{ path: 'createoffer', component: OfferFormComponent }],
+    children: [
+      { path: 'createoffer', component: OfferFormComponent },
+      {path:'ViewAppliaction' ,component:ViewApplicationComponent},
+      {path:'viewJobProfile',component:ViewJobProfileComponent},
+      {path:'Shortlisted',component:ShortlistedApplicationComponent},
+      {path:'Selected',component:SelectedApplicationComponent},
+      {path:'Statistics',component:CompanyStatasticsComponent}
+
+    ],
   },
 ];
 

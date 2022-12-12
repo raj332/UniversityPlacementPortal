@@ -76,13 +76,10 @@ export class StudentDashboardComponent implements OnInit {
       heading: 'My Profile',
       links: [
         {
-          title: 'fdsfsd',
-          url: '/dashboard/student/AddJobProfile',
+          title: 'View Profile',
+          url: '/dashboard/student/ViewProfile',
         },
-        {
-          title: 'fsfdsf',
-          url: '/dashboard/ViewJobProfile',
-        },
+        
       ],
     },
   ];

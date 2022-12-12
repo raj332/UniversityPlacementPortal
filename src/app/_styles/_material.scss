@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import "../_styles/variables.scss";
 
 // Form Field outline
 
@@ -163,5 +163,5 @@ td, th {
   
 }
 .mat-expansion-panel-header-title{
-  color: rgba(255, 177, 33, 0.897) !important;
+  color: $yellow !important;
 }

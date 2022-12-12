@@ -24,7 +24,7 @@ export class CommiteeDashboardComponent implements OnInit {
         },
         {
           title: 'Sheduled Talks',
-           url:'/dashboard/commitee/VotingResults'
+           url:'/dashboard/commitee/SheduledPPTList'
           },
       ],
       },
@@ -47,7 +47,7 @@ export class CommiteeDashboardComponent implements OnInit {
       links: [
         {
           title: 'View Profile',
-          url:'/dashboard/student/MyProfile'
+          url:'/dashboard/commitee/MyProfile'
         },
       ],
       },
