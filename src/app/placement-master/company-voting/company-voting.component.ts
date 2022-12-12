@@ -66,8 +66,6 @@ export class CompanyVotingComponent implements OnInit {
             this.dataSource.data =  tempArrray;
             this.show = true;
           }, 1000);
-      
-         
         }
       });
 
@@ -84,8 +82,6 @@ export class CompanyVotingComponent implements OnInit {
     this.CompanyData.companyName = data.companyName;
     this.CompanyData.minCtc = data.minCTC;
     this.CompanyData.maxCtc = data.maxCTC;
-    this.CompanyData.date = data.Date;
-    this.CompanyData.venue = data.Venue;
     this.CompanyData.intrestedStudents = 1;
     this.CompanyData.isVisitingCampus = true;
     this.CompanyData.isInVotingList = true;
@@ -107,8 +103,6 @@ export class CompanyVotingComponent implements OnInit {
     'CompanyName',
     'Min Ctc',
     'Max Ctc',
-    'Date',
-    'Venue',
     'action',
   ];
 }

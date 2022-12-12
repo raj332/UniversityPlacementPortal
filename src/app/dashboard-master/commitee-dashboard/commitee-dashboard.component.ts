@@ -15,13 +15,17 @@ export class CommiteeDashboardComponent implements OnInit {
       heading:'Pre Placemnet Talk',
       links: [
         {
-          title: 'Company Voting',
+          title: 'Start Voting',
           url:'/dashboard/commitee/CompanyVoting'
         },
         {
-        title: 'Voting Results',
+        title: 'On going Votings',
          url:'/dashboard/commitee/VotingResults'
-        }
+        },
+        {
+          title: 'Sheduled Talks',
+           url:'/dashboard/commitee/VotingResults'
+          },
       ],
       },
     {
@@ -29,38 +33,22 @@ export class CommiteeDashboardComponent implements OnInit {
       links: [
         {
           title: 'Add Company',
-          url:'/dashboard/student/AddJobProfile'
+          url:'/dashboard/commitee/AddCompany'
         },
         {
         title: 'View Companys',
-         url:'/dashboard/ViewJobProfile'
+         url:'/dashboard/commitee/ViewCompany'
         }
       ],
     },
-    {
-      heading:'Apply For Jobs',
-      links: [
-        {
-          title: 'fdsfsd',
-          url:'/dashboard/student/AddJobProfile'
-        },
-        {
-        title: 'fsfdsf',
-         url:'/dashboard/ViewJobProfile'
-        }
-      ],
-    },
+    
     {
       heading:'My Profile',
       links: [
         {
-          title: 'fdsfsd',
-          url:'/dashboard/student/AddJobProfile'
+          title: 'View Profile',
+          url:'/dashboard/student/MyProfile'
         },
-        {
-        title: 'fsfdsf',
-         url:'/dashboard/ViewJobProfile'
-        }
       ],
       },
 

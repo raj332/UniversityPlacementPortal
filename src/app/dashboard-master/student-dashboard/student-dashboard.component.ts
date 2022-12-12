@@ -60,15 +60,15 @@ export class StudentDashboardComponent implements OnInit {
       ],
     },
     {
-      heading: 'Apply For Jobs',
+      heading: 'Jobs Section',
       links: [
         {
-          title: 'fdsfsd',
-          url: '/dashboard/student/AddJobProfile',
+          title: 'View Openings',
+          url: '/dashboard/student/ViewOpenings',
         },
         {
-          title: 'fsfdsf',
-          url: '/dashboard/ViewJobProfile',
+          title: 'check Status',
+          url: '/dashboard/student/CheckStatus',
         },
       ],
     },

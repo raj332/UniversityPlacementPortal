@@ -17,55 +17,53 @@ export class CompanyDashboardComponent implements OnInit {
 
     {
 
-      heading:'job profile',
+      heading:'Job Section',
       links: [
         {
-          title: 'Add Job Profile',
-          url:'/dashboard/student/AddJobProfile'
+          title: 'Create Offer',
+          url:'/dashboard/company/createoffer'
         },
-        {
-        title: 'View job Profile',
-         url:'/dashboard/ViewJobProfile'
-        }
       ],
       },
     {
-      heading:'Pre Placement Talks',
+      heading:'Application Management',
       links: [
         {
-          title: 'fdsfsd',
-          url:'/dashboard/student/AddJobProfile'
+          title: 'View Applications',
+          url:'/dashboard/company/ViewAppliaction'
         },
         {
-        title: 'fsfdsf',
-         url:'/dashboard/ViewJobProfile'
+        title: 'Shortlisted Application',
+         url:'/dashboard/company/Shortlisted'
+        },
+        {
+          title: 'Sheduled Interviews',
+           url:'/dashboard/company/Interviews'
+        },
+        {
+          title: 'Selected Candidates',
+           url:'/dashboard/company/Selected'
+        },
+
+      ],
+    },
+    {
+      heading:'Statistics',
+      links: [
+        {
+          title: '2022-Statistics',
+          url:'/dashboard/company/Statistics'
         }
       ],
     },
     {
-      heading:'Apply For Jobs',
+      heading:'Profile',
       links: [
         {
-          title: 'fdsfsd',
-          url:'/dashboard/student/AddJobProfile'
+          title: 'View Profile',
+          url:'/dashboard/company/MyProfile'
         },
-        {
-        title: 'fsfdsf',
-         url:'/dashboard/ViewJobProfile'
-        }
-      ],
-    },
-    {
-      heading:'My Profile',
-      links: [
-        {
-          title: 'fdsfsd',
-          url:'/dashboard/student/AddJobProfile'
-        },
-        {
-        title: 'fsfdsf',
-         url:'/dashboard/ViewJobProfile'
-        }
+
       ],
       },
 

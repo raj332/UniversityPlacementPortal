@@ -6,6 +6,9 @@ import { JobProfileComponent } from './student-dashboard/job-profile/job-profile
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { PrePlacementVotingComponent } from '../placement-master/pre-placement-voting/pre-placement-voting.component';
 import { PrePlacementTalkListComponent } from '../placement-master/pre-placement-talk-list/pre-placement-talk-list.component';
+import { CommiteeDashboardComponent } from './commitee-dashboard/commitee-dashboard.component';
+import { CompanyVotingComponent } from '../placement-master/company-voting/company-voting.component';
+import { CompanyRegistrationComponent } from '../registration-master/company-registration/company-registration.component';
 
 const routes: Routes = [
   { path: '', component: StudentDashboardComponent },
@@ -15,7 +18,15 @@ const routes: Routes = [
     children: [
       { path: 'AddJobProfile', component: JobProfileComponent },
       { path: 'prePlacementVoting', component: PrePlacementVotingComponent },
-      { path: 'prePlacementTalkList',component: PrePlacementTalkListComponent},
+    ],
+  },
+  {
+    path: 'commitee',
+    component: CommiteeDashboardComponent,
+    children: [
+      { path: 'CompanyVoting', component: CompanyVotingComponent },
+      {path:'VotingResults',component:PrePlacementTalkListComponent},
+      { path: 'AddCompany', component: CompanyRegistrationComponent }
     ],
   },
   {

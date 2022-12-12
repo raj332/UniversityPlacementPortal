@@ -20,10 +20,23 @@ export class CommonApisService {
   insertPptlist(company:any){
     return this.http.post("https://localhost:7212/api/PrePlacementTalk",company)
   }
+  getInvotinglist(){
+    return this.http.get("https://localhost:7212/api/PrePlacementTalk/votinglist")
+  }
+  getSheduledlist(){
+    return this.http.get("https://localhost:7212/api/PrePlacementTalk/sheduledlist")
+  }
   updatePptlist(company:any){
     return this.http.put("https://localhost:7212/api/PrePlacementTalk",company)
   }
   getResultData(spid:any){
     return this.http.get("https://localhost:7212/api/StudentResultData/"+spid)
+  }
+  castVote(spid:any ,data:any){
+    return this.http.put("https://localhost:7212/api/PrePlacementTalk/vote/"+spid,data)
+  }
+  getStudentNotVotedCompany(spid:any){
+    return this.http.get("https://localhost:7212/api/PrePlacementTalk/"+spid)
+
   }
 }

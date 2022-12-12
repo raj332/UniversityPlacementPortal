@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonApisService } from 'src/app/services/common-apis.service';
+import { MatTableDataSource } from '@angular/material/table';
+
 export interface CompanyDetails {
   Companyid: number;
   CompanyName: string;
@@ -8,16 +11,7 @@ export interface CompanyDetails {
   Max_Ctc: number;
 }
 
-const ELEMENT_DATA: CompanyDetails[] = [
-  {
-    Companyid: 1,
-    CompanyName: 'Hydrogen',
-    Date: '12-11-2022',
-    Venue: 'H',
-    Min_Ctc: 200000,
-    Max_Ctc: 300000,
-  },
-];
+
 
 @Component({
   selector: 'app-pre-placement-voting',
@@ -25,7 +19,12 @@ const ELEMENT_DATA: CompanyDetails[] = [
   styleUrls: ['./pre-placement-voting.component.scss'],
 })
 export class PrePlacementVotingComponent implements OnInit {
-  constructor() {}
+
+  dataSource = new MatTableDataSource<any>();
+  spid:any ;
+  constructor( private commonService: CommonApisService) {
+    this.spid=localStorage.getItem("spid");
+  }
 
   displayedColumns: string[] = [
     'Companyid',
@@ -36,7 +35,23 @@ export class PrePlacementVotingComponent implements OnInit {
     'Max Ctc',
     'action'
   ];
-  dataSource = ELEMENT_DATA;
+onVote(data:any){
+  this.commonService.castVote(this.spid,data).subscribe((data:any)=>{
+    alert("Your Vote casted")
+  })
+  setTimeout(() => {
+    this.getVotingList()
+  }, 500);
+  
+}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+   this.getVotingList()
+}
+
+getVotingList(){
+  this.commonService.getStudentNotVotedCompany(this.spid).subscribe((data: any) => {
+    this.dataSource.data =data;
+})
+}
 }

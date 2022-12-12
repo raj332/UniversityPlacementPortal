@@ -33,5 +33,7 @@ body{
   .--height-full{
     height: 100%;
   }
-  
-  
+  .mat-expansion-pane-body{
+    padding: 0px 0px !important;
+  }
+ 
