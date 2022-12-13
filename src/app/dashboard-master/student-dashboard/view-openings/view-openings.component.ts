@@ -47,7 +47,7 @@ export class ViewOpeningsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result:any )=> {
       //console.log("data from dialog is");
-      //console.log(result.name);
+      console.log(result.name);
       
     });
   }

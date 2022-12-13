@@ -1,0 +1,111 @@
+<div class="container parent-div mt-4">
+    <form>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 -light-gray">
+  
+            <mat-card class="mb-4 ">
+              <h4 class="my-1">
+                <mat-icon>post_add</mat-icon> 1. Add Document Links
+              </h4>
+  
+              <div class="col-md-6 form-group my-2">
+                <label for="website">Portfolio Website </label>
+                <input type="text" class="form-control" id="website" name="websiteLink" [(ngModel)]="websiteLink">
+              </div>
+              <div class="col-md-6 form-group my-2">
+                <label for="linkedin">linkedin Profiel Url</label>
+                <input type="text" class="form-control" id="linkedin" name="linkedinLink" [(ngModel)]="linkedinLink">
+              </div>
+  
+              <div class="col-md-6 form-group my-2">
+                <label for="resume">Resume Link</label>
+                <input type="text" class="form-control" id="resume" name="resumeLink" [(ngModel)]="resumeLink">
+              </div>
+            </mat-card>
+            <mat-card class="--width-full my-5">
+              <div class="col-md-12 form-group">
+                <h4 class="my-1">
+                  <mat-icon>work_outlined</mat-icon> 2. Add Work Experience
+                </h4>
+                <mat-card-header class="--width-full">
+                  <mat-card-title class="d-flex flex-row justify-content-between ">
+                    
+                  </mat-card-title>
+                </mat-card-header>
+                <div class="row">
+                  <div class="d-flex flex-column justify-content-around --width-90 --border-0-bottom-gray "
+                    *ngFor="let internship of InternshipData">
+  
+                    <h3 class=" ms-2 ">{{internship.companyName}}</h3>
+                    <p class="mx-2 --internship-date --text-gray"> From - {{internship.startDate}} To - {{internship.endDate}}</p>
+                    <div class="d-flex flex-row">
+                      <p  *ngFor="let ele of internship.technology" class="--width-10 --tech-style mx-2">{{ele}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card>
+            <mat-card class="--width-full my-5">
+  
+              <div class="row d-flex flex-column justify-content-between" style="height: 210px;">
+                <h4 class="my-1">
+                  <mat-icon>grade</mat-icon> 3.Results Details
+                </h4>
+                <div class="row col-xl-10 col-md-10 col-sm-10 col-10">
+                  <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                    <label for="sem1">SEM 1 CGPA : </label>
+                    <input type="text" class="form-control" id="linkedin"name="sem1Cgpa" [(ngModel)]="resultData.sem1Cgpa" readonly>
+                  </div>
+                  <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                    <label for="sem1">SEM 2 CGPA : </label>
+                    <input type="text" class="form-control" id="linkedin"  name="sem2Cgpa"[(ngModel)]="resultData.sem2Cgpa"  readonly>
+                  </div>
+                  <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                    <label for="sem1">SEM 3 CGPA : </label>
+                    <input type="text" class="form-control" id="linkedin"name="sem3Cgpa" [(ngModel)]="resultData.sem3Cgpa"  readonly>
+                  </div>
+                  <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                    <label for="sem1">SEM 4 CGPA : </label>
+                    <input type="text" class="form-control" id="linkedin"name="sem4Cgpa" [(ngModel)]="resultData.sem4Cgpa"  readonly>
+                  </div>
+                  <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                    <label for="sem1">SEM 5 CGPA : </label>
+                    <input type="text" class="form-control" id="linkedin"name="sem5Cgpa" [(ngModel)]="resultData.sem5Cgpa"  readonly>
+                  </div>
+                </div>
+                <div class="row col-xl-10 col-md-10 col-sm-10 col-10">
+                  <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                    <label for="sem1">SEM 6 CGPA : </label>
+                    <input type="text" class="form-control" id="linkedin" name="sem6Cgpa" [(ngModel)]="resultData.sem6Cgpa"  readonly>
+                  </div>
+                  <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                    <label for="sem1">SEM 7 CGPA : </label>
+                    <input type="text" class="form-control" id="linkedin"name="sem7Cgpa" [(ngModel)]="resultData.sem7Cgpa"  readonly>
+                  </div>
+                  <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                    <label for="sem1">SEM 8 CGPA : </label>
+                    <input type="text" class="form-control" id="linkedin"name="sem8Cgpa" [(ngModel)]="resultData.sem8Cgpa"  readonly>
+                  </div>
+                  <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                    <label for="sem1">SEM 9 CGPA : </label>
+                    <input type="text" class="form-control" id="linkedin"name="sem9Cgpa" [(ngModel)]="resultData.sem9Cgpa"  readonly>
+                  </div>
+                  <div class="col-xl-2 col-md-2 col-sm-2 col-2">
+                    <label for="sem1">Overall CGPA : </label>
+                    <input type="text" class="form-control" id="linkedin" value="0.0"name="sgpa" [(ngModel)]="resultData.sgpa"  readonly>
+                  </div>
+                </div>
+              </div>
+            </mat-card>
+            <div class="col-12 d-flex justify-content-end" >
+              <button class="btn btn-blue --width-10" (click)="onShortlist()">Shortlist</button>
+              <button class="btn btn-success --width-10" (click)="onInterviewCall()">Shedule Interview</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </form>
+  </div>
+  
