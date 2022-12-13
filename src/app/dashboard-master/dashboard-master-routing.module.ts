@@ -16,7 +16,7 @@ import { SheduledPPTListComponent } from './commitee-dashboard/sheduled-pptlist/
 import { CompanyListComponent } from './commitee-dashboard/company-list/company-list.component';
 import { CommiteeProfileComponent } from './commitee-dashboard/commitee-profile/commitee-profile.component';
 import { ViewApplicationComponent } from './company-dashboard/view-application/view-application.component';
-import { ViewJobProfileComponent } from './company-dashboard/view-job-profile/view-job-profile.component';
+import { ViewJobProfileComponent } from './company-dashboard/view-application/view-job-profile/view-job-profile.component';
 import { ShortlistedApplicationComponent } from './company-dashboard/shortlisted-application/shortlisted-application.component';
 import { SelectedApplicationComponent } from './company-dashboard/selected-application/selected-application.component';
 import { CompanyStatasticsComponent } from './company-dashboard/company-statastics/company-statastics.component';

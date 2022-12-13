@@ -1,1 +1,51 @@
-<p>selected-application works!</p>
+<p>selected application</p>
+
+<mat-form-field appearance="standard" class="--width-20 mx-3">
+    <mat-label>Search</mat-label>
+  
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+  
+      <div class=" mat-elevation-z8 mx-3">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef class="--bg-green">Candidate</th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email  </th>
+            <td mat-cell *matCellDef="let element">{{element.email}}</td>
+        </ng-container>
+        <ng-container matColumnDef="contactNo">
+            <th mat-header-cell *matHeaderCellDef> Contact </th>
+            <td mat-cell *matCellDef="let element"> {{element.contactNo}} </td>
+        </ng-container>
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> Position </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+        <ng-container matColumnDef="technology">
+              <th mat-header-cell *matHeaderCellDef class="--bg-green"> technology </th>
+              <td mat-cell *matCellDef="let element"> {{element.technology}} </td>
+        </ng-container>
+        <ng-container matColumnDef="offeredCTC">
+            <th mat-header-cell *matHeaderCellDef class="--bg-green"> Offered CTC </th>
+            <td mat-cell *matCellDef="let element"> {{element.offeredCTC}} </td>
+      </ng-container>
+      <ng-container matColumnDef="stipend">
+        <th mat-header-cell *matHeaderCellDef class="--bg-green"> Stipend </th>
+        <td mat-cell *matCellDef="let element"> {{element.stipend}} </td>
+  </ng-container>
+
+         
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let row"> <button class="--btn-filled-primary" (click)="onInterviewCall(row)">Shedule Interview</button> </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+         
+      </table>
+      <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+      </mat-paginator>
+  </div>
