@@ -1,24 +1,41 @@
 import { Component, Inject, OnInit } from '@angular/core';
 
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CompanyApisService } from 'src/app/services/company-apis.service';
+import { StudentApisService } from 'src/app/services/student-apis.service';
 @Component({
   selector: 'app-view-job-offer',
   templateUrl: './view-job-offer.component.html',
   styleUrls: ['./view-job-offer.component.scss']
 })
 export class ViewJobOfferComponent implements OnInit {
-
+spid!:any;
+    mainData !:any;
+companyData!:any;
   constructor(public dialogRef: MatDialogRef<ViewJobOfferComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { 
-      console.log(this.data);
+@Inject(MAT_DIALOG_DATA) public data: any,private service:CompanyApisService , private stuService : StudentApisService ) { 
+this.mainData =data ;
+this.service.getOneCompanyDetail(this.mainData.companyId).subscribe((data)=>{
+  this.companyData =data;
+  this.spid =localStorage.getItem("spid")
+});
     }
     ngOnInit(): void {
-    }
-    onClose(){
-      
-      this.dialogRef.close(this.data);
-    }
 
+    }
+   
+handleApply(){
+  let item = {
+spid :this.spid,
+offerId :this.mainData.offerId ,
+status :"applied",
+isOutSideProcess :false,
+isSelected :false
+  }
+  this.stuService.applyJob(item).subscribe((data)=>{
+    this.dialogRef.close();
+  })
+}
   
 
 }

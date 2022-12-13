@@ -20,5 +20,7 @@ export class CompanyApisService {
   getCompanylist(){
      return this.http.get("https://localhost:7212/api/CompanyOffers/ppt")
   }
-  
+  getOneCompanyDetail(cid:any){
+    return this.http.get("https://localhost:7212/api/Company/"+cid);
+  } 
 }
