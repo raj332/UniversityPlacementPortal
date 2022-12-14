@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center align-item-center w-100">
- 
+
   <div class="d-flex justify-content-center align-item-center w-100 mt-5 align">
     <div class=" d-flex justify-content-center flex-column ">
       <h2 class="--text-dark d-flex justify-content-center">
@@ -14,34 +14,61 @@
 
         <div class="col-md-12">
           <label for="spid" class="form-label --text-Primary">SPID</label>
-          <input type="number" class="form-control" name="spid" [(ngModel)]="spid" id="spid">
+          <input type="number" class="form-control" name="spid" [(ngModel)]="spid" id="spid" #spidField="ngModel"
+            required>
+          <div class="error" *ngIf="(spidField.touched||spidField.dirty) && spidField.invalid"
+            style="color: red; font-size:12px">
+            Spid Is Required.</div>
         </div>
         <div class="col-md-12">
           <label for="stdname" class="form-label --text-Primary">Name</label>
-          <input type="text" class="form-control" id="stdname" name="studentName" [(ngModel)]="studentName">
+          <input type="text" class="form-control" id="stdname" name="studentName" [(ngModel)]="studentName"
+            #name="ngModel" required>
+          <div class="error" *ngIf="(name.touched||name.dirty) && name.invalid" style="color: red; font-size:12px">
+            Name Is Required.</div>
         </div>
         <div class="col-md-12">
           <label for="course" class="form-label --text-Primary">Course</label>
-          <select id="course" class="form-select" name="course" [(ngModel)]="courseId">
+          <select id="course" class="form-select" name="course" [(ngModel)]="courseId" #course="ngModel" required>
             <option selected>Choose...</option>
             <option value="{{item.courseId}}" *ngFor=" let item of courseList">{{item.courseName}}</option>
           </select>
+          <div class="error" *ngIf="(course.touched||course.dirty) && course.invalid"
+            style="color: red; font-size:12px">
+            Course Is Required.</div>
         </div>
         <div class="col-md-12">
           <label for="contactNo" class="form-label --text-Primary">Contact Number</label>
-          <input type="text" class="form-control" id="contactNo" name="contactNo" [(ngModel)]="contactNo">
+          <input type="text" class="form-control" id="contactNo" name="contactNo" [(ngModel)]="contactNo"
+            #contact="ngModel" required>
+          <div class="error" *ngIf="(contact.touched||contact.dirty) && contact.invalid"
+            style="color: red; font-size:12px">
+            Contact Is Required.</div>
         </div>
         <div class="col-md-12">
           <label for="Email" class="form-label --text-Primary">Email</label>
-          <input type="email" class="form-control" id="Email" name="email" [(ngModel)]="email">
+          <input type="email" class="form-control" id="Email" name="email" [(ngModel)]="email" #validemail="ngModel"
+            required>
+          <div class="error" *ngIf="(validemail.touched||validemail.dirty) && validemail.invalid"
+            style="color: red; font-size:12px">
+            Email Is Required.</div>
         </div>
         <div class="col-md-12">
           <label for="password" class="form-label --text-Primary">password</label>
-          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
+            #passwordField="ngModel" required>
+          <div class="error" *ngIf="(passwordField.touched||passwordField.dirty) && passwordField.invalid"
+            style="color: red; font-size:12px">password Is Required.</div>
         </div>
         <div class="col-md-12">
           <label for="confirmPassword" class="form-label --text-Primary">Confirm Password</label>
-          <input type="text" class="form-control" id="confirmPassword">
+          <input type="text" class="form-control" id="confirmPassword" name="confirmPassword"
+            [(ngModel)]="confirmPassword" (keyup)="onconfirmPassword(password,confirmPassword)" #confirm="ngModel"
+            required>
+          <div class="error" *ngIf="(confirm.touched||confirm.dirty) && confirm.invalid"
+            style="color: red; font-size:12px">Please Confirm Your Password</div>
+          <div *ngIf="errorMsg" style="color: red; font-size:12px">{{errorMsg}}</div>
+          <div *ngIf="validMsg" style="color: green; font-size:12px">{{validMsg}}</div>
         </div>
         <div class="col-md-12">
           <img *ngIf="isPreview" [src]="url" alt="" srcset="" height="150px" width="150px" class="mb-2">
@@ -49,7 +76,8 @@
             [(ngModel)]="photo" />
         </div>
         <div class="col-12">
-          <button type="submit" class="btn my-2 p-1 btn-primary --text-Primary">Register</button>
+          <button type="submit" class="btn my-2 p-1 btn-primary --text-Primary"
+            [disabled]="!(spidField.valid && name.valid &&course.valid&&contact.valid &&validemail.valid &&passwordField.valid && confirm.valid)">Register</button>
         </div>
       </form>
     </div>
