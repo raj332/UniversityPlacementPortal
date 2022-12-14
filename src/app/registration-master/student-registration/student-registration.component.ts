@@ -19,7 +19,7 @@ email!:String;
 password!:String;
 photo!:String;
 courseList!:any[] ;
-
+registered:Boolean=false;
   constructor(private service:StudentApisService, private cservices :CommonApisService ,private router:Router) { 
        cservices.getCourses().subscribe((data:any)=>{
             this.courseList = data ;
@@ -43,8 +43,15 @@ password:this.password,
 photo:this.photo
  }
 
-  this.service.registerStudent(stu).subscribe((data)=>{
-    this.router.navigate(['registration/companylogin'])
+  this.service.registerStudent(stu).subscribe((data:any)=>{
+    if(data.success){
+      this.registered =true;
+      setTimeout(() => {
+        this.router.navigate(['registration/studentlogin'])
+      }, 2000);
+    }
+   
+    
   })
 }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonApisService } from 'src/app/services/common-apis.service';
+import { CompanyApisService } from 'src/app/services/company-apis.service';
 import { StudentApisService } from 'src/app/services/student-apis.service';
 
 @Component({
@@ -12,8 +13,9 @@ export class ViewJobProfileComponent implements OnInit {
    linkedinLink!:string ;
    resumeLink!:string ;
   resultData!:any;
+  companyId:any = localStorage.getItem("companyId")
  spid !:any;
-  constructor( private services : CommonApisService ,private studentService : StudentApisService) { 
+  constructor( private services : CommonApisService ,private companyServices : CompanyApisService,private studentService : StudentApisService) { 
    this.spid = localStorage.getItem("spid");
    this.services.getResultData(this.spid).subscribe((data)=>{
     this.resultData =data;
@@ -38,7 +40,6 @@ this.resumeLink =data.resumeLink;
   technology:any[]=[];
   ngOnInit(): void {
   }
-  file: any;
   MenuList: any = [
     "SEM 1 CGPA",
     "SEM 2 CGPA",
@@ -51,13 +52,7 @@ this.resumeLink =data.resumeLink;
     "SEM 9 CGPA",
     "SEM 10 CGPA",
   ]
-  onFileAdd(file: any) {
-    this.file = file;
-  }
-
-  onFileRemove() {
-    this.file = null;
-  }
+  
 
   width = "600px";
   height = "375px";
@@ -66,12 +61,24 @@ this.resumeLink =data.resumeLink;
 
   }
   onShortlist(){
- 
+    let item ={
+      spid:this.spid,
+      companyId :this.companyId ,
+      isSelectedForInterview : false,
+      clearedRounds : false,
+      isPlaced : false,
+      status : "shortlisted"
+    }
+    this.companyServices.shortistStudent(item).subscribe((data:any)=>{
+       alert("shortlisted")
+    })
     // insert in shortlist tb
 
   }
   onInterviewCall(){
     //insert in Interview
+
+
   }
 
 }

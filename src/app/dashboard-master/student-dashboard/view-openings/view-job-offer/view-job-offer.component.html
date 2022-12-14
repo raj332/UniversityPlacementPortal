@@ -47,7 +47,7 @@
         <h2 class="col-8"> {{mainData.maxCtc}}</h2>
     </div>
 </div>
-<div class="row col-12 d-flex flex-row justify-content-start">
+<div class="row col-12 d-flex flex-row justify-content-start"  *ngIf="!mainData.status">
 <div>
     <button class="--btn-filled-green" (click)="handleApply()">apply</button>
 </div>

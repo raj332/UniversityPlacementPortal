@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'StudentLogin', component: StudentLoginComponent },
   { path : 'CommiteeLogin' ,component:CommiteeLoginComponent},
   { path: 'company',component:CompanyRegistrationComponent},
-  {path:'companylogin',component:CompanyLoginComponent}
+  {path:'CompanyLogin',component:CompanyLoginComponent}
 
 ];
 

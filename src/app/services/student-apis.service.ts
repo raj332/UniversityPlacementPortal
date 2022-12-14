@@ -26,6 +26,9 @@ export class StudentApisService {
   getInternship(spid:any){
     return this.http.get("https://localhost:7212/api/InternshipMaster/"+spid)
   }
+  getAppliedCompanies(spid:any){
+    return this.http.get("https://localhost:7212/api/StudentApplication/applied/"+spid)
+  }
   getNotAppliedCompanies(spid:any){
     return this.http.get("https://localhost:7212/api/StudentApplication/notapplied/"+spid)
   }
