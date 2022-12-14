@@ -18,12 +18,16 @@ contactNo!:Number;
 email!:String;
 password!:String;
 photo!:String;
-courseList!:any[] ;
-registered:Boolean=false;
-  constructor(private service:StudentApisService, private cservices :CommonApisService ,private router:Router) { 
+registered=false;
+courseList!: any[];
+  confirmPassword!:String;
+  errorMsg!: string;
+  validMsg!: string;
+
+  constructor(private service:StudentApisService, private cservices :CommonApisService ,private router:Router) {
        cservices.getCourses().subscribe((data:any)=>{
             this.courseList = data ;
-    
+
        })
   }
 
@@ -64,6 +68,21 @@ photo:this.photo
         this.url=event.target.result;
       }
       this.isPreview == false ? this.isPreview = true : this.isPreview = false;
+    }
+  }
+
+  onconfirmPassword(pass: String, confirmpass: String) {
+
+    if (!this.confirmPassword) {
+      this.errorMsg = '';
+    }
+    else if (pass != confirmpass) {
+      this.validMsg = '';
+      this.errorMsg="Doesn't Match With Yor Password!"
+    }
+    else {
+      this.errorMsg = '';
+      this.validMsg = 'Password Matched!';
     }
   }
 
