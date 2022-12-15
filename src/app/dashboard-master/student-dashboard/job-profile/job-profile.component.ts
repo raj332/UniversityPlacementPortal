@@ -103,8 +103,9 @@ this.resumeLink =data.resumeLink;
       linkedinLink :this.linkedinLink,
       resumeLink :this.resumeLink
     }
-    this.studentService.addJobProfile(item).subscribe((data)=>{
+    this.studentService.addJobProfile(item).subscribe((data:any)=>{
       alert("Job profile created")
+      localStorage.setItem("jobProfileId",data.jobProfileId)
     }) 
   }
 }

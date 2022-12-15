@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { StudentApisService } from 'src/app/services/student-apis.service';
 import { ViewJobOfferComponent } from './view-job-offer/view-job-offer.component';
 export interface PeriodicElement {
@@ -20,7 +21,7 @@ export class ViewOpeningsComponent implements OnInit {
 spid!:any; 
 dataSource = new MatTableDataSource<any>();
 
-  constructor(private dialog: MatDialog, private services:StudentApisService) {
+  constructor(private dialog: MatDialog, private services:StudentApisService,private router:Router) {
     this.spid =localStorage.getItem("spid");
    }
    
@@ -46,17 +47,25 @@ dataSource = new MatTableDataSource<any>();
       : (this.defaultcontent = true);
   }
   openDialog(row:any){
-    const dialogRef=this.dialog.open(ViewJobOfferComponent, {
-      // add any additional options here
-      height: '50rem',
-      width: '90rem',
-      data:row
-    });
-    dialogRef.afterClosed().subscribe((result:any )=> {
-this.fetchCompanyOffers();
-      
-    });
-  }
+    if(!localStorage.getItem("jobProfileId")){
+        alert("Please create job profile first !")
+        this.router.navigate(['/dashboard/student/AddJobProfile'])
+        return ;
+     }
+     else{
+
+       const dialogRef=this.dialog.open(ViewJobOfferComponent, {
+         // add any additional options here
+         height: '50rem',
+         width: '90rem',
+         data:row
+       });
+       dialogRef.afterClosed().subscribe((result:any )=> {
+   this.fetchCompanyOffers();
+         
+       });
+     }
+    }
 
   
 }

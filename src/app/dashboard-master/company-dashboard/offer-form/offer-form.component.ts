@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, NgModel} from '@angular/forms'
+import { Router } from '@angular/router';
 import { CompanyApisService } from 'src/app/services/company-apis.service';
 import { CriteriaApisService } from 'src/app/services/criteria-apis.service';
 
@@ -20,7 +21,7 @@ export class OfferFormComponent implements OnInit {
   isDisclose!:Number;
   criterias!:String[];
   criteriaList:any = []
-  constructor(private cservices:CriteriaApisService ,private offerservice: CompanyApisService) {
+  constructor(private cservices:CriteriaApisService ,private offerservice: CompanyApisService,private router:Router) {
     cservices.getCriteriaList().subscribe((data)=>{
       this.criteriaList=data;
     })
@@ -37,7 +38,7 @@ handleSelChange(data:any){
 }
 handleSubmit(){
  this.offerservice.createOffer({
-  companyID : sessionStorage.getItem('companyID') ,
+  companyID : localStorage.getItem('companyId') ,
   position : this.position ,
   technology : this.technology,
   jobDescription : this.jobDescription ,
@@ -48,6 +49,7 @@ handleSubmit(){
   criterias: this.criterias
  }).subscribe((data)=>{
   alert(" offer created")
+this.router.navigate(["dashboard/company/"]);
  })
 }
 }

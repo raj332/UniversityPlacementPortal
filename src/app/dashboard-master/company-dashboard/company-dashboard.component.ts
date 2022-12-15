@@ -12,6 +12,8 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class CompanyDashboardComponent implements OnInit {
  panelOpenState = false;
+ currentCompanyName:any=localStorage.getItem("companyName");
+ 
   constructor() { }
   MenuList: any = [
 
@@ -21,7 +23,7 @@ export class CompanyDashboardComponent implements OnInit {
       links: [
         {
           title: 'Create Offer',
-          url:'/dashboard/company/createoffer'
+          url:'/dashboard/company/CreateOffer'
         },
       ],
       },

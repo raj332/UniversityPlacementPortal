@@ -20,6 +20,7 @@ import { ViewJobProfileComponent } from './company-dashboard/view-application/vi
 import { ShortlistedApplicationComponent } from './company-dashboard/shortlisted-application/shortlisted-application.component';
 import { SelectedApplicationComponent } from './company-dashboard/selected-application/selected-application.component';
 import { CompanyStatasticsComponent } from './company-dashboard/company-statastics/company-statastics.component';
+import { StudentSheduledPptlistComponent } from './student-dashboard/student-sheduled-pptlist/student-sheduled-pptlist.component';
 
 const routes: Routes = [
   { path: '', component: StudentDashboardComponent },
@@ -31,7 +32,8 @@ const routes: Routes = [
       { path: 'prePlacementVoting', component: PrePlacementVotingComponent },
       { path: 'ViewOpenings' ,component:ViewOpeningsComponent},
       {path: 'CheckStatus' ,component:CheckStatusComponent},
-      {path:'ViewProfile',component:MyProfileComponent}
+      {path:'ViewProfile',component:MyProfileComponent},
+     {path:'talklist',component:StudentSheduledPptlistComponent}
     ],
   },
   {
@@ -50,7 +52,7 @@ const routes: Routes = [
     path: 'company',
     component: CompanyDashboardComponent,
     children: [
-      { path: 'createoffer', component: OfferFormComponent },
+      {path:'CreateOffer', component: OfferFormComponent },
       {path:'ViewAppliaction' ,component:ViewApplicationComponent},
       {path:'viewJobProfile',component:ViewJobProfileComponent},
       {path:'Shortlisted',component:ShortlistedApplicationComponent},

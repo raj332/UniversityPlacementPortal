@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Inject, OnInit } from '@angular/core';
 import { CommonApisService } from 'src/app/services/common-apis.service';
 import { CompanyApisService } from 'src/app/services/company-apis.service';
 import { StudentApisService } from 'src/app/services/student-apis.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-view-job-profile',
@@ -14,19 +15,20 @@ export class ViewJobProfileComponent implements OnInit {
    resumeLink!:string ;
   resultData!:any;
   companyId:any = localStorage.getItem("companyId")
- spid !:any;
-  constructor( private services : CommonApisService ,private companyServices : CompanyApisService,private studentService : StudentApisService) { 
-   this.spid = localStorage.getItem("spid");
-   this.services.getResultData(this.spid).subscribe((data)=>{
+ mainData!:any;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private services : CommonApisService ,private companyServices : CompanyApisService,private studentService : StudentApisService) { 
+   
+    this.mainData=data;
+   this.services.getResultData(this.mainData.spid).subscribe((data)=>{
     this.resultData =data;
    })
-   this.studentService.getInternship(this.spid).subscribe((data:any)=>{
+   this.studentService.getInternship(this.mainData.spid).subscribe((data:any)=>{
     data.forEach((element:any) => {
       element.technology=element.technology.split(',');
       this.InternshipData.push(element);
     });
    })
-   this.studentService.getOneJobProfile(this.spid).subscribe((data:any)=>{
+   this.studentService.getOneJobProfile(this.mainData.spid).subscribe((data:any)=>{
     this.websiteLink = data.websiteLink ;
 this.linkedinLink =data.linkedinLink;
 this.resumeLink =data.resumeLink;
@@ -60,25 +62,22 @@ this.resumeLink =data.resumeLink;
   toggleBTN(){
 
   }
-  onShortlist(){
+ 
+  onInterviewCall(){
+    //insert in Interview
+
     let item ={
-      spid:this.spid,
+      spid:this.mainData.spid,
       companyId :this.companyId ,
-      isSelectedForInterview : false,
-      clearedRounds : false,
+      isSelectedForInterview : true,
+      clearedRounds : true,
       isPlaced : false,
       status : "shortlisted"
     }
     this.companyServices.shortistStudent(item).subscribe((data:any)=>{
-       alert("shortlisted")
+       alert("shortlisted");
+       MatDialogRef
     })
-    // insert in shortlist tb
-
-  }
-  onInterviewCall(){
-    //insert in Interview
-
-
   }
 
 }

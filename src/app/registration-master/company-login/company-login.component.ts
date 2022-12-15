@@ -21,8 +21,15 @@ export class CompanyLoginComponent implements OnInit {
       email: this.companyEmail,
       password:this.companyPassword
    };
-    this.services.loginCompany(company).subscribe((data)=>{
-  this.router.navigate(['dashboard/company'])
+    this.services.loginCompany(company).subscribe((data:any)=>{
+      if(data.error){
+        alert(data.error)
+      }else{
+        localStorage.setItem("companyId",data.user.companyId)
+        localStorage.setItem("companyName",data.user.name)
+        this.router.navigate(['dashboard/company'])
+      }
+  
     })
   }
 

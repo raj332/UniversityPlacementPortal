@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommiteeDashboardComponent implements OnInit {
   panelOpenState = false;
+  commiteeId:any = localStorage.getItem("memberId")
   constructor() { }
   MenuList: any = [
 

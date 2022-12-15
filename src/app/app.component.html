@@ -24,10 +24,11 @@
       </div>
     </div>
     <div class="col-2">
-      <button *ngIf="!isLogin" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
+      <!-- <button *ngIf="!isLogin" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
         routerLink="/registration/StudentLogin">Login</button>
       <button *ngIf="!isRegistered" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
-        routerLink="/registration/student">Register</button>
+        routerLink="/registration/student">Register</button> -->
+        <button *ngIf="logoutBtn" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="onLogout()">logout</button>
     </div>
   </div>
 </nav>

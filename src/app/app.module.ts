@@ -10,6 +10,9 @@ import { CommonModule } from '@angular/common';
 import { UploaderModule } from 'angular-uploader';
 import { MaterialDesignModuleModule } from './material-design-module/material-design-module.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [AppComponent, DashboardMasterComponent],
   imports: [
@@ -21,6 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     UploaderModule,
     MaterialDesignModuleModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

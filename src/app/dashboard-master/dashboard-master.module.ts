@@ -22,6 +22,7 @@ import { ShortlistedApplicationComponent } from './company-dashboard/shortlisted
 import { SelectedApplicationComponent } from './company-dashboard/selected-application/selected-application.component';
 import { CompanyStatasticsComponent } from './company-dashboard/company-statastics/company-statastics.component';
 import { ViewJobOfferComponent } from './student-dashboard/view-openings/view-job-offer/view-job-offer.component';
+import { StudentSheduledPptlistComponent } from './student-dashboard/student-sheduled-pptlist/student-sheduled-pptlist.component';
 @NgModule({
   declarations: [
     StudentDashboardComponent,
@@ -42,6 +43,7 @@ import { ViewJobOfferComponent } from './student-dashboard/view-openings/view-jo
     SelectedApplicationComponent,
     CompanyStatasticsComponent,
     ViewJobOfferComponent,
+    StudentSheduledPptlistComponent,
   ],
   imports: [
     CommonModule,

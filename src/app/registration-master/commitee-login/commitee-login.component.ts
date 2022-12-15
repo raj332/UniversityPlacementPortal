@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonApisService } from 'src/app/services/common-apis.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { CommonApisService } from 'src/app/services/common-apis.service';
 export class CommiteeLoginComponent implements OnInit {
   spid!:Number;
   password!:String
-  constructor(private services:CommonApisService) { }
+  constructor(private services:CommonApisService , private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -18,9 +19,10 @@ export class CommiteeLoginComponent implements OnInit {
       spid:this.spid,
       password:this.password
     }
-    this.services.loginCommitee(user).subscribe((data)=>{
+    this.services.loginCommitee(user).subscribe((data:any)=>{
       console.log(data)
-      alert("logedin")
+      localStorage.setItem("memberId",data.commiteeMemberId)
+this.router.navigate(["/dashboard/commitee"])
     })
    }
 }

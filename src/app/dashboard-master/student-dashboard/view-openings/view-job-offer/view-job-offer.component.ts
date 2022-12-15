@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { CompanyApisService } from 'src/app/services/company-apis.service';
 import { StudentApisService } from 'src/app/services/student-apis.service';
 @Component({
@@ -12,7 +13,7 @@ export class ViewJobOfferComponent implements OnInit {
 spid!:any;
     mainData !:any;
 companyData!:any;
-  constructor(public dialogRef: MatDialogRef<ViewJobOfferComponent>,
+  constructor(public dialogRef: MatDialogRef<ViewJobOfferComponent>,private router: Router,
 @Inject(MAT_DIALOG_DATA) public data: any,private service:CompanyApisService , private stuService : StudentApisService ) { 
 this.mainData =data ;
 this.service.getOneCompanyDetail(this.mainData.companyId).subscribe((data)=>{
@@ -25,16 +26,19 @@ this.service.getOneCompanyDetail(this.mainData.companyId).subscribe((data)=>{
     }
    
 handleApply(){
+ 
   let item = {
-spid :this.spid,
-offerId :this.mainData.offerId ,
-status :"applied",
-isOutSideProcess :false,
-isSelected :false
-  }
-  this.stuService.applyJob(item).subscribe((data)=>{
-    this.dialogRef.close();
-  })
+    spid :this.spid,
+    offerId :this.mainData.offerId ,
+    status :"applied",
+    isOutSideProcess :false,
+    isSelected :false
+      }
+      this.stuService.applyJob(item).subscribe((data)=>{
+        this.dialogRef.close();
+      })
+ 
+ 
 }
   
 

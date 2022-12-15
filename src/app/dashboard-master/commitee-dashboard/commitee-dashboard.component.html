@@ -1,14 +1,14 @@
 
 
 
-<mat-drawer-container class="example-container " autosize>
+<mat-drawer-container class="example-container mt-5 " autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side" opened>
       <div class="mainNavDiv">
         <div class="d-flex justify-content-center align-items-center my-3">
           <img src="../../../assets/imgs/Screenshot 2022-10-22 133010.png" height="100h" width="100vw"
             style="clip-path: circle(50%);" alt="">
         </div>
-        <p class="--text-yellow">Welcome, JaiminKumar </p>
+        <p class="--text-yellow">{{commiteeId}} </p>
         <mat-accordion *ngFor="let menu of MenuList">
           <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
