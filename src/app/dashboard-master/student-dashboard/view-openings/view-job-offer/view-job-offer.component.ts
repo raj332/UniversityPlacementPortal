@@ -32,7 +32,11 @@ handleApply(){
     offerId :this.mainData.offerId ,
     status :"applied",
     isOutSideProcess :false,
-    isSelected :false
+    isSelected :false,
+    hasClearedRounds : false,
+    isPlaced :false,
+    companyId:this.mainData.companyId
+
       }
       this.stuService.applyJob(item).subscribe((data)=>{
         this.dialogRef.close();

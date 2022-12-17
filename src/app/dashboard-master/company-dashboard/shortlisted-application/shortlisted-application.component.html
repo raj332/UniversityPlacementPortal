@@ -11,12 +11,9 @@
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef class="--bg-green">Candidate</th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.studentName}} </td>
           </ng-container>
-          <ng-container matColumnDef="sgpa">
-            <th mat-header-cell *matHeaderCellDef> SGPA  </th>
-            <td mat-cell *matCellDef="let element">{{element.sgpa}}</td>
-        </ng-container>
+        
           <ng-container matColumnDef="email">
             <th mat-header-cell *matHeaderCellDef> Email  </th>
             <td mat-cell *matCellDef="let element">{{element.email}}</td>
@@ -33,10 +30,26 @@
               <th mat-header-cell *matHeaderCellDef class="--bg-green"> technology </th>
               <td mat-cell *matCellDef="let element"> {{element.technology}} </td>
             </ng-container>
+            <ng-container matColumnDef="action1">
+              <th mat-header-cell *matHeaderCellDef>Final CTC</th>
+              <td mat-cell *matCellDef="let row">  <input type="number" name="finalCTC" [(ngModel)]="finalCTC">  </td>
+            </ng-container>
+            <ng-container matColumnDef="action2">
+              <th mat-header-cell *matHeaderCellDef>Training Months</th>
+              <td mat-cell *matCellDef="let row">  <input type="number" name="trainingMonths" [(ngModel)]="trainingMonths">  </td>
+            </ng-container>
+            <ng-container matColumnDef="action3">
+              <th mat-header-cell *matHeaderCellDef>Stipend</th>
+              <td mat-cell *matCellDef="let row"> <input type="number" name="stipend" [(ngModel)]="stipend">  </td>
+            </ng-container>
          
-          <ng-container matColumnDef="action">
+            <ng-container matColumnDef="action5">
+              <th mat-header-cell *matHeaderCellDef> Job Profile</th>
+              <td mat-cell *matCellDef="let row"> <button class="--btn-filled-primary" (click)="openDialog(row)">View Profile</button> </td>
+            </ng-container>
+          <ng-container matColumnDef="action4">
             <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let row"> <button class="--btn-filled-primary" (click)="onSelection(row)">Select</button> </td>
+            <td mat-cell *matCellDef="let row"> <button class="--btn-filled-primary" (click)="onSelection(row)">Select for Job</button> </td>
           </ng-container>
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

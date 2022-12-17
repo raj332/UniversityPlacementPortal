@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark-blue fixed-top">
+<nav class="navbar navbar-expand-lg  fixed-top">
   <div class="container-fluid m-0 p-0">
     <div class="d-flex flex-row col-8">
       <a class="navbar-brand ms-2" href="#">
@@ -11,14 +11,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active --text-white --primary-font" aria-current="page" href="#">Home</a>
+            <a class="nav-link active  --primary-font" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link --text-white --primary-font" href="#">Link</a>
+            <a class="nav-link  --primary-font" href="#">Link</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link disabled --text-white --primary-font">Disabled</a>
+            <a class="nav-link disabled  --primary-font">Disabled</a>
           </li>
         </ul>
       </div>
@@ -28,7 +28,7 @@
         routerLink="/registration/StudentLogin">Login</button>
       <button *ngIf="!isRegistered" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
         routerLink="/registration/student">Register</button> -->
-        <button *ngIf="logoutBtn" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="onLogout()">logout</button>
+        <button *ngIf="logoutBtn" class="  py-2 px-3" matRipple (click)="onLogout()">logout</button>
     </div>
   </div>
 </nav>

@@ -27,6 +27,7 @@ export class CompanyLoginComponent implements OnInit {
       }else{
         localStorage.setItem("companyId",data.user.companyId)
         localStorage.setItem("companyName",data.user.name)
+    
         this.router.navigate(['dashboard/company'])
       }
   

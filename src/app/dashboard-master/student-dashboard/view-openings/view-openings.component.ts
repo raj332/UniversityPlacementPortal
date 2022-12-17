@@ -26,7 +26,13 @@ dataSource = new MatTableDataSource<any>();
    }
    
   ngOnInit(): void {
-    this.fetchCompanyOffers()
+    if(localStorage.getItem("isInPlacementDrive")=="false"){
+      alert("Your are out of placement Drive !")
+    }else
+    {
+      this.fetchCompanyOffers()
+
+    }
   }
 
   fetchCompanyOffers(){

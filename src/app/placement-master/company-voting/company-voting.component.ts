@@ -14,6 +14,7 @@ class Cls_PPTCompany {
   isVisitingCampus!: boolean;
   isInVotingList!: Boolean;
   isInSheduleList!: Boolean;
+  votingEndDate !: Date ;
 }
 
 @Component({
@@ -29,6 +30,7 @@ export class CompanyVotingComponent implements OnInit {
   CompanyData = new Cls_PPTCompany();
   dataSource = new MatTableDataSource<any>();
   pptList: any = [];
+  endDate!:Date;
   tempList: any = [];
   show = false;
   constructor(
@@ -77,23 +79,29 @@ export class CompanyVotingComponent implements OnInit {
  
 
   onVoting(data: any) {
-    this.Status = 'Shedule';
-    this.CompanyData.companyId = data.companyId;
-    this.CompanyData.companyName = data.companyName;
-    this.CompanyData.minCtc = data.minCTC;
-    this.CompanyData.maxCtc = data.maxCTC;
-    this.CompanyData.intrestedStudents = 1;
-    this.CompanyData.isVisitingCampus = true;
-    this.CompanyData.isInVotingList = true;
-    this.CompanyData.isInSheduleList = false;
-    console.log(this.CompanyData);
-    this.commonService.insertPptlist(this.CompanyData).subscribe((data) => {
-      if (data) {
-        console.log(data);
-        alert('voted');
-      }
-      this.ngOnInit();
-    });
+    if(this.endDate != null){
+      this.Status = 'Shedule';
+      this.CompanyData.votingEndDate = this.endDate;
+      this.CompanyData.companyId = data.companyId;
+      this.CompanyData.companyName = data.companyName;
+      this.CompanyData.minCtc = data.minCTC;
+      this.CompanyData.maxCtc = data.maxCTC;
+      this.CompanyData.intrestedStudents = 1;
+      this.CompanyData.isVisitingCampus = true;
+      this.CompanyData.isInVotingList = true;
+      this.CompanyData.isInSheduleList = false;
+      console.log(this.CompanyData);
+      this.commonService.insertPptlist(this.CompanyData).subscribe((data) => {
+        if (data) {
+          console.log(data);
+          alert('voted');
+        }
+        this.ngOnInit();
+      });
+    }else{
+      alert("select voting end date !");
+    }
+   
   }
   onShedule() {
     this.CompanyData.isInSheduleList = true;
@@ -103,6 +111,7 @@ export class CompanyVotingComponent implements OnInit {
     'CompanyName',
     'Min Ctc',
     'Max Ctc',
+    'ENd Date',
     'action',
   ];
 }

@@ -46,7 +46,7 @@ companyid !:any;
     dialogRef.afterClosed().subscribe((result:any )=> {
       //console.log("data from dialog is");
       //console.log(result.name);
-      
+      this.ngOnInit();
     });
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { DataSource } from '@angular/cdk/table';
+import { StudentApisService } from 'src/app/services/student-apis.service';
 
 
 @Component({
@@ -12,8 +13,8 @@ export class StudentDashboardComponent implements OnInit {
   currentUser = localStorage.getItem("studentName")
     
  profilePic:string="../../assets/"+localStorage.getItem("profilePic") ;
-
-  constructor(private elementRef: ElementRef) {
+ 
+  constructor(private elementRef: ElementRef ,private services:StudentApisService) {
   
    
 
@@ -81,6 +82,7 @@ export class StudentDashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+
     console.log(this.MenuList[0]);
 
     var s = document.createElement('script');

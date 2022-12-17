@@ -20,13 +20,21 @@ export class CompanyApisService {
   getApplications(cid:any){
     return this.http.get("https://localhost:7212/api/StudentApplication/applications/"+cid)
   }
+  getShortListedApplications(cid:any){
+    return this.http.get("https://localhost:7212/api/StudentApplication/shortlisted/"+cid)
+
+  }
+  getSelectedApplications(cid:any){
+    return this.http.get("https://localhost:7212/api/StudentApplication/selected/"+cid)
+
+  }
   getCompanylist(){
      return this.http.get("https://localhost:7212/api/CompanyOffers/ppt")
   }
   getOneCompanyDetail(cid:any){
     return this.http.get("https://localhost:7212/api/Company/"+cid);
   } 
-  shortistStudent(item :any){
-   return this.http.post("https://localhost:7212/api/StudentShortlist",item)
+  updateStudentStatus(item :any){
+   return this.http.put("https://localhost:7212/api/StudentApplication",item)
   }
 }

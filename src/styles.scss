@@ -24,13 +24,12 @@ li{
 
 html,
 body {
-  height: auto;
 
+margin: 0;
+padding: 0;
 }
 
-.bg-dark-blue {
-  background-color: #00004d;
-}
+
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 

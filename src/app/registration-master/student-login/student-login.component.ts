@@ -25,6 +25,12 @@ export class StudentLoginComponent implements OnInit {
     }else{
       localStorage.setItem("profilePic",data.user.photo)
       localStorage.setItem("spid",this.spid.toString()) 
+      localStorage.setItem("isInPlacementDrive",data.user.isInPlacementDrive)
+      this.services.getOneJobProfile(this.spid).subscribe((data:any)=>{
+          if(data){
+            localStorage.setItem("jobProfileId",data.jobProfileId);
+          }
+      })
       localStorage.setItem("studentName",data.user.studentName)
       this.router.navigate(['dashboard/student'])
     }

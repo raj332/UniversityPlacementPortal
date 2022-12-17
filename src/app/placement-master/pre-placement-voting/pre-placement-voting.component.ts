@@ -2,14 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonApisService } from 'src/app/services/common-apis.service';
 import { MatTableDataSource } from '@angular/material/table';
 
-export interface CompanyDetails {
-  Companyid: number;
-  CompanyName: string;
-  Date: string;
-  Venue: string;
-  Min_Ctc: number;
-  Max_Ctc: number;
-}
+
 
 
 
@@ -25,14 +18,21 @@ export class PrePlacementVotingComponent implements OnInit {
   constructor( private commonService: CommonApisService) {
     this.spid=localStorage.getItem("spid");
   }
-
+  todayDate:Date = new Date();
+  
+  checkDate(item:any){
+    if(this.todayDate < new Date(item)){
+      return true;
+    }else{
+      return false;
+    }
+  }
   displayedColumns: string[] = [
     'Companyid',
-    'CompanyName',
-    'Date',
-    'Venue',
+    'CompanyName', 
     'Min Ctc',
     'Max Ctc',
+    'VotingEndDate',
     'action'
   ];
 onVote(data:any){
@@ -42,11 +42,17 @@ onVote(data:any){
   setTimeout(() => {
     this.getVotingList()
   }, 500);
-  
 }
 
   ngOnInit(): void {
-   this.getVotingList()
+    if(localStorage.getItem("isInPlacementDrive")=="false"){
+      alert("Your are out of placement Drive !")
+    }else
+    {
+      this.getVotingList()
+
+    }
+   
 }
 
 getVotingList(){

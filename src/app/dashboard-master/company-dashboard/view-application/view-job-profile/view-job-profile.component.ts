@@ -16,9 +16,10 @@ export class ViewJobProfileComponent implements OnInit {
   resultData!:any;
   companyId:any = localStorage.getItem("companyId")
  mainData!:any;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private services : CommonApisService ,private companyServices : CompanyApisService,private studentService : StudentApisService) { 
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,public dialogRef: MatDialogRef<ViewJobProfileComponent>, private services : CommonApisService ,private companyServices : CompanyApisService,private studentService : StudentApisService) { 
    
     this.mainData=data;
+    console.log(this.mainData)
    this.services.getResultData(this.mainData.spid).subscribe((data)=>{
     this.resultData =data;
    })
@@ -67,16 +68,20 @@ this.resumeLink =data.resumeLink;
     //insert in Interview
 
     let item ={
+      applicationId:this.mainData.applicationId,
+      offerId :this.mainData.offerId,
       spid:this.mainData.spid,
       companyId :this.companyId ,
-      isSelectedForInterview : true,
-      clearedRounds : true,
+      isOutSideProcess :false,
+      isSelected : false,
+      hasClearedRounds : true,
       isPlaced : false,
-      status : "shortlisted"
+      status : "shortlisted For HR Interview"
     }
-    this.companyServices.shortistStudent(item).subscribe((data:any)=>{
+    this.companyServices.updateStudentStatus(item).subscribe((data:any)=>{
+      this.dialogRef.close()
        alert("shortlisted");
-       MatDialogRef
+       
     })
   }
 

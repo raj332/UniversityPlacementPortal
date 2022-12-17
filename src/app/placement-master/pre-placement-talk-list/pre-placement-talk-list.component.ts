@@ -28,16 +28,30 @@ export class PrePlacementTalkListComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
   pptList: any = [];
   tempList: any = [];
+  todayDate:Date = new Date();
+  
+  checkDate(item:any){
+    if(this.todayDate > new Date(item)){
+      return true;
+    }else{
+      return false;
+    }
+  }
   show = false;
   constructor(
     private services: CompanyApisService,
     private commonService: CommonApisService,
-  ) {}
+  ) {
+    console.log(this.todayDate);
+
+  }
   IsCommiteeLogin=true;
   ngOnInit(): void {
 
     this.commonService.getInvotinglist().subscribe((data: any) => {
       this.dataSource.data =data;
+    console.log( new Date( data[1].votingEndDate))
+    console.log( this.todayDate > new Date( data[2].votingEndDate) )
   })}
 
   displayedColumns = [
@@ -46,6 +60,7 @@ export class PrePlacementTalkListComponent implements OnInit {
     'Min Ctc',
     'Max Ctc',
     'IntrestedStudents',
+    'VotingEndDate',
     'Date',
     'Venue',
     'action',
