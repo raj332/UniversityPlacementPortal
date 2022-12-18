@@ -5,10 +5,7 @@ body{
     width: 100vw;
     height: 100vh;
   }
-  .example-sidenav{
-    width: 15vw;
-    background-color: #1D1919;
-  }
+ 
   .example-sidenav-content {
     display: flex;
     height: 100%;
@@ -23,13 +20,7 @@ body{
     margin: 0;
     padding: 0;
   }
-  .mainNavDiv{
-  
-    display: flex;
-    flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
+
   .--height-full{
     height: 100%;
   }

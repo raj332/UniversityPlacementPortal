@@ -26,40 +26,44 @@
 
 .mat-accordion .mat-expansion-panel:last-of-type {
   border-radius: 0px;
-
+margin-bottom: 1rem;
 }
 
 .mat-expansion-panel {
-  width: 14vw;
+  width: 13rem;
   box-shadow: none;
-  background-color: #1D1919;
-  color: white;
+  background-color: $primary;
+  color:$blue;
   border: none;
-  border-bottom: 1px solid rgb(78, 76, 76);
-
+  border-bottom: 2px solid $blue;
+  li{
+    color: $yellow;
+  }
 }
 
-.mat-expansion-panel-header-title {
-  color: rgba(245, 245, 245, 0.74) !important;
+.mat-expansion-panel-header-title{
+  color: $blue !important;
+  
 }
 
 .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
-  background: #1D1919;
+  background:$primary
 }
 
 .mat-expansion-panel-header-description,
 .mat-expansion-indicator::after {
-  color: rgba(245, 245, 245, 0.74) !important;
+  color: $yellow !important;
+  
 }
 .--mat-input-font-size {
   font-size: 13px;
 }
 
 th.mat-header-cell {
-  color: $--color-dark;
+  color: $yellow;
   font-size: 13px;
   font-family: $--font-family-primary;
-  background-color: #d7d7d7 !important;
+  background-color: $primary !important;
   font-weight: 600;
   position: sticky;
   top: 0;
@@ -71,11 +75,11 @@ tr.example-detail-row {
 }
 
 tr.example-element-row:not(.example-expanded-row):hover {
-  background: whitesmoke;
+  background:$primary ;
 }
 
 tr.example-element-row:not(.example-expanded-row):active {
-  background: #efefef;
+  background: $primary;
 }
 
 .example-element-row td {
@@ -104,24 +108,24 @@ tr.example-element-row:not(.example-expanded-row):active {
     }
 
     a:hover {
-      color: $--color-primary;
+      color: $blue;
     }
   }
 
   .mat-progress-bar-fill::after {
-    background-color: $--color-primary;
+    background-color: $green
   }
 
   .mat-progress-bar-buffer {
-    background: $--color-light;
+    background: $green;
   }
 
   .mat-ink-bar {
-    background-color:  $--color-primary !important;
+    background-color: $primary !important;
   }
 
   .mat-tab-label-active {
-    color: $--color-primary;
+    color: $green;
     font-weight: bold;
   }
 
@@ -158,10 +162,4 @@ td, th {
 
 // Checkbox
 
-.mat-drawer-content{
-  overflow: hidden !important;
-  
-}
-.mat-expansion-panel-header-title{
-  color: $yellow !important;
-}
+
