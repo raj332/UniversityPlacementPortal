@@ -26,21 +26,20 @@
 
 .mat-accordion .mat-expansion-panel:last-of-type {
   border-radius: 0px;
-margin-bottom: 1rem;
+// margin-bottom: 1rem;
 }
 
 .mat-expansion-panel {
   width: 13rem;
-  box-shadow: none;
+  box-shadow:  none !important;
   background-color: $primary;
   color:$blue;
   border: none;
-  border-bottom: 2px solid $blue;
+  // border-bottom: 2px solid $blue;
   li{
     color: $yellow;
   }
 }
-
 .mat-expansion-panel-header-title{
   color: $blue !important;
   

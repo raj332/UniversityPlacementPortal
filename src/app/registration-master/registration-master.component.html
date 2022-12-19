@@ -1,1 +1,21 @@
-<p>registration-master works!</p>
+
+  <div class="main-container">
+      <div class="left-info-container " style="z-index:1;">
+        <div class="  small-title"> Veer Narmad South Gujarat University Placement cell</div>
+        
+        <div class="mt-3 mx-5 large-title ">
+          ONE STOP PORTAL FOR STUDENTS & COMPANIES FOR PLACEMENTS.
+        </div>
+        <div class="mt-5 big-univ-logo">
+          <img src="../../assets/imgs/vnsgu-logo-main.png">
+        </div>
+      </div>
+      <div class="right-form-container ">
+        <div class="main-login-header">{{ isRegistrationform==true ? 'SignUp':'SignIn' }}</div>
+        <div class="small-navbar d-flex justify-content-center" *ngIf="!isRegistrationform">
+          <div class="navbar-header " *ngFor="let item of navbarList" routerLink={{item.url}} routerLinkActive="active-link" >{{item.title}}</div>
+        </div>
+<router-outlet></router-outlet>
+      </div>
+  </div>
+  

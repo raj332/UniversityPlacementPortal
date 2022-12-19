@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg  fixed-top">
+    <div class="container-fluid m-0 p-0">
+      <div class="d-flex flex-row col-8">
+        <a class="navbar-brand ms-2" href="#">
+          <img src="../assets/imgs/vnsgu-logo-high.png" height="42" width="200" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- <li class="nav-item">
+              <a class="nav-link active  --primary-font" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  --primary-font" href="#">Link</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link disabled  --primary-font">Disabled</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+      
+        <!-- <button *ngIf="!isLogin" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
+          routerLink="/registration/StudentLogin">Login</button>
+        <button *ngIf="!isRegistered" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
+          routerLink="/registration/student">Register</button> -->
+          <button *ngIf="logoutBtn" class="mx-3  py-2 px-3" matRipple (click)="onLogout()">logout</button>
+      
+    </div>
+  </nav>

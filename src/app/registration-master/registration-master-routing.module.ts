@@ -3,15 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommiteeLoginComponent } from './commitee-login/commitee-login.component';
 import { CompanyLoginComponent } from './company-login/company-login.component';
 import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
+import { RegistrationMasterComponent } from './registration-master.component';
 import { StudentLoginComponent } from './student-login/student-login.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 const routes: Routes = [
-  // {path:'',component:regis??},
-  { path: 'student', component: StudentRegistrationComponent },
-  { path: 'StudentLogin', component: StudentLoginComponent },
-  { path : 'CommiteeLogin' ,component:CommiteeLoginComponent},
-  { path: 'company',component:CompanyRegistrationComponent},
-  {path:'CompanyLogin',component:CompanyLoginComponent}
+  {path:'',component:RegistrationMasterComponent,
+  children: [
+    { path: 'registration/student', component: StudentRegistrationComponent },
+    { path: 'login/student', component: StudentLoginComponent },
+    { path : 'login/commitee' ,component:CommiteeLoginComponent},
+    { path: 'registration/company',component:CompanyRegistrationComponent},
+    {path:'login/company',component:CompanyLoginComponent}
+  ],},
+  
 
 ];
 

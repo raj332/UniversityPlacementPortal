@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
-  { path: 'registration', loadChildren: () => import("./registration-master/registration-master.module").then(m => m.registrationMaster) },
+  { path: 'auth', loadChildren: () => import("./registration-master/registration-master.module").then(m => m.registrationMaster) },
   { path: 'dashboard', loadChildren: () => import("./dashboard-master/dashboard-master.module").then(m => m.dashboardMaster) },
    { path:'placement',loadChildren: () => import("./placement-master/placement-master.module").then(m => m.PlacementMasterModule)}
 ];

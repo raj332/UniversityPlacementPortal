@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { registrationRoutingModule } from './registration-master-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -8,6 +9,8 @@ import { CommonModule } from '@angular/common';
 import { MaterialDesignModuleModule } from '../material-design-module/material-design-module.module';
 import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
 import { CompanyLoginComponent } from './company-login/company-login.component';
+import { RouterModule } from '@angular/router';
+import { RegistrationMasterComponent } from './registration-master.component';
 @NgModule({
   declarations: [
     StudentRegistrationComponent,
@@ -15,16 +18,18 @@ import { CompanyLoginComponent } from './company-login/company-login.component';
     CommiteeLoginComponent,
     CompanyRegistrationComponent,
     CompanyLoginComponent,
+    RegistrationMasterComponent
   ],
   imports: [
     registrationRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+  RouterModule,
     MaterialDesignModuleModule,
   ],
   providers: [],
   bootstrap: [],
-  exports: [StudentRegistrationComponent],
+  exports: [StudentRegistrationComponent,RouterModule],
 })
 export class registrationMaster {}

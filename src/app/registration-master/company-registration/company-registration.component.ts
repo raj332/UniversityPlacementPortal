@@ -14,6 +14,7 @@ export class CompanyRegistrationComponent implements OnInit {
   companyDomain!: String;
   companyPassword!:String;
   companyEmail!: String;
+  confirmPassword !:string;
   constructor(private services:CompanyApisService , private router: Router) {
     
     }

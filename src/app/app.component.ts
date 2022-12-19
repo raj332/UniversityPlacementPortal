@@ -14,17 +14,7 @@ export class AppComponent {
   constructor(private router:Router){
     
   }
- ngDoCheck(){
-  if(localStorage.getItem("spid")||localStorage.getItem("companyId")){
-    this.logoutBtn=true;
-  }
- }
-  onLogout() {
-    localStorage.clear();
-    this.logoutBtn=false;
-    this.router.navigate(['/']);
-
-  }
+ 
 
 }
 
