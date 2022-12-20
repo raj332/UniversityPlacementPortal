@@ -18,6 +18,7 @@ contactNo!:Number;
 email!:String;
 password!:String;
 photo!:String;
+registered=false;
 courseList!: any[];
   confirmPassword!:String;
   errorMsg!: string;
@@ -46,8 +47,15 @@ password:this.password,
 photo:this.photo
  }
 
-  this.service.registerStudent(stu).subscribe((data)=>{
-    this.router.navigate(['registration/companylogin'])
+  this.service.registerStudent(stu).subscribe((data:any)=>{
+    if(data.success){
+      this.registered =true;
+      setTimeout(() => {
+        this.router.navigate(['registration/StudentLogin'])
+      }, 2000);
+    }
+   
+    
   })
 }
 

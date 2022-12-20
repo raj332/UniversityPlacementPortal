@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark-blue">
+<nav class="navbar navbar-expand-lg bg-dark-blue fixed-top">
   <div class="container-fluid m-0 p-0">
     <div class="d-flex flex-row col-8">
       <a class="navbar-brand ms-2" href="#">
@@ -24,10 +24,11 @@
       </div>
     </div>
     <div class="col-2">
-      <button *ngIf="!isLogin" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
+      <!-- <button *ngIf="!isLogin" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
         routerLink="/registration/StudentLogin">Login</button>
       <button *ngIf="!isRegistered" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
-        routerLink="/registration/student">Register</button>
+        routerLink="/registration/student">Register</button> -->
+        <button *ngIf="logoutBtn" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="onLogout()">logout</button>
     </div>
   </div>
 </nav>

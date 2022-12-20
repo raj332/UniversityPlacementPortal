@@ -23,6 +23,7 @@ import { SelectedApplicationComponent } from './company-dashboard/selected-appli
 import { CompanyStatasticsComponent } from './company-dashboard/company-statastics/company-statastics.component';
 import { ViewJobOfferComponent } from './student-dashboard/view-openings/view-job-offer/view-job-offer.component';
 import { ChangePasswordComponent } from './student-dashboard/my-profile/change-password/change-password.component';
+import { StudentSheduledPptlistComponent } from './student-dashboard/student-sheduled-pptlist/student-sheduled-pptlist.component';
 @NgModule({
   declarations: [
     StudentDashboardComponent,
@@ -44,6 +45,7 @@ import { ChangePasswordComponent } from './student-dashboard/my-profile/change-p
     CompanyStatasticsComponent,
     ViewJobOfferComponent,
     ChangePasswordComponent,
+    StudentSheduledPptlistComponent,
   ],
   imports: [
     CommonModule,

@@ -8,7 +8,16 @@ import { DataSource } from '@angular/cdk/table';
   styleUrls: ['./student-dashboard.component.scss'],
 })
 export class StudentDashboardComponent implements OnInit {
-  constructor(private elementRef: ElementRef) {}
+
+  currentUser = localStorage.getItem("studentName")
+    
+ profilePic:string="../../assets/"+localStorage.getItem("profilePic") ;
+
+  constructor(private elementRef: ElementRef) {
+  
+   
+
+  }
   showFiller = false;
   panelOpenState = true;
   //side navigation menu options
@@ -17,12 +26,8 @@ export class StudentDashboardComponent implements OnInit {
       heading: 'job profile',
       links: [
         {
-          title: 'Add Job Profile',
+          title: 'Job Profile',
           url: '/dashboard/student/AddJobProfile',
-        },
-        {
-          title: 'View job Profile',
-          url: '/dashboard/ViewJobProfile',
         },
       ],
     },
@@ -35,7 +40,7 @@ export class StudentDashboardComponent implements OnInit {
         },
         {
           title: 'View sheduled',
-          url: '/dashboard/student/prePlacementTalkList',
+          url: '/dashboard/student/talklist',
         },
       ],
     },

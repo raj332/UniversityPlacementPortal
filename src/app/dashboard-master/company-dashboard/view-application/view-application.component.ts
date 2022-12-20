@@ -1,19 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { ViewJobOfferComponent } from '../../student-dashboard/view-openings/view-job-offer/view-job-offer.component';
+import { CompanyApisService } from 'src/app/services/company-apis.service';
+import { StudentApisService } from 'src/app/services/student-apis.service';
+import { ViewJobProfileComponent } from './view-job-profile/view-job-profile.component';
 @Component({
   selector: 'app-view-application',
   templateUrl: './view-application.component.html',
   styleUrls: ['./view-application.component.scss']
 })
 export class ViewApplicationComponent implements OnInit {
-
-  constructor(private dialog: MatDialog) { }
+companyid !:any;
+  constructor(private dialog: MatDialog ,private service : CompanyApisService) { 
+    this.companyid =localStorage.getItem("companyId");
+  }
 
   ngOnInit(): void {
+    this.fetchApplications()
   }
-  displayedColumns: string[] = ['name','sgpa','email','contactNo', 'technology','position','action'];
+
+  fetchApplications(){
+    this.service.getApplications(this.companyid).subscribe((data:any)=>{
+      this.dataSource = data ;
+    })
+  }
+  displayedColumns: string[] = ['name','course','email','contactNo', 'technology','position','action'];
   dataSource = new MatTableDataSource();
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -26,7 +37,7 @@ export class ViewApplicationComponent implements OnInit {
       : (this.defaultcontent = true);
   }
   openDialog(row:any){
-    const dialogRef=this.dialog.open(ViewJobOfferComponent, {
+    const dialogRef=this.dialog.open(ViewJobProfileComponent, {
       // add any additional options here
       height: '50rem',
       width: '90rem',

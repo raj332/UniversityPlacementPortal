@@ -31,12 +31,8 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
-
             ],
-            "scripts": [
-
-
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -98,6 +94,11 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "../../C:/Users/Bhatt Jaimin/Pictures",
+                "output": "./assets/"
+              },
               "src/favicon.ico",
               "src/assets"
             ],

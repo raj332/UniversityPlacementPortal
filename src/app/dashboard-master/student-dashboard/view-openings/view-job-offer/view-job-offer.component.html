@@ -2,54 +2,54 @@
 <div class="col-6 border-end d-flex flex-column justify-content-evenly h-100" >
     <div class="col-12 d-flex flex-row justify-content-start">
     <h2 class="col-4">Name : </h2>
-    <h2 class="col-8">Wipro Ltd.</h2>
+    <h2 class="col-8">{{mainData.companyName}}</h2>
     </div>
 
     <div class="col-12 d-flex flex-row justify-content-start">
         <h2 class="col-4">Website : </h2>
-        <h2 class="col-8">www.wipro.com</h2>
+        <h2 class="col-8">{{companyData.website}}</h2>
     </div>
 
     <div class="col-12 d-flex flex-row justify-content-start">
         <h2 class="col-4">Hr Contact : </h2>
-        <h2 class="col-8">9054520603</h2>
+        <h2 class="col-8">{{companyData.contactNo}}</h2>
     </div>
 
     <div class="col-12 d-flex flex-row justify-content-start">
         <h2 class="col-4">Email : </h2>
-        <h2 class="col-8">carrears@wipro.com</h2>
+        <h2 class="col-8">{{companyData.email}}</h2>
     </div>
     <div class="col-12 d-flex flex-row justify-content-start">
         <h2 class="col-4">Address : </h2>
-        <h2 class="col-8">dindoli kharavasa road surat.</h2>
+        <h2 class="col-8">{{companyData.address }}</h2>
     </div>
 
 </div>
 <div class="col-6 d-flex flex-column justify-content-evenly h-100">
     <div class="col-12 d-flex flex-row justify-content-start">
         <h2 class="col-4">Position : </h2>
-        <h2 class="col-8">Web Developer</h2>
+        <h2 class="col-8">{{mainData.position}}</h2>
     </div>
     <div class="col-12 d-flex flex-row justify-content-start">
         <h2 class="col-4">technology : </h2>
-        <h2 class="col-8">Html Css Angular React</h2>
+        <h2 class="col-8">{{mainData.technology}}</h2>
     </div>
     <div class="col-12 d-flex flex-row justify-content-start">
         <h2 class="col-4">description : </h2>
-        <h2 class="col-8">hfvsfvsdfvsfvsjfhvsdhf</h2>
+        <h2 class="col-8">{{ mainData.jobDescription}}</h2>
     </div>
     <div class="col-12 d-flex flex-row justify-content-start">
         <h2 class="col-4">Mininum CTC : </h2>
-        <h2 class="col-8">400000</h2>
+        <h2 class="col-8">{{mainData.minCtc}}</h2>
     </div>
     <div class="col-12 d-flex flex-row justify-content-start">
         <h2 class="col-4">Maximum CTC:</h2>
-        <h2 class="col-8"> 700000</h2>
+        <h2 class="col-8"> {{mainData.maxCtc}}</h2>
     </div>
 </div>
-<div class="row col-12 d-flex flex-row justify-content-start">
+<div class="row col-12 d-flex flex-row justify-content-start"  *ngIf="!mainData.status">
 <div>
-    <button class="--btn-filled-green">apply</button>
+    <button class="--btn-filled-green" (click)="handleApply()">apply</button>
 </div>
 </div>    
 </div>

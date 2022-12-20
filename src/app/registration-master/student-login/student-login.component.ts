@@ -11,7 +11,7 @@ export class StudentLoginComponent implements OnInit {
   spid!:Number;
   password!:String
   constructor(private services: StudentApisService, private router: Router) { }
-
+ errorMessage:Boolean= false ;
   ngOnInit(): void {
   }
  handleSubmit(){
@@ -19,9 +19,16 @@ export class StudentLoginComponent implements OnInit {
     spid:this.spid,
     password:this.password
   }
-  this.services.loginStudent(user).subscribe((data)=>{
-  localStorage.setItem("spid",this.spid.toString()) 
-  this.router.navigate(['dashboard/student'])
+  this.services.loginStudent(user).subscribe((data:any)=>{
+    if(data.error){
+        this.errorMessage =data.error;
+    }else{
+      localStorage.setItem("profilePic",data.user.photo)
+      localStorage.setItem("spid",this.spid.toString()) 
+      localStorage.setItem("studentName",data.user.studentName)
+      this.router.navigate(['dashboard/student'])
+    }
+  
   })
  }
 }

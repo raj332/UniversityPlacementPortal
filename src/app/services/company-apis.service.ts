@@ -17,8 +17,16 @@ export class CompanyApisService {
   loginCompany(user:any){
     return this.http.post("https://localhost:7212/api/Company/login",user)
   }
+  getApplications(cid:any){
+    return this.http.get("https://localhost:7212/api/StudentApplication/applications/"+cid)
+  }
   getCompanylist(){
      return this.http.get("https://localhost:7212/api/CompanyOffers/ppt")
   }
-  
+  getOneCompanyDetail(cid:any){
+    return this.http.get("https://localhost:7212/api/Company/"+cid);
+  } 
+  shortistStudent(item :any){
+   return this.http.post("https://localhost:7212/api/StudentShortlist",item)
+  }
 }
