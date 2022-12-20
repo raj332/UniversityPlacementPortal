@@ -1,6 +1,9 @@
-<div class="container parent-div mt-4">
+<div class="container parent-div ">
+
   <form>
     <div class="container">
+      <h3 class="--sub-heading mb-0 ">My Job Profile</h3>
+
       <div class="row">
         <div class="col-md-12 -light-gray">
 
@@ -22,19 +25,26 @@
               <label for="resume">Resume Link</label>
               <input type="text" class="form-control" id="resume" name="resumeLink" [(ngModel)]="resumeLink">
             </div>
+            <div class="col-12 d-flex justify-content-end my-3" >
+              <button class="btn submit-btn --width-10" (click)="onSubmit()">Save</button>
+            </div>
           </mat-card>
-          <mat-card class="--width-full my-5">
+          <mat-card class=" my-5">
             <div class="col-md-12 form-group">
-              <h4 class="my-1">
-                <mat-icon>work_outlined</mat-icon> 2. Add Work Experience
-              </h4>
-              <mat-card-header class="--width-full">
+              <div class="d-flex justify-content-between">
+                <h4 class="my-1">
+                  <mat-icon>work_outlined</mat-icon> 2. Add Work Experience
+                </h4>
+                <div class="d-flex justify-content-around --width-15">
+                  <mat-icon>edit</mat-icon>
+                  <mat-icon (click)="openDialog()">add</mat-icon>
+                </div>
+              </div>
+             
+              <mat-card-header class="">
                 <mat-card-title class="d-flex flex-row justify-content-between ">
                   <p></p>
-                  <div class="d-flex justify-content-around --width-15">
-                    <mat-icon>edit</mat-icon>
-                    <mat-icon (click)="openDialog()">add</mat-icon>
-                  </div>
+                
                 </mat-card-title>
               </mat-card-header>
               <div class="row">
@@ -50,7 +60,7 @@
               </div>
             </div>
           </mat-card>
-          <mat-card class="--width-full my-5">
+          <mat-card class=" my-5">
 
             <div class="row d-flex flex-column justify-content-between" style="height: 210px;">
               <h4 class="my-1">
@@ -102,9 +112,7 @@
               </div>
             </div>
           </mat-card>
-          <div class="col-12 d-flex justify-content-end" >
-            <button class="btn btn-success --width-10" (click)="onSubmit()">Submit</button>
-          </div>
+          
         </div>
       </div>
       

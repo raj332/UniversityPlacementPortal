@@ -1,40 +1,12 @@
-<!-- <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <div class="mainNavDiv">
-      <h6 routerLink="/dashboard/student">Dashboard</h6>
-      <mat-accordion *ngFor="let menu of MenuList ">
 
-        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{menu.heading}}
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <ul *ngFor="let item of menu.links">
-            <li routerLink="{{item.url}}" style="color: white;">{{item.title}}</li>
-          </ul>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </div>
-  </mat-drawer>
-  <button type="button" class="--btn-outlined-primary mx-4" mat-button (click)="toggle(drawer)">
-    <mat-icon>{{isMenuOpne?'clear':'apps'}}</mat-icon>
-  </button>
-  <hr class="mx-3">
-  <div class="example-sidenav-content">
-    <router-outlet></router-outlet>
-  </div>
 
-</mat-drawer-container> -->
-
-<mat-drawer-container class="example-container mt-5" autosize>
+<mat-drawer-container class="example-container " autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side" opened>
     <div class="mainNavDiv">
-      <div class="d-flex justify-content-center align-items-center my-3">
-        <img src={{profilePic}} height="100h" width="100vw"
-          style="clip-path: circle(50%);" alt="">
-      </div>
-      <p class="--text-yellow">Welcome, {{currentUser}} </p>
+      <!-- <div class="d-flex justify-content-center align-items-center ">
+        <img src={{profilePic}}  alt="">
+      </div> -->
+      <!-- <p >Welcome, {{currentUser}} </p> -->
       <mat-accordion *ngFor="let menu of MenuList">
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
@@ -49,37 +21,9 @@
       </mat-accordion>
     </div>
   </mat-drawer>
-  <div class="d-flex  mt-4">
-    <button type="button" class="--btn-outlined-primary mx-2 " mat-button (click)="toggle(drawer)" style="height: 50px">
-      <mat-icon>{{isMenuOpne?'clear':'apps'}}</mat-icon>
-    </button>
-    <div class="d-flex justify-content-between --width-80 me-4">
-      <ngb-alert [dismissible]="false" class="--width-50 mx-1 --border- mat-elevation-z8" type="light">
-        <img src="https://img.icons8.com/fluency/48/null/permanent-job.png" height="35px" width="35px" />
-        <strong class="sub-heading">Total Company : {{TotalCompanys}}</strong>
-      </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1  mat-elevation-z8" type="light">
-        <img src="https://img.icons8.com/fluency/48/null/find-matching-job.png" height="35px" width="35px" />
-        <strong class="sub-heading">Applied :</strong> {{Applied}}
-      </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1 mat-elevation-z8" type="light">
-        <img src="https://img.icons8.com/fluency/48/null/hourglass--v1.png" height="35px" width="35px" />
-        <strong class="sub-heading">Pending :</strong> {{pending}}
-      </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1 mat-elevation-z8" type="light">
-        <strong class="sub-heading">Shortlisted :</strong> {{Shortlisted}}
-      </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1 mat-elevation-z8" type="light">
-        <strong class="sub-heading">Selected :</strong> {{Selected}}
-      </ngb-alert>
-      <ngb-alert [dismissible]="false" class="--width-35 mx-1 mat-elevation-z8" type="success">
-        <strong class="sub-heading">Status :</strong> {{status}}
-      </ngb-alert>
-    </div>
-  </div>
+ 
 
-
-  <div class="example-sidenav-content">
+  <div class="main-content">
     <router-outlet></router-outlet>
   </div>
 

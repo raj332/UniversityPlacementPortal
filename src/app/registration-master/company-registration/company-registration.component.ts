@@ -31,7 +31,7 @@ export class CompanyRegistrationComponent implements OnInit {
       website: this.companyWebsite
     };
     this.services.registerCompany(company).subscribe((data)=>{
-      this.router.navigate(['registration/CompanyLogin'])
+      this.router.navigate(['auth/login/company'])
     })
   }
 }

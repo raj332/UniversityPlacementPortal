@@ -21,46 +21,48 @@ import { ShortlistedApplicationComponent } from './company-dashboard/shortlisted
 import { SelectedApplicationComponent } from './company-dashboard/selected-application/selected-application.component';
 import { CompanyStatasticsComponent } from './company-dashboard/company-statastics/company-statastics.component';
 import { StudentSheduledPptlistComponent } from './student-dashboard/student-sheduled-pptlist/student-sheduled-pptlist.component';
+import { DashboardMasterComponent } from './dashboard-master.component';
 
 const routes: Routes = [
-  { path: '', component: StudentDashboardComponent },
-  {
-    path: 'student',
-    component: StudentDashboardComponent,
-    children: [
-      { path: 'AddJobProfile', component: JobProfileComponent },
-      { path: 'prePlacementVoting', component: PrePlacementVotingComponent },
-      { path: 'ViewOpenings' ,component:ViewOpeningsComponent},
-      {path: 'CheckStatus' ,component:CheckStatusComponent},
-      {path:'ViewProfile',component:MyProfileComponent},
-     {path:'talklist',component:StudentSheduledPptlistComponent}
-    ],
-  },
-  {
-    path: 'commitee',
-    component: CommiteeDashboardComponent,
-    children: [
-      { path: 'CompanyVoting', component: CompanyVotingComponent },
-      {path:'VotingResults',component:PrePlacementTalkListComponent},
-      { path: 'AddCompany', component: CompanyRegistrationComponent },
-      {path:'SheduledPPTList',component:SheduledPPTListComponent},
-      {path:'ViewCompany',component:CompanyListComponent},
-      {path:'MyProfile',component:CommiteeProfileComponent}
-    ],
-  },
-  {
-    path: 'company',
-    component: CompanyDashboardComponent,
-    children: [
-      {path:'CreateOffer', component: OfferFormComponent },
-      {path:'ViewAppliaction' ,component:ViewApplicationComponent},
-      {path:'viewJobProfile',component:ViewJobProfileComponent},
-      {path:'Shortlisted',component:ShortlistedApplicationComponent},
-      {path:'Selected',component:SelectedApplicationComponent},
-      {path:'Statistics',component:CompanyStatasticsComponent}
+  { path: '', component: DashboardMasterComponent,
+children: [{
+  path: 'student',
+  component: StudentDashboardComponent,
+  children: [
+    { path: 'AddJobProfile', component: JobProfileComponent },
+    { path: 'prePlacementVoting', component: PrePlacementVotingComponent },
+    { path: 'ViewOpenings' ,component:ViewOpeningsComponent},
+    {path: 'CheckStatus' ,component:CheckStatusComponent},
+    {path:'ViewProfile',component:MyProfileComponent},
+   {path:'talklist',component:StudentSheduledPptlistComponent}
+  ],
+},
+{
+  path: 'commitee',
+  component: CommiteeDashboardComponent,
+  children: [
+    { path: 'CompanyVoting', component: CompanyVotingComponent },
+    {path:'VotingResults',component:PrePlacementTalkListComponent},
+    { path: 'AddCompany', component: CompanyRegistrationComponent },
+    {path:'SheduledPPTList',component:SheduledPPTListComponent},
+    {path:'ViewCompany',component:CompanyListComponent},
+    {path:'MyProfile',component:CommiteeProfileComponent}
+  ],
+},
+{
+  path: 'company',
+  component: CompanyDashboardComponent,
+  children: [
+    {path:'CreateOffer', component: OfferFormComponent },
+    {path:'ViewAppliaction' ,component:ViewApplicationComponent},
+    {path:'viewJobProfile',component:ViewJobProfileComponent},
+    {path:'Shortlisted',component:ShortlistedApplicationComponent},
+    {path:'Selected',component:SelectedApplicationComponent},
+    {path:'Statistics',component:CompanyStatasticsComponent}
 
-    ],
-  },
+  ],
+}],},
+  
 ];
 
 @NgModule({

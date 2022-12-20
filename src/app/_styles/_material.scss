@@ -24,36 +24,6 @@
 //   }
 // }
 
-.mat-accordion .mat-expansion-panel:last-of-type {
-  border-radius: 0px;
-// margin-bottom: 1rem;
-}
-
-.mat-expansion-panel {
-  width: 13rem;
-  box-shadow:  none !important;
-  background-color: $primary;
-  color:$blue;
-  border: none;
-  // border-bottom: 2px solid $blue;
-  li{
-    color: $yellow;
-  }
-}
-.mat-expansion-panel-header-title{
-  color: $blue !important;
-  
-}
-
-.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
-  background:$primary
-}
-
-.mat-expansion-panel-header-description,
-.mat-expansion-indicator::after {
-  color: $yellow !important;
-  
-}
 .--mat-input-font-size {
   font-size: 13px;
 }

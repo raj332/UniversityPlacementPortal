@@ -51,7 +51,7 @@ photo:this.photo
     if(data.success){
       this.registered =true;
       setTimeout(() => {
-        this.router.navigate(['registration/StudentLogin'])
+        this.router.navigate(['auth/login/student'])
       }, 2000);
     }
    

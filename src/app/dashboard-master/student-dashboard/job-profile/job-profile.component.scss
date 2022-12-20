@@ -1,21 +1,15 @@
 @import "../../../_styles/variables.scss";
-.ng-star-inserted {
-  height: 100%;
-  width: 85vw;
-}
-.parent-div {
-  height: 83vh;
-  width: 85vw;
-}
+
+
 .mat-card-title {
   width: 65vw !important;
 }
 
 .mat-card {
-  border-radius: 10px;
-  -webkit-box-shadow: 13px 16px 37px -11px rgba(0, 0, 0, 0.123);
-  -moz-box-shadow: 13px 16px 37px -11px rgba(0, 0, 0, 0.124);
-  box-shadow: 13px 16px 37px -11px rgba(0, 0, 0, 0.117);
+  box-shadow: 0px 4px 8px rgba(27, 33, 44, 0.1);
+  border-radius: 4px;
+  margin: 2rem 0rem ;
+  padding: 1.5rem !important;
 }
 .mat-select {
   height: 15px !important;
