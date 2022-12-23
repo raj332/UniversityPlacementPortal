@@ -64,7 +64,7 @@ export class CheckStatusComponent implements OnInit {
       let item ={
         applicationId:row.applicationId,
         offerId :row.offerId,
-        spid:row.spid,
+        spid:this.spid,
         companyId :row.companyId ,
         isOutSideProcess :true,
         isSelected : true,
@@ -84,8 +84,7 @@ export class CheckStatusComponent implements OnInit {
     openDialog(row:any){
       const dialogRef=this.dialog.open(ViewJobOfferComponent, {
         // add any additional options here
-        height: '50rem',
-        width: '90rem',
+       
         data:row
       });
       dialogRef.afterClosed().subscribe((result:any )=> {

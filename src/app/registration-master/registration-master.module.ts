@@ -11,6 +11,7 @@ import { CompanyRegistrationComponent } from './company-registration/company-reg
 import { CompanyLoginComponent } from './company-login/company-login.component';
 import { RouterModule } from '@angular/router';
 import { RegistrationMasterComponent } from './registration-master.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 @NgModule({
   declarations: [
     StudentRegistrationComponent,
@@ -18,7 +19,8 @@ import { RegistrationMasterComponent } from './registration-master.component';
     CommiteeLoginComponent,
     CompanyRegistrationComponent,
     CompanyLoginComponent,
-    RegistrationMasterComponent
+    RegistrationMasterComponent,
+    AdminLoginComponent
   ],
   imports: [
     registrationRoutingModule,

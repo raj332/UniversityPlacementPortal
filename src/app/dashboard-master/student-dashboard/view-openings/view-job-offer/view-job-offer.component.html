@@ -1,55 +1,55 @@
+<div class="row d-flex justify-content-center box-heading">
+  {{ mainData.companyName }}
+</div>
+<div class="row">
+  <div class="col-12 d-flex flex-row justify-content-center">
+    <div class=" box-sub-heading">{{ mainData.position }}</div>
+  </div>
+</div>
 <div class="row main">
-<div class="col-6 border-end d-flex flex-column justify-content-evenly h-100" >
-    <div class="col-12 d-flex flex-row justify-content-start">
-    <h2 class="col-4">Name : </h2>
-    <h2 class="col-8">{{mainData.companyName}}</h2>
+  <div class="col-6  d-flex flex-column justify-content-evenly h-100">
+    <div class="col-12 d-flex flex-column justify-content-start">
+      <div class=" data-label">Technology</div>
+      <div class=" api-data">{{ mainData.technology }}</div>
     </div>
 
-    <div class="col-12 d-flex flex-row justify-content-start">
-        <h2 class="col-4">Website : </h2>
-        <h2 class="col-8">{{companyData.website}}</h2>
+    <div class="col-12 d-flex flex-column justify-content-start">
+      <div class=" data-label">Estimated CTC</div>
+      <div class=" api-data">{{ mainData.minCtc }} - {{mainData.maxCtc}}</div>
+    </div>
+    <div class="col-12 d-flex flex-column justify-content-start">
+        <div class=" data-label">Website</div>
+        <div class=" api-data">{{ companyData.website }}</div>
+      </div>
+  </div>
+  <div class="col-6 d-flex flex-column  h-100">
+ 
+
+    <div class="col-12 d-flex flex-column justify-content-start">
+      <div class=" data-label">Hr Contact No.</div>
+      <div class=" api-data">{{ companyData.contactNo }}</div>
     </div>
 
-    <div class="col-12 d-flex flex-row justify-content-start">
-        <h2 class="col-4">Hr Contact : </h2>
-        <h2 class="col-8">{{companyData.contactNo}}</h2>
+    <div class="col-12 d-flex flex-column justify-content-start">
+      <div class=" data-label">Email</div>
+      <div class=" api-data">{{ companyData.email }}</div>
     </div>
+  </div>
 
-    <div class="col-12 d-flex flex-row justify-content-start">
-        <h2 class="col-4">Email : </h2>
-        <h2 class="col-8">{{companyData.email}}</h2>
-    </div>
-    <div class="col-12 d-flex flex-row justify-content-start">
-        <h2 class="col-4">Address : </h2>
-        <h2 class="col-8">{{companyData.address }}</h2>
-    </div>
-
+  
 </div>
-<div class="col-6 d-flex flex-column justify-content-evenly h-100">
-    <div class="col-12 d-flex flex-row justify-content-start">
-        <h2 class="col-4">Position : </h2>
-        <h2 class="col-8">{{mainData.position}}</h2>
+<div class="row">
+    <div class="col-12 d-flex flex-column justify-content-start">
+      <div class="data-label">Description</div>
+      <div class="api-data">{{ mainData.jobDescription }}</div>
     </div>
-    <div class="col-12 d-flex flex-row justify-content-start">
-        <h2 class="col-4">technology : </h2>
-        <h2 class="col-8">{{mainData.technology}}</h2>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex flex-column justify-content-start">
+      <div class="data-label">Company Address</div>
+      <div class="api-data">{{ companyData.address }}</div>
     </div>
-    <div class="col-12 d-flex flex-row justify-content-start">
-        <h2 class="col-4">description : </h2>
-        <h2 class="col-8">{{ mainData.jobDescription}}</h2>
-    </div>
-    <div class="col-12 d-flex flex-row justify-content-start">
-        <h2 class="col-4">Mininum CTC : </h2>
-        <h2 class="col-8">{{mainData.minCtc}}</h2>
-    </div>
-    <div class="col-12 d-flex flex-row justify-content-start">
-        <h2 class="col-4">Maximum CTC:</h2>
-        <h2 class="col-8"> {{mainData.maxCtc}}</h2>
-    </div>
-</div>
-<div class="row col-12 d-flex flex-row justify-content-start"  *ngIf="!mainData.status">
-<div>
-    <button class="--btn-filled-green" (click)="handleApply()">apply</button>
-</div>
-</div>    
-</div>
+  </div>
+  <div class="d-flex flex-row justify-content-end" *ngIf="!mainData.status">
+    <button class="btn submit-btn" (click)="handleApply()">Apply</button>
+  </div>

@@ -8,7 +8,7 @@
         <div class="col-md-12 -light-gray">
 
           <mat-card class="mb-4 ">
-            <h4 class="my-1">
+            <h4 class="my-1 mb-4">
               <mat-icon>post_add</mat-icon> 1. Add Document Links
             </h4>
 
@@ -52,7 +52,7 @@
                   *ngFor="let internship of InternshipData">
 
                   <h3 class=" ms-2 ">{{internship.companyName}}</h3>
-                  <p class="mx-2 --internship-date --text-gray"> From - {{internship.startDate}} To - {{internship.endDate}}</p>
+                  <p class="mx-2 --internship-date --text-gray"> From - {{internship.startDate | date: 'dd/MM/yyyy'}} To - {{internship.endDate | date: 'dd/MM/yyyy'}}</p>
                   <div class="d-flex flex-row">
                     <p  *ngFor="let ele of internship.technology" class="--width-10 --tech-style mx-2">{{ele}}</p>
                   </div>
@@ -68,45 +68,45 @@
               </h4>
               <div class="row col-xl-10 col-md-10 col-sm-10 col-10">
                 <div class="col-xl-2 col-md-2 col-sm-2 col-2">
-                  <label for="sem1">SEM 1 CGPA : </label>
+                  <label for="sem1">SEM 1 CGPA </label>
                   <input type="text" class="form-control" id="linkedin"name="sem1Cgpa" [(ngModel)]="resultData.sem1Cgpa" readonly>
                 </div>
                 <div class="col-xl-2 col-md-2 col-sm-2 col-2">
-                  <label for="sem1">SEM 2 CGPA : </label>
+                  <label for="sem1">SEM 2 CGPA </label>
                   <input type="text" class="form-control" id="linkedin"  name="sem2Cgpa"[(ngModel)]="resultData.sem2Cgpa"  readonly>
                 </div>
                 <div class="col-xl-2 col-md-2 col-sm-2 col-2">
-                  <label for="sem1">SEM 3 CGPA : </label>
+                  <label for="sem1">SEM 3 CGPA </label>
                   <input type="text" class="form-control" id="linkedin"name="sem3Cgpa" [(ngModel)]="resultData.sem3Cgpa"  readonly>
                 </div>
                 <div class="col-xl-2 col-md-2 col-sm-2 col-2">
-                  <label for="sem1">SEM 4 CGPA : </label>
+                  <label for="sem1">SEM 4 CGPA </label>
                   <input type="text" class="form-control" id="linkedin"name="sem4Cgpa" [(ngModel)]="resultData.sem4Cgpa"  readonly>
                 </div>
                 <div class="col-xl-2 col-md-2 col-sm-2 col-2">
-                  <label for="sem1">SEM 5 CGPA : </label>
+                  <label for="sem1">SEM 5 CGPA </label>
                   <input type="text" class="form-control" id="linkedin"name="sem5Cgpa" [(ngModel)]="resultData.sem5Cgpa"  readonly>
                 </div>
               </div>
               <div class="row col-xl-10 col-md-10 col-sm-10 col-10">
                 <div class="col-xl-2 col-md-2 col-sm-2 col-2">
-                  <label for="sem1">SEM 6 CGPA : </label>
+                  <label for="sem1">SEM 6 CGPA </label>
                   <input type="text" class="form-control" id="linkedin" name="sem6Cgpa" [(ngModel)]="resultData.sem6Cgpa"  readonly>
                 </div>
                 <div class="col-xl-2 col-md-2 col-sm-2 col-2">
-                  <label for="sem1">SEM 7 CGPA : </label>
+                  <label for="sem1">SEM 7 CGPA </label>
                   <input type="text" class="form-control" id="linkedin"name="sem7Cgpa" [(ngModel)]="resultData.sem7Cgpa"  readonly>
                 </div>
                 <div class="col-xl-2 col-md-2 col-sm-2 col-2">
-                  <label for="sem1">SEM 8 CGPA : </label>
+                  <label for="sem1">SEM 8 CGPA </label>
                   <input type="text" class="form-control" id="linkedin"name="sem8Cgpa" [(ngModel)]="resultData.sem8Cgpa"  readonly>
                 </div>
                 <div class="col-xl-2 col-md-2 col-sm-2 col-2">
-                  <label for="sem1">SEM 9 CGPA : </label>
+                  <label for="sem1">SEM 9 CGPA </label>
                   <input type="text" class="form-control" id="linkedin"name="sem9Cgpa" [(ngModel)]="resultData.sem9Cgpa"  readonly>
                 </div>
                 <div class="col-xl-2 col-md-2 col-sm-2 col-2">
-                  <label for="sem1">Overall CGPA : </label>
+                  <label for="sem1">Overall CGPA </label>
                   <input type="text" class="form-control" id="linkedin" value="0.0"name="sgpa" [(ngModel)]="resultData.sgpa"  readonly>
                 </div>
               </div>

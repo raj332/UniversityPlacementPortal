@@ -7,21 +7,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard-master.component.scss']
 })
 export class DashboardMasterComponent implements OnInit {
-
+loggedInUser! :string ;
   logoutBtn:any ;
-  constructor(private router : Router) { }
+  constructor(private router : Router) {
+   this.loggedInUser = localStorage.getItem("studentName") || localStorage.getItem("companyName") || localStorage.getItem("adminName")|| '';
+   }
   showFiller = false;
   ngOnInit(): void {
-  }
-  ngDoCheck(){
-    if(localStorage.getItem("spid")||localStorage.getItem("companyId")){
+    if(localStorage.getItem("spid")||localStorage.getItem("companyId")||localStorage.getItem("commiteeSpid")||localStorage.getItem("adminEmail")){
       this.logoutBtn=true;
     }
-   }
+  }
+  
     onLogout() {
       localStorage.clear();
       this.logoutBtn=false;
-      this.router.navigate(['/']);
+      this.router.navigate(['/auth/login/student']);
   
     }
 }

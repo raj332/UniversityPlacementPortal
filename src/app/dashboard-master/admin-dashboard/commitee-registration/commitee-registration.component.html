@@ -1,0 +1,26 @@
+<div class="container">
+ <h3 class="--sub-heading  ">Add Commitee Member</h3>
+<div class="d-flex justify-content-around align-item-center main-form-container">
+   
+
+    <form class="row g-3 d-flex flex-row align-item-center --width-50 " (ngSubmit)="handleSubmit()">
+     
+      <div class="col-md-12">
+        <label for="spid" class="form-label --text-Primary">SPID</label>
+        <input type="number" class="form-control" id="spid" name="spid" [(ngModel)]="spid">
+      </div>
+      <div class="col-md-12">
+        <label for="password" class="form-label --text-Primary">Password</label>
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+      </div>
+     
+      <div class="col-12 d-flex justify-content-center">
+        <button type="submit" class="btn submit-btn">Register</button>
+      </div>
+   
+    </form>
+    <div>
+
+    </div>
+  </div>
+</div>

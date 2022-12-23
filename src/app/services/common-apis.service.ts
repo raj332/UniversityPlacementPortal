@@ -14,6 +14,13 @@ export class CommonApisService {
   loginCommitee(user:any){
     return this.http.post("https://localhost:7212/api/CommiteeMember/Login",user)
   }
+  loginAdmin(user:any){
+    return this.http.post("https://localhost:7212/api/Admin/Login",user)
+  }
+  registerCommitee(user:any){
+    return this.http.post("https://localhost:7212/api/CommiteeMember/register",user)
+  }
+  
   getPptlist(){
     return this.http.get("https://localhost:7212/api/PrePlacementTalk")
   }
@@ -39,4 +46,13 @@ export class CommonApisService {
     return this.http.get("https://localhost:7212/api/PrePlacementTalk/"+spid)
 
   }
+  getCompanyList(){
+    return this.http.get("https://localhost:7212/api/Company");
+  }
+getStudentYearlyPlacementChartData(id:any){
+return this.http.get("https://localhost:7212/api/Statestics/yearlyPlaced/"+id);
+}
+getCurrentYearApplicationRatio (id:any){
+  return this.http.get("https://localhost:7212/api/Statestics/currentYearApplication/"+id);
+}
 }

@@ -1,39 +1,50 @@
-<form class=" g-3 px-5 d-flex flex-column align-item-center --width-50 " (ngSubmit)="handleSubmit()">
-    <h1 class="--text-dark">
-      Create Offer
-    </h1>
-    <hr>
-    <div class="col-md-12">
-      <label for="position" class="form-label --text-Primary">Position</label>
-      <input type="text" class="form-control" id="position" name="position" [(ngModel)]="position">
+<div class="container parent-div ">
+  <h3 class="--sub-heading mb-0 "> Create Job Offer</h3>
+
+<mat-card >
+
+<form class=" g-3 px-3 d-flex flex-column align-item-center --width-100 " (ngSubmit)="handleSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="position" class="form-label --text-Primary">Position</label>
+        <input type="text" class="form-control" id="position" name="position" [(ngModel)]="position">
+      </div>
+      <div class="col-md-6">
+        <label for="technology" class="form-label --text-Primary">Technology</label>
+        <input type="text" class="form-control" id="technology" name="technology" [(ngModel)]="technology">
+      </div>
     </div>
-    <div class="col-md-12">
-      <label for="technology" class="form-label --text-Primary">Technology</label>
-      <input type="text" class="form-control" id="technology" name="technology" [(ngModel)]="technology">
-    </div>
+   
     <div class="col-md-12" >
       <label for="jobDescription" class="form-label --text-Primary">Description</label>
-      <textarea  class="form-control" id="jobDescription" rows="3" name="jobDescription" [(ngModel)]="jobDescription"></textarea>
+      <textarea  class="form-control" id="jobDescription" rows="6" name="jobDescription" [(ngModel)]="jobDescription"></textarea>
     </div>
     <div class="col-md-12">
       <label for="openings" class="form-label --text-Primary">No of Openings</label>
       <input type="text" class="form-control" id="openings" name="openings" [(ngModel)]="openings">
     </div>
+
+    <label for="openings" class="form-label --text-Primary">Criterias</label>
     <mat-form-field appearance="outline" class="col-md-12 mt-3">
       <mat-label>Select Criterias</mat-label>
       <mat-select multiple name="criterias"   (valueChange)="handleSelChange($event)">
        <mat-option *ngFor="let item of criteriaList" [value]="item.criteriaName">{{item.criteriaName}}</mat-option> 
       </mat-select>
     </mat-form-field>
-    <div class="col-md-12">
-      <label for="minctc" class="form-label --text-Primary">Minimum CTC</label>
-      <input type="text" class="form-control" id="minctc" name="minCTC" [(ngModel)]="minCTC">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="minctc" class="form-label --text-Primary">Minimum CTC</label>
+        <input type="text" class="form-control" id="minctc" name="minCTC" [(ngModel)]="minCTC">
+      </div>
+      <div class="col-md-6">
+        <label for="maxctc" class="form-label --text-Primary">Maximum CTC</label>
+        <input type="text" class="form-control" id="maxctc" name="maxCTC" [(ngModel)]="maxCTC">
+      </div>
     </div>
-    <div class="col-md-12">
-      <label for="maxctc" class="form-label --text-Primary">Maximum CTC</label>
-      <input type="text" class="form-control" id="maxctc" name="maxCTC" [(ngModel)]="maxCTC">
-    </div>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary --text-Primary">Create</button>
+   
+    <div class="col-12 my-4 d-flex justify-content-end">
+      <button type="submit" class="btn submit-btn">Create</button>
     </div>
   </form>
+</mat-card>
+</div>

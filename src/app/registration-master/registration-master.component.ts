@@ -8,6 +8,9 @@ import { NavigationEnd, Router, RouterModule,Event ,Navigation } from '@angular/
 export class RegistrationMasterComponent implements OnInit {
 
   constructor(private router: Router) { 
+    if(localStorage.getItem('stoken')){
+    this.router.navigate(['/dashboard/student'])
+    }
     this.router.events.subscribe((event:Event)=>{
 if(event instanceof NavigationEnd){
   this.isRegistrationform = ( this.router.url== "/auth/registration/company" ||this.router.url== "/auth/registration/student" )? true :false;
@@ -42,7 +45,7 @@ isRegistrationform!:boolean;
         },
         {
           title: 'Coordinators',
-           url:'/auth/login/coordinator'
+           url:'/auth/login/admin'
         }
   
   ]

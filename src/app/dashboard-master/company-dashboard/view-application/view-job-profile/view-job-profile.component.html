@@ -1,4 +1,3 @@
-<div class="container parent-div mt-4">
     <form>
       <div class="container">
         <div class="row">
@@ -23,12 +22,12 @@
                 <input type="text" class="form-control" id="resume" name="resumeLink" [(ngModel)]="resumeLink" readonly>
               </div>
             </mat-card>
-            <mat-card class="--width-full my-5">
+            <mat-card class=" my-5">
               <div class="col-md-12 form-group">
                 <h4 class="my-1">
                   <mat-icon>work_outlined</mat-icon> 2. Add Work Experience
                 </h4>
-                <mat-card-header class="--width-full">
+                <mat-card-header class="">
                   <mat-card-title class="d-flex flex-row justify-content-between ">
                     
                   </mat-card-title>
@@ -46,13 +45,13 @@
                 </div>
               </div>
             </mat-card>
-            <mat-card class="--width-full my-5">
+            <mat-card class=" my-5">
   
-              <div class="row d-flex flex-column justify-content-between" style="height: 210px;">
+              <div class="row d-flex flex-column justify-content-between" >
                 <h4 class="my-1">
                   <mat-icon>grade</mat-icon> 3.Results Details
                 </h4>
-                <div class="row col-xl-10 col-md-10 col-sm-10 col-10">
+                <div class="row col-xl-10 col-md-10 col-sm-10 col-10 mt-3">
                   <div class="col-xl-2 col-md-2 col-sm-2 col-2">
                     <label for="sem1">SEM 1 CGPA : </label>
                     <input type="text" class="form-control" id="linkedin"name="sem1Cgpa" [(ngModel)]="resultData.sem1Cgpa" readonly>
@@ -99,12 +98,12 @@
               </div>
             </mat-card>
             <div class="col-12 d-flex justify-content-end" *ngIf="!mainData.hasClearedRounds" >
-              <button class="btn btn-success --width-10" (click)="onInterviewCall()">Call for Hr Interview</button>
+              <button class="btn btn-success " (click)="onInterviewCall()">Call for Hr Interview</button>
             </div>
           </div>
         </div>
         
       </div>
     </form>
-  </div>
+
   

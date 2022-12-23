@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { CommiteeLoginComponent } from './commitee-login/commitee-login.component';
 import { CompanyLoginComponent } from './company-login/company-login.component';
 import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
@@ -13,7 +14,9 @@ const routes: Routes = [
     { path: 'login/student', component: StudentLoginComponent },
     { path : 'login/commitee' ,component:CommiteeLoginComponent},
     { path: 'registration/company',component:CompanyRegistrationComponent},
-    {path:'login/company',component:CompanyLoginComponent}
+    {path:'login/company',component:CompanyLoginComponent},
+    {path:'login/admin',component:AdminLoginComponent}
+
   ],},
   
 

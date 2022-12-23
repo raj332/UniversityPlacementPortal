@@ -21,6 +21,8 @@ export class CommiteeLoginComponent implements OnInit {
     }
     this.services.loginCommitee(user).subscribe((data:any)=>{
       console.log(data)
+      localStorage.clear()
+      localStorage.setItem("commiteeSpid",this.spid.toString())
       localStorage.setItem("memberId",data.commiteeMemberId)
 this.router.navigate(["/dashboard/commitee"])
     })

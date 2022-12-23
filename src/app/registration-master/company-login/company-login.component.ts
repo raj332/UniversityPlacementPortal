@@ -25,6 +25,7 @@ export class CompanyLoginComponent implements OnInit {
       if(data.error){
         alert(data.error)
       }else{
+        localStorage.clear();
         localStorage.setItem("companyId",data.user.companyId)
         localStorage.setItem("companyName",data.user.name)
     

@@ -1,11 +1,17 @@
 
+<div class="container">
+<div class="d-flex justify-content-between" >
+  <h3 class="--sub-heading mb-0 "> Student Applications </h3>
+
 <mat-form-field appearance="standard" class="--width-20 mx-3">
     <mat-label>Search</mat-label>
   
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
   </mat-form-field>
+</div>
   
-      <div class=" mat-elevation-z8 mx-3">
+  
+      <div class=" mat-elevation-z8 ">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef class="--bg-green">Candidate</th>
@@ -34,7 +40,7 @@
          
           <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef> Job Profile</th>
-            <td mat-cell *matCellDef="let row"> <button class="--btn-filled-primary" (click)="openDialog(row)">View Profile</button> </td>
+            <td mat-cell *matCellDef="let row"> <button class="submit-btn" (click)="openDialog(row)">View Profile</button> </td>
           </ng-container>
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -43,3 +49,4 @@
       <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
       </mat-paginator>
   </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="row d-flex justify-content-center box-heading">
+    {{ mainData.studentName }}
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex flex-row justify-content-center">
+      <div class=" box-sub-heading">{{ mainData.spid}}</div>
+    </div>
+  </div>
+  <div class="row main">
+    <div class="col-6  d-flex flex-column justify-content-evenly h-100">
+      <div class="col-12 d-flex flex-column justify-content-start">
+        <div class=" data-label">Course</div>
+        <div class=" api-data">{{ mainData.courseName}}</div>
+      </div>
+  
+      <div class="col-12 d-flex flex-column justify-content-start">
+        <div class=" data-label">ContactNo</div>
+        <div class=" api-data">{{ mainData.contactNo }} </div>
+      </div>
+      <div class="col-12 d-flex flex-column justify-content-start">
+          <div class=" data-label">Email</div>
+          <div class=" api-data">{{ mainData.email }}</div>
+        </div>
+    </div>
+    <div class="col-6 d-flex flex-column  h-100">
+   
+  
+      <div class="col-12 d-flex flex-column justify-content-start">
+        <div class=" data-label">Website</div>
+        <div class=" api-data">{{ sdata.websiteLink }}</div>
+      </div>
+  
+      <div class="col-12 d-flex flex-column justify-content-start">
+        <div class=" data-label">linkedIn</div>
+        <div class=" api-data">{{ sdata.linkedinLink }}</div>
+      </div>
+      
+      <div class="col-12 d-flex flex-column justify-content-start">
+        <div class=" data-label">Resume</div>
+        <div class=" api-data">{{sdata.resumeLink }}</div>
+      </div>
+    </div>
+  
+    
+  </div>
+  <div class="row">
+      <div class="col-12 d-flex flex-column justify-content-start">
+        <div class="data-label">Status</div>
+        <div class="api-data">{{ sdata.ctc ? "Got Placement !" :" On goining " }}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-flex flex-column justify-content-start">
+        <div class="data-label">Company name</div>
+        <div class="api-data">{{sdata.name }}</div>
+        <div class="data-label">CTC</div>
+        <div class="api-data">{{ sdata.ctc}}</div>
+        <div class="data-label">Is still in Placement Drive</div>
+        <div class="api-data">{{ mainData.isInPlacementDrive ? " Yes ! In placement drive." :" No ! Out of placement drive. "}}</div>
+      </div>
+    </div>
+    <div class="d-flex flex-row justify-content-end" *ngIf="mainData.isInPlacementDrive">
+      <button class="btn submit-btn" (click)="handleApply()">Remove from Placements</button>
+      
+    </div>
+    <div class="d-flex flex-row justify-content-end" *ngIf="!mainData.isInPlacementDrive">
+      <button class="btn submit-btn" (click)="handleApply()">Add in Placements</button>
+      
+    </div>
+  

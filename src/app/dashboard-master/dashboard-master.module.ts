@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
-
 import { CommonModule } from '@angular/common';
 import { dashboardRoutingModule } from './dashboard-master-routing.module';
 import { CompanyDashboardComponent } from './company-dashboard/company-dashboard.component';
@@ -12,7 +11,6 @@ import { OfferFormComponent } from './company-dashboard/offer-form/offer-form.co
 import { CommiteeDashboardComponent } from './commitee-dashboard/commitee-dashboard.component';
 import { ViewOpeningsComponent } from './student-dashboard/view-openings/view-openings.component';
 import { CheckStatusComponent } from './student-dashboard/check-status/check-status.component';
-import { MyProfileComponent } from './student-dashboard/my-profile/my-profile.component';
 import { CompanyListComponent } from './commitee-dashboard/company-list/company-list.component';
 import { SheduledPPTListComponent } from './commitee-dashboard/sheduled-pptlist/sheduled-pptlist.component';
 import { CommiteeProfileComponent } from './commitee-dashboard/commitee-profile/commitee-profile.component';
@@ -23,17 +21,29 @@ import { SelectedApplicationComponent } from './company-dashboard/selected-appli
 import { CompanyStatasticsComponent } from './company-dashboard/company-statastics/company-statastics.component';
 import { ViewJobOfferComponent } from './student-dashboard/view-openings/view-job-offer/view-job-offer.component';
 import { StudentSheduledPptlistComponent } from './student-dashboard/student-sheduled-pptlist/student-sheduled-pptlist.component';
+import { MyProfileComponent } from './student-dashboard/my-profile/my-profile.component';
+import { ChangePasswordComponent } from './student-dashboard/my-profile/change-password/change-password.component';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { AllOffersComponent } from './company-dashboard/all-offers/all-offers.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { StudentListComponent } from './admin-dashboard/student-list/student-list.component';
+import { CommiteeRegistrationComponent } from './admin-dashboard/commitee-registration/commitee-registration.component';
+import { PlacementStatesComponent } from './admin-dashboard/placement-states/placement-states.component';
+import { StudentDetailComponent } from './admin-dashboard/student-list/student-detail/student-detail.component';
+import { SelectionFormComponent } from './company-dashboard/shortlisted-application/selection-form/selection-form.component';
+
 @NgModule({
   declarations: [
     StudentDashboardComponent,
     CompanyDashboardComponent,
     JobProfileComponent,
+    AllOffersComponent,
     AddExperienceComponent,
     OfferFormComponent,
     CommiteeDashboardComponent,
     ViewOpeningsComponent,
+    SelectionFormComponent,
     CheckStatusComponent,
-    MyProfileComponent,
     CompanyListComponent,
     SheduledPPTListComponent,
     CommiteeProfileComponent,
@@ -44,12 +54,21 @@ import { StudentSheduledPptlistComponent } from './student-dashboard/student-she
     CompanyStatasticsComponent,
     ViewJobOfferComponent,
     StudentSheduledPptlistComponent,
+    MyProfileComponent,
+    ChangePasswordComponent,
+    AdminDashboardComponent,
+    StudentListComponent,
+    CommiteeRegistrationComponent,
+    PlacementStatesComponent,
+    StudentDetailComponent,
+    
   ],
   imports: [
     CommonModule,
     dashboardRoutingModule,
     UploaderModule,
     MaterialDesignModuleModule,
+    GoogleChartsModule,
   ],
   providers: [],
   bootstrap: [],

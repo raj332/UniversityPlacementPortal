@@ -23,12 +23,16 @@
           </ul>
         </div>
       </div>
-      
+      <div>
+        <img src="../../assets/imgs/userIcon.png" class="mx-2" style="height: 1.7rem;">
+        {{loggedInUser}}
         <!-- <button *ngIf="!isLogin" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
           routerLink="/registration/StudentLogin">Login</button>
         <button *ngIf="!isRegistered" class="--btn-filled-yellow me-2 --text-dark" matRipple (click)="toggleBtns()"
           routerLink="/registration/student">Register</button> -->
-          <button *ngIf="logoutBtn" class="mx-3  py-2 px-3" matRipple (click)="onLogout()">logout</button>
+          <button *ngIf="logoutBtn" class="mx-5  py-2 px-3" matRipple (click)="onLogout()">logout</button>
+      </div>
+     
       
     </div>
   </nav>

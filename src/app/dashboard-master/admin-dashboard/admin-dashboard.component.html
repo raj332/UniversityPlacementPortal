@@ -1,0 +1,21 @@
+
+
+<mat-drawer-container class="example-container " autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+      <div class="mainNavDiv">
+   
+          
+            <ul *ngFor="let item of MenuList">
+              <li class="nav-link" routerLink="{{item.url}}"> {{item.title}}</li>
+            </ul>
+
+      </div>
+    </mat-drawer>
+   
+  
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  
+  </mat-drawer-container>
+  

@@ -1,0 +1,26 @@
+<div class="container">
+  <h3 class="--sub-heading">All offers</h3>
+
+  <div class="companylist d-flex justify-content-between flex-wrap">
+    <div class="company-card" *ngFor="let item of offerData">
+      <div class="card-title">{{ item.position }}</div>
+      <div class="card-content">
+        <table class="table">
+          <tr>
+            <td class="card-field">Technology</td>
+            <td class="card-value">{{ item.technology }}</td>
+          </tr>
+          <tr>
+            <td class="card-field">No of openings</td>
+            <td class="card-value">{{ item.noOfPositions }}</td>
+          </tr>
+          <tr>
+            <td class="card-field">CTC</td>
+            <td class="card-value">{{item.isDisclose ? ( item.minCtc +"- "+ item.maxCtc ) :"Not Disclosed"}}</td>
+          </tr>
+        </table>
+        <div class="card-description">{{ item.jobDescription }}</div>
+      </div>
+    </div>
+  </div>
+</div>

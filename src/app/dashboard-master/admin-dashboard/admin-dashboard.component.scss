@@ -1,0 +1,54 @@
+@import "../../_styles/variables.scss";
+.example-sidenav-content {
+    display: flex;
+    height: auto;
+    background: white;
+    // align-items: center;
+    // justify-content: center;
+    overflow-y: scroll;
+    min-height: 45rem;
+  }
+  .mat-drawer-container{
+    background-color: white!important;
+    height: 100vh;
+  }
+  .example-sidenav-content::-webkit-scrollbar {
+    width: 10px;
+  }
+  .example-sidenav-content::-webkit-scrollbar-track {
+    background-color: #f3f2ef;
+  }
+  // .example-sidenav-content::-webkit-scrollbar-thumb {
+  //   box-shadow: inset 6px 6px 6px rgba(37, 124, 245, 0.326);
+  // }
+  .example-sidenav {
+    padding: 20px;
+  }
+  .mat-drawer {
+    margin: 0;
+    padding: 0;
+  }
+  .mainNavDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left !important;
+  }
+  .--height-full {
+    height: 100%;
+  }
+  .sub-heading {
+    font-size: 20px;
+  }
+  .mat-expansion-panel-content {
+    border-top: 1px soild rgb(247, 200, 48) !important;
+    border-bottom: 1px soild rgb(247, 200, 48) !important;
+  }
+  .nav-link
+  {
+    font-size: 1rem;
+    color: $primary !important;
+    width: 12rem;
+    padding-left: 0rem !important;
+  }
+  

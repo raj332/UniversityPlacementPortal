@@ -31,13 +31,14 @@ dataSource = new MatTableDataSource<any>();
     }else
     {
       this.fetchCompanyOffers()
-
+      
     }
   }
 
   fetchCompanyOffers(){
     this.services.getNotAppliedCompanies(this.spid).subscribe((data:any)=>{
       this.dataSource.data = data;
+      
     })
   }
   displayedColumns: string[] = ['companyName', 'technology','position','minCtc','maxCtc','action'];
@@ -62,8 +63,6 @@ dataSource = new MatTableDataSource<any>();
 
        const dialogRef=this.dialog.open(ViewJobOfferComponent, {
          // add any additional options here
-         height: '50rem',
-         width: '90rem',
          data:row
        });
        dialogRef.afterClosed().subscribe((result:any )=> {

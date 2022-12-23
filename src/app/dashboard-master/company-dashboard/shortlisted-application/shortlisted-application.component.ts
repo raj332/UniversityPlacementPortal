@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ViewJobProfileComponent } from '../view-application/view-job-profile/view-job-profile.component';
 import { CompanyApisService } from 'src/app/services/company-apis.service';
+import { SelectionFormComponent } from './selection-form/selection-form.component';
 @Component({
   selector: 'app-shortlisted-application',
   templateUrl: './shortlisted-application.component.html',
@@ -27,7 +28,7 @@ export class ShortlistedApplicationComponent implements OnInit {
     })
   }
   
-  displayedColumns: string[] = ['name','email','contactNo', 'technology','position','action1','action2','action3','action4','action5'];
+  displayedColumns: string[] = ['name','email','contactNo', 'technology','position','action1','action2','action3'];
   dataSource = new MatTableDataSource();
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -41,36 +42,45 @@ export class ShortlistedApplicationComponent implements OnInit {
   }
   openDialog(row:any){
     const dialogRef=this.dialog.open(ViewJobProfileComponent, {
-      // add any additional options here
-      height: '50rem',
-      width: '90rem',
+ 
       data:row
     });
     dialogRef.afterClosed().subscribe((result:any )=> {
-      //console.log("data from dialog is");
-      //console.log(result.name);
+    
       this.ngOnInit();
     });
   }
-  onSelection(row:any){
+
+  openDialog1(row:any){
+    const dialogRef=this.dialog.open(SelectionFormComponent, {
+ 
+      data:row
+    });
+    dialogRef.afterClosed().subscribe((result:any )=> {
+    
+      this.ngOnInit();
+    });
+  }
+  handleReject(row:any){
     let item ={
       applicationId:row.applicationId,
       offerId :row.offerId,
       spid:row.spid,
-      companyId :this.companyId ,
-      isOutSideProcess :false,
-      isSelected : true,
-      finalCTC:this.finalCTC,
-      trainingMonths :this.trainingMonths,
-      stipend:this.stipend,
+      companyId :localStorage.getItem("companyId") ,
+      isOutSideProcess :true,
+      isSelected : false,
+      finalCTC:0,
+      trainingMonths :0,
+      stipend:0,
       hasClearedRounds : true,
       isPlaced : false,
-      status : "Selected for Job !"
+      status : "Rejected in HR interview !"
     }
     this.services.updateStudentStatus(item).subscribe((data)=>{
       this.ngOnInit();
-      alert("Selected !")
+      alert("Rejected!")
     })
   }
-
+    
+  
 }

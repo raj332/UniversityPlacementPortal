@@ -22,6 +22,11 @@ import { SelectedApplicationComponent } from './company-dashboard/selected-appli
 import { CompanyStatasticsComponent } from './company-dashboard/company-statastics/company-statastics.component';
 import { StudentSheduledPptlistComponent } from './student-dashboard/student-sheduled-pptlist/student-sheduled-pptlist.component';
 import { DashboardMasterComponent } from './dashboard-master.component';
+import { AllOffersComponent } from './company-dashboard/all-offers/all-offers.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { CommiteeRegistrationComponent } from './admin-dashboard/commitee-registration/commitee-registration.component';
+import { StudentListComponent } from './admin-dashboard/student-list/student-list.component';
+import { PlacementStatesComponent } from './admin-dashboard/placement-states/placement-states.component';
 
 const routes: Routes = [
   { path: '', component: DashboardMasterComponent,
@@ -29,6 +34,7 @@ children: [{
   path: 'student',
   component: StudentDashboardComponent,
   children: [
+    {path:'',component:MyProfileComponent},
     { path: 'AddJobProfile', component: JobProfileComponent },
     { path: 'prePlacementVoting', component: PrePlacementVotingComponent },
     { path: 'ViewOpenings' ,component:ViewOpeningsComponent},
@@ -41,6 +47,7 @@ children: [{
   path: 'commitee',
   component: CommiteeDashboardComponent,
   children: [
+    {path:'',component:CommiteeProfileComponent},
     { path: 'CompanyVoting', component: CompanyVotingComponent },
     {path:'VotingResults',component:PrePlacementTalkListComponent},
     { path: 'AddCompany', component: CompanyRegistrationComponent },
@@ -53,12 +60,25 @@ children: [{
   path: 'company',
   component: CompanyDashboardComponent,
   children: [
+    {path:'offers',component:AllOffersComponent},
+    {path:"",component:CompanyStatasticsComponent},
     {path:'CreateOffer', component: OfferFormComponent },
     {path:'ViewAppliaction' ,component:ViewApplicationComponent},
     {path:'viewJobProfile',component:ViewJobProfileComponent},
     {path:'Shortlisted',component:ShortlistedApplicationComponent},
     {path:'Selected',component:SelectedApplicationComponent},
     {path:'Statistics',component:CompanyStatasticsComponent}
+
+  ],
+},
+{
+  path: 'admin',
+  component: AdminDashboardComponent,
+  children: [
+    {path:'AddCommitee',component:CommiteeRegistrationComponent},
+    {path:"",component:StudentListComponent},
+    {path:'PlacementStates', component: PlacementStatesComponent},
+    
 
   ],
 }],},

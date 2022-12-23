@@ -39,8 +39,7 @@ companyid !:any;
   openDialog(row:any){
     const dialogRef=this.dialog.open(ViewJobProfileComponent, {
       // add any additional options here
-      height: '50rem',
-      width: '90rem',
+     
       data:row
     });
     dialogRef.afterClosed().subscribe((result:any )=> {

@@ -1,0 +1,23 @@
+@import "../../../_styles/variables.scss";
+.company-card{
+    border: 0px ;
+    border-radius: 4px;
+    background-color: $primary;
+    width:32%;
+    padding: 1.5rem;
+    box-shadow: 0px 4px 8px rgba(27, 33, 44, 0.1);
+    
+}
+.card-title{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+    color:$yellow
+}
+.card-field{
+   color: rgba(0, 0, 0, 0.584);
+}
+.card-link{
+    text-align: center;
+    color: $blue;
+}

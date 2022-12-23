@@ -1,1 +1,36 @@
-<p>company-list works!</p>
+<div class="container">
+  <h3 class="--sub-heading">Visiting Companies</h3>
+
+  <div class="companylist d-flex justify-content-between">
+    <div
+      class="company-card "
+      *ngFor="let item of companyData"
+    >
+      <div class="card-title">{{ item.name }}</div>
+      <div class="card-content">
+        <table class="table">
+            <tr >
+                <td class="card-field">Domain</td>
+                <td class="card-value">{{ item.domain }}</td>
+            </tr>
+            <tr >
+                <td class="card-field">Contact No</td>
+                <td class="card-value">{{ item.contactNo }}</td>
+            </tr>
+            <tr >
+                <td class="card-field">Email</td>
+                <td class="card-value">{{ item.email }}</td>
+            </tr>
+            
+              
+    
+            <tr >
+                <td class="card-field">Address</td>
+                <td class="card-value">{{ item.address }}</td>
+            </tr>
+        </table>
+      <div class="card-link">{{ item.website }}</div>  
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,7 +20,7 @@
       </ng-container>
       <ng-container matColumnDef="VotingEndDate">
         <th mat-header-cell *matHeaderCellDef> Voting End Date </th>
-        <td mat-cell *matCellDef="let element"> {{element.votingEndDate}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.votingEndDate| date: 'dd/MM/yyyy'}} </td>
       </ng-container>
       <!-- Weight Column -->
       <ng-container matColumnDef="Date">

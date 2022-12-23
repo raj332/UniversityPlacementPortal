@@ -1,0 +1,30 @@
+
+  <form class="d-flex flex-column form-group">
+    <div class="mb-4">
+      <div class=" mb-4">
+        <label>Final CTC</label>
+        <input  id="ctn" type="number" name="finalCtc" class="form-control" [(ngModel)]="finalCtc" />
+       
+      </div>
+      <div>
+        <div class="mb-4">
+          <label>Training Months</label>
+          <input id="months" type="number"  name="trainingMonths" class="form-control" [(ngModel)]="trainingMonths" />
+        
+        </div>
+  
+        <div class=" mb-4">
+          <label>Stipend</label>
+          <input  id="stipend" type="number" name="stipend" [(ngModel)]="stipend" class="form-control" />
+       
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <button class="btn submit-btn" type="button" (click)="handleSubmit()">Send Offer</button>
+  
+  
+  </form>
+  

@@ -1,0 +1,22 @@
+@import '../../../_styles/variables.scss';
+
+.mat-card {
+    box-shadow: 0px 4px 8px rgba(27, 33, 44, 0.1);
+    border-radius: 4px;
+    margin: 2rem 0rem ;
+    background-color: $primary;
+    padding: 1.5rem !important;
+  }
+
+  .form-label{
+    margin-bottom: 0rem !important;
+    margin-top: 1rem !important;
+  }
+  mat-form-field{
+    margin: 0 !important;
+  }
+  .mat-form-field-wrapper{
+    margin: 0rem !important;
+    padding-bottom: 0rem !important;
+
+  }

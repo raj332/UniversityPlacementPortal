@@ -1,0 +1,8 @@
+@import '../../../_styles/variables.scss';
+
+.main-form-container{
+    background-color: $primary;
+    padding: 1.5rem 0rem;
+    border-radius: 5px;
+ box-shadow:  0px 3px 5px rgba(20, 29, 75, 0.26)
+}

@@ -9,6 +9,7 @@
   box-shadow: 0px 4px 8px rgba(27, 33, 44, 0.1);
   border-radius: 4px;
   margin: 2rem 0rem ;
+  background-color: $primary;
   padding: 1.5rem !important;
 }
 .mat-select {
@@ -24,9 +25,10 @@ mat-chip-list {
 .--tech-style{
   text-align: center;
   border-radius: 8px;
-  border:1px dashed $primary;
-  color: $primary;
-  letter-spacing: 2px;
+  border:2px dashed $blue;
+  color: $blue;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 .--internship-date{
   font-weight: bold;

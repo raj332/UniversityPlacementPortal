@@ -1,48 +1,92 @@
-<mat-form-field appearance="standard" class=" mx-3">
+<div class="container">
+<div class="d-flex justify-content-between">
+  <h3 class="--sub-heading">Application status</h3>
+
+  <mat-form-field appearance="standard">
     <mat-label>Search</mat-label>
-  
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Ex. ium"
+      #input
+    />
   </mat-form-field>
-  
-      <div class=" mat-elevation-z8 mx-3">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-          <ng-container matColumnDef="companyName">
-            <th mat-header-cell *matHeaderCellDef class="--bg-green"> Company </th>
-            <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
-          </ng-container>
-          <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef> Position </th>
-            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-          </ng-container>
-          <ng-container matColumnDef="technology">
-              <th mat-header-cell *matHeaderCellDef class="--bg-green"> technology </th>
-              <td mat-cell *matCellDef="let element"> {{element.technology}} </td>
-            </ng-container>
-          <ng-container matColumnDef="status">
-              <th mat-header-cell *matHeaderCellDef> status  </th>
-              <td mat-cell *matCellDef="let element">{{(element.isOutsideProcess && !element.isPlaced) ?"Not Eligible": (element.isPlaced ?" Placement Done ! ":element.status)}}</td>
-          </ng-container>
-          <ng-container matColumnDef="isOutSideProcess">
-              <th mat-header-cell *matHeaderCellDef> Is Outside of process </th>
-              <td mat-cell *matCellDef="let element"> {{element.isOutsideProcess?"Yes":"No"}} </td>
-          </ng-container>
-          
-          <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef> </th>
-            <td mat-cell *matCellDef="let row"> <button class="--btn-filled-primary" (click)="openDialog(row)">View Offer</button> </td>
-          </ng-container>
-          <ng-container matColumnDef="action1" >
-            <th mat-header-cell *matHeaderCellDef> </th>
-            <td mat-cell *matCellDef="let row" > <button *ngIf="!row.isPlaced && row.isSelected " class="--btn-filled-primary" (click)="acceptOffer(row)">Accept</button> </td>
-          </ng-container>
-          <ng-container matColumnDef="action2" >
-            <th mat-header-cell *matHeaderCellDef> </th>
-            <td mat-cell *matCellDef="let row" > <button *ngIf="!row.isPlaced && row.isSelected " class="--btn-filled-primary" (click)="rejectOffer(row)">Reject</button> </td>
-          </ng-container>
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-         
-      </table>
-      <mat-paginator [length]="10" [pageSize]="8" [pageSizeOptions]="[5, 10]" aria-label="Select page">
-      </mat-paginator>
-  </div>
+</div>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="companyName">
+      <th mat-header-cell *matHeaderCellDef class="--bg-green">Company</th>
+      <td mat-cell *matCellDef="let element">{{ element.companyName }}</td>
+    </ng-container>
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>Position</th>
+      <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+    </ng-container>
+    <ng-container matColumnDef="technology">
+      <th mat-header-cell *matHeaderCellDef class="--bg-green">technology</th>
+      <td mat-cell *matCellDef="let element">{{ element.technology }}</td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>status</th>
+      <td mat-cell *matCellDef="let element">
+        {{
+          element.isOutsideProcess && !element.isPlaced
+            ? "Not Eligible"
+            : element.isPlaced
+            ? " Placement Done ! "
+            : element.status
+        }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="isOutSideProcess">
+      <th mat-header-cell *matHeaderCellDef>Is Outside of process</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.isOutsideProcess ? "Yes" : "No" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button class="submit-btn" (click)="openDialog(row)">
+          View Offer
+        </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="action1">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button
+          *ngIf="!row.isPlaced && row.isSelected && !row.isOutsideProcess"
+          class="btn-sm btn btn-success"
+          (click)="acceptOffer(row)"
+        >
+          Accept
+        </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="action2">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button
+          *ngIf="!row.isPlaced && row.isSelected&& !row.isOutsideProcess"
+          class="btn btn-sm btn-danger"
+          (click)="rejectOffer(row)"
+        >
+          Reject
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [length]="10"
+    [pageSize]="8"
+    [pageSizeOptions]="[5, 10]"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</div>
+</div>

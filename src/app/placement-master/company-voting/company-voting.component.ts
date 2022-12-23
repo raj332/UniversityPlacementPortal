@@ -86,7 +86,7 @@ export class CompanyVotingComponent implements OnInit {
       this.CompanyData.companyName = data.companyName;
       this.CompanyData.minCtc = data.minCTC;
       this.CompanyData.maxCtc = data.maxCTC;
-      this.CompanyData.intrestedStudents = 1;
+      this.CompanyData.intrestedStudents = 0;
       this.CompanyData.isVisitingCampus = true;
       this.CompanyData.isInVotingList = true;
       this.CompanyData.isInSheduleList = false;

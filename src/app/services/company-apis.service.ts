@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
-
+import {HttpClient , HttpHeaders} from '@angular/common/http'
+var headers = new HttpHeaders();
 @Injectable({
   providedIn: 'root'
 })
@@ -8,6 +8,9 @@ export class CompanyApisService {
 
   constructor(private http :HttpClient) { }
 
+  getAllOffers(cid:any){
+    return this.http.get("https://localhost:7212/api/CompanyOffers/"+cid)
+  }
   createOffer(offer:any){
     return this.http.post("https://localhost:7212/api/CompanyOffers",offer)
   }

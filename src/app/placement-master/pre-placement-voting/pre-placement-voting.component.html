@@ -1,4 +1,6 @@
 <div class="container mt-3">
+  <h3 class="--sub-heading  ">Ongoing Votings</h3>
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -30,15 +32,15 @@
     </ng-container>
     <ng-container matColumnDef="VotingEndDate">
       <th mat-header-cell *matHeaderCellDef> Voting End Date </th>
-      <td mat-cell *matCellDef="let element"> {{element.votingEndDate}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.votingEndDate| date: 'dd/MM/yyyy'}} </td>
     </ng-container>
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef> ACTION</th>
       <td mat-cell *matCellDef="let element">
         <div *ngIf="checkDate(element.votingEndDate)">
-          <button class="--btn-filled-green" (click)="onVote(element)">Vote</button>
+          <button class="--btn-filled-green " (click)="onVote(element)">Vote</button>
         </div>
-        <div *ngIf="!checkDate(element.votingEndDate)">
+        <div *ngIf="!checkDate(element.votingEndDate) " class=" text-danger">
           voting End!
         </div>
       </td>

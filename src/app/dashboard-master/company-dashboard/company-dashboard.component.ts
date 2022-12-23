@@ -25,6 +25,10 @@ export class CompanyDashboardComponent implements OnInit {
           title: 'Create Offer',
           url:'/dashboard/company/CreateOffer'
         },
+        {
+          title: 'All Offer',
+          url:'/dashboard/company/offers'
+        },
       ],
       },
     {

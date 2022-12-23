@@ -23,6 +23,8 @@ export class StudentLoginComponent implements OnInit {
     if(data.error){
         this.errorMessage =data.error;
     }else{
+      localStorage.clear()
+      localStorage.setItem("stoken",data.token)
       localStorage.setItem("profilePic",data.user.photo)
       localStorage.setItem("spid",this.spid.toString()) 
       localStorage.setItem("isInPlacementDrive",data.user.isInPlacementDrive)

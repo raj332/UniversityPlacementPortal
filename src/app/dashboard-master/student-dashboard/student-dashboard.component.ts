@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { DataSource } from '@angular/cdk/table';
 import { StudentApisService } from 'src/app/services/student-apis.service';
+import { Route, Router } from '@angular/router';
 
 
 @Component({
@@ -14,8 +15,22 @@ export class StudentDashboardComponent implements OnInit {
     
  profilePic:string="../../assets/"+localStorage.getItem("profilePic") ;
  
-  constructor(private elementRef: ElementRef ,private services:StudentApisService) {
-  
+  constructor(private elementRef: ElementRef ,private services:StudentApisService,private router:Router) {
+
+    if(!localStorage.getItem("spid")){
+      this.router.navigate(['/auth/login/student'])
+    }else{
+      this.services.getMyDetail(localStorage.getItem("spid")).subscribe((data:any)=>{
+        if(data.error){
+              if(data.error =="noToken" || data.error == 'tokenExpired'){
+                alert("session is expired !")
+                localStorage.clear();
+                this.router.navigate(['/auth/login/student'])
+              }
+        }
+      })
+
+    }
    
 
   }
