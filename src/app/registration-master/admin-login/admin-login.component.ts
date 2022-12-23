@@ -27,6 +27,7 @@ export class AdminLoginComponent implements OnInit {
         localStorage.clear()
         localStorage.setItem("adminEmail",this.email.toString())
         localStorage.setItem("adminName",data.adminName)
+        localStorage.setItem("admintoken",data.token)
   this.router.navigate(["/dashboard/admin"])
       }
      

@@ -16,7 +16,7 @@ export class CompanyLoginComponent implements OnInit {
     }
   ngOnInit(): void {
   }
-  handleSubmit() {
+  async handleSubmit() {
     let company = {
       email: this.companyEmail,
       password:this.companyPassword
@@ -26,9 +26,9 @@ export class CompanyLoginComponent implements OnInit {
         alert(data.error)
       }else{
         localStorage.clear();
+        localStorage.setItem("cmptoken",data.token)
         localStorage.setItem("companyId",data.user.companyId)
         localStorage.setItem("companyName",data.user.name)
-    
         this.router.navigate(['dashboard/company'])
       }
   

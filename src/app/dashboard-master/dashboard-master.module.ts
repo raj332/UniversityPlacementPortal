@@ -5,6 +5,7 @@ import { dashboardRoutingModule } from './dashboard-master-routing.module';
 import { CompanyDashboardComponent } from './company-dashboard/company-dashboard.component';
 import { JobProfileComponent } from './student-dashboard/job-profile/job-profile.component';
 import { UploaderModule } from "angular-uploader";
+import { MyProfileComponent as MyProfileComponent1 } from './company-dashboard/my-profile/my-profile.component';
 import { MaterialDesignModuleModule } from '../material-design-module/material-design-module.module';
 import { AddExperienceComponent } from './student-dashboard/job-profile/add-experience/add-experience.component';
 import { OfferFormComponent } from './company-dashboard/offer-form/offer-form.component';
@@ -31,7 +32,7 @@ import { CommiteeRegistrationComponent } from './admin-dashboard/commitee-regist
 import { PlacementStatesComponent } from './admin-dashboard/placement-states/placement-states.component';
 import { StudentDetailComponent } from './admin-dashboard/student-list/student-detail/student-detail.component';
 import { SelectionFormComponent } from './company-dashboard/shortlisted-application/selection-form/selection-form.component';
-
+import { ChangePasswordComponent as ChangePasswordComponent1 } from './company-dashboard/my-profile/change-password/change-password.component';
 @NgModule({
   declarations: [
     StudentDashboardComponent,
@@ -44,6 +45,7 @@ import { SelectionFormComponent } from './company-dashboard/shortlisted-applicat
     ViewOpeningsComponent,
     SelectionFormComponent,
     CheckStatusComponent,
+    ChangePasswordComponent1,
     CompanyListComponent,
     SheduledPPTListComponent,
     CommiteeProfileComponent,
@@ -55,6 +57,7 @@ import { SelectionFormComponent } from './company-dashboard/shortlisted-applicat
     ViewJobOfferComponent,
     StudentSheduledPptlistComponent,
     MyProfileComponent,
+    MyProfileComponent1,
     ChangePasswordComponent,
     AdminDashboardComponent,
     StudentListComponent,

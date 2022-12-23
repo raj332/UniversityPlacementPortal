@@ -42,7 +42,7 @@
           <div class="col-12 my-3 d-flex justify-content-around">
             <button type="submit" class="btn my-2 p-1 btn-primary --text-Primary">Register</button>
           </div>
-          <div class="registration-link text-center" routerLink="/auth/login/company">
+          <div class="registration-link text-center" routerLink="/auth/login/company" *ngIf="!isCommitee">
            Already Have an account ? Login here !
           </div>
         </form>

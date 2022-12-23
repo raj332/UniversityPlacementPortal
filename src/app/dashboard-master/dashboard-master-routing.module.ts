@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {MyProfileComponent as  MyProfileComponent1 } from './company-dashboard/my-profile/my-profile.component';
 import { CompanyDashboardComponent } from './company-dashboard/company-dashboard.component';
 import { OfferFormComponent } from './company-dashboard/offer-form/offer-form.component';
 import { JobProfileComponent } from './student-dashboard/job-profile/job-profile.component';
@@ -67,6 +68,7 @@ children: [{
     {path:'viewJobProfile',component:ViewJobProfileComponent},
     {path:'Shortlisted',component:ShortlistedApplicationComponent},
     {path:'Selected',component:SelectedApplicationComponent},
+    {path:'MyProfile',component:MyProfileComponent1},
     {path:'Statistics',component:CompanyStatasticsComponent}
 
   ],

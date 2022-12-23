@@ -13,20 +13,10 @@ export class AdminDashboardComponent implements OnInit {
   
    constructor( private router:Router) {
  
-    //  if(!localStorage.getItem("adminId")){
-    //    this.router.navigate(['/auth/login/student'])
-    //  }else{
-    //    this.services.getMyDetail(localStorage.getItem("adminId")).subscribe((data:any)=>{
-    //      if(data.error){
-    //            if(data.error =="noToken" || data.error == 'tokenExpired'){
-    //              alert("session is expired !")
-    //              localStorage.clear();
-    //              this.router.navigate(['/auth/login/student'])
-    //            }
-    //      }
-    //    })
- 
-    //  }
+     if(!localStorage.getItem("admintoken")){
+      localStorage.clear()
+       this.router.navigate(['/auth/login/admin'])
+     }
     
  
    }
@@ -65,12 +55,12 @@ export class AdminDashboardComponent implements OnInit {
  
    ngOnInit(): void {
  
- 
+   }
     //  var s = document.createElement('script');
     //  s.type = 'text/javascript';
     //  s.src = '../assets/js/main.js';
     //  this.elementRef.nativeElement.appendChild(s);
-   }
+   
   //  toggle(drawer: any) {
   //    this.isMenuOpne === false
   //      ? (this.isMenuOpne = true)

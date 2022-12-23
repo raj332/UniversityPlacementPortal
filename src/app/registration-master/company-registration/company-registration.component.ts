@@ -15,8 +15,15 @@ export class CompanyRegistrationComponent implements OnInit {
   companyPassword!:String;
   companyEmail!: String;
   confirmPassword !:string;
+
+  isCommitee =false;
   constructor(private services:CompanyApisService , private router: Router) {
-    
+    console.log(this.router.url)
+      if(this.router.url== "/dashboard/commitee/AddCompany"){
+        this.isCommitee =true;
+      }else{
+        this.isCommitee=false;
+      }
     }
 
   ngOnInit(): void {}

@@ -10,7 +10,7 @@ export class DashboardMasterComponent implements OnInit {
 loggedInUser! :string ;
   logoutBtn:any ;
   constructor(private router : Router) {
-   this.loggedInUser = localStorage.getItem("studentName") || localStorage.getItem("companyName") || localStorage.getItem("adminName")|| '';
+   this.loggedInUser = localStorage.getItem("studentName") || localStorage.getItem("companyName") || localStorage.getItem("adminName")|| localStorage.getItem("commiteeSpid")|| '';
    }
   showFiller = false;
   ngOnInit(): void {

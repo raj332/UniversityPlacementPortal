@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-commitee-dashboard',
@@ -8,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class CommiteeDashboardComponent implements OnInit {
   panelOpenState = false;
   commiteeId:any = localStorage.getItem("memberId")
-  constructor() { }
+  constructor(private router:Router) {
+    if (!localStorage.getItem('commiteeSpid') || !localStorage.getItem("cmttoken")) {
+      localStorage.clear();
+      this.router.navigate(['/auth/login/commitee']);
+    } ;
+    }
+   
   MenuList: any = [
 
     {
@@ -42,16 +49,7 @@ export class CommiteeDashboardComponent implements OnInit {
         }
       ],
     },
-    
-    {
-      heading:'My Profile',
-      links: [
-        {
-          title: 'View Profile',
-          url:'/dashboard/commitee/MyProfile'
-        },
-      ],
-      },
+  
 
   ]
 
@@ -61,7 +59,6 @@ export class CommiteeDashboardComponent implements OnInit {
   Eligible:number=0;
   Applied:number=0;
   status: string = 'In Process';
-
 
 
   ngOnInit(): void {

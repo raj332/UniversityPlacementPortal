@@ -18,7 +18,9 @@ export class StudentDashboardComponent implements OnInit {
   constructor(private elementRef: ElementRef ,private services:StudentApisService,private router:Router) {
 
     if(!localStorage.getItem("spid")){
+      localStorage.clear()
       this.router.navigate(['/auth/login/student'])
+
     }else{
       this.services.getMyDetail(localStorage.getItem("spid")).subscribe((data:any)=>{
         if(data.error){

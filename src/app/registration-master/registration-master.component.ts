@@ -10,6 +10,12 @@ export class RegistrationMasterComponent implements OnInit {
   constructor(private router: Router) { 
     if(localStorage.getItem('stoken')){
     this.router.navigate(['/dashboard/student'])
+    }else if(localStorage.getItem("cmttoken")){
+      this.router.navigate(['/dashboard/commitee'])
+    }else if(localStorage.getItem("cmptoken")){
+      this.router.navigate(['/dashboard/company'])
+    }else if(localStorage.getItem("admintoken")){
+      this.router.navigate(['/dashboard/admin'])
     }
     this.router.events.subscribe((event:Event)=>{
 if(event instanceof NavigationEnd){
