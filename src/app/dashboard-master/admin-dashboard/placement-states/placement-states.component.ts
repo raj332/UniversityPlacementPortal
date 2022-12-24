@@ -20,22 +20,22 @@ export class PlacementStatesComponent implements OnInit {
   height = 300;
   columnNames = ['year', 'Hired Students'];
 
-  title2 = 'Browser market shares at a specific website, 2014';
+  title2 = ' Company wise Placed student s';
   type2: any = 'PieChart';
   data2: any[][] = [];
   options2 = {
-    colors: ['#f3b600', '#325288'],
+   
     is3D: true,
   };
   width2 = 450;
   height2 = 300;
-  columnNames2 = ['Totalapplications', 'companyApplications'];
+  columnNames2 = ['company', 'student placed'];
 
 
   totalPlacedTillNow:any;
   totalPlacedthisyear:any;
   totalRegisteredStudent:any
-  totalCounts:any;
+  totalCounts:number = 0;
   constructor(private services: AdminApisService) {
     this.services
      .getYearlyPlacementChart()
@@ -48,16 +48,16 @@ export class PlacementStatesComponent implements OnInit {
 
       this.services.compantWisePlacementChart().subscribe((apidata:any)=>{
         apidata.forEach((element:any) => {
-            this.totalCounts=this.totalCounts+   element.count;
+            this.totalCounts=this.totalCounts+ element.count;
         });
 
             apidata.forEach((element:any)=> {
   
-              let temp = (element.count/this.totalCounts)*100;
-              let x = [element.name, temp];
+               
+              let x = [element.name, (element.count/this.totalCounts)*100];
                this.data2.push(x)
             });
-      
+      console.log(this.data2)
       })
     this.services.getTotalPlacedStudentCount().subscribe((data)=>{
        this.totalPlacedTillNow= data;
