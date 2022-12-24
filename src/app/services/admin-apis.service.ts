@@ -17,5 +17,22 @@ export class AdminApisService {
   changeIsInPlacement(spid:any){
     return this.http.get("https://localhost:7212/api/StudentRegs/changeIsInPlacement/"+spid)
   }
+compantWisePlacementChart(){
+  return this.http.get("https://localhost:7212/api/Statestics/compantWisePlacement/")
 
+}
+  
+  getYearlyPlacementChart(){
+return this.http.get("https://localhost:7212/api/Statestics/yearlyplacement");
+  }
+  getTotalPlacedStudentCount(){
+    return this.http.get("https://localhost:7212/api/Statestics/totalplacedtillnow");
+  }
+  getTotalPlacedThisYear(){
+    return this.http.get("https://localhost:7212/api/Statestics/totalplacedthisyear");
+
+  }
+  getTotalRegisteredStudent(){
+    return this.http.get("https://localhost:7212/api/Statestics/totalRegisteredStudentThisyear");
+  }
 }

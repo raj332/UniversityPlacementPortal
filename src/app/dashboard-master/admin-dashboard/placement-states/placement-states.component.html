@@ -1,1 +1,49 @@
-<p>placement-states works!</p>
+<div class="container">
+    <h3 class="--sub-heading mb-0 "> Placement Statstics</h3>
+    <div class="d-flex justify-content-around flex-wrap">
+        <mat-card class=" mat-elivation-z8 m-3 p-3">  <google-chart #chart
+            [title]="title"
+            [type]="type"
+            [data]="data"
+            [columns]="columnNames"
+            [options]="options"
+            [width]="width"
+            [height]="height">
+         </google-chart></mat-card>
+         <mat-card class=" mat-elivation-z8 m-3 p-3">  <google-chart #chart
+            [title]="title2"
+            [type]="type2"
+            [data]="data2"
+            [columns]="columnNames2"
+            [options]="options2"
+            [width]="width2"
+            [height]="height2">
+         </google-chart></mat-card>
+   
+
+    <div class="small-card  p-3 m-3 d-flex alignt-item-center ">
+       <div class="subtitles">
+        Total Student Placed till now
+       </div>
+       <div>
+        {{totalPlacedTillNow}}
+       </div>
+    </div>
+    <div class="small-card  p-3 m-3 d-flex alignt-item-center ">
+        <div class="subtitles">
+         Total Registered Student this year
+        </div>
+        <div>
+           {{ totalRegisteredStudent}}
+        </div>
+     </div>
+     <div class="small-card  p-3 m-3 d-flex alignt-item-center ">
+        <div class="subtitles">
+         Total placed Student this year
+        </div>
+        <div>
+         {{totalPlacedthisyear}}
+        </div>
+     </div>
+    </div>
+</div>
