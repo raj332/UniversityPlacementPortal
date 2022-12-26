@@ -1,103 +1,164 @@
-<section class="--section-width">
-  <div class="container py-5">
-    <div class="row">
-      <div class="col">
-        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">User</a></li>
-            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-          </ol>
-        </nav>
+<div class="container">
+  <h3 class="--sub-heading">My Profile</h3>
+
+  <!-- <div class="row">
+        <div class="col">
+          <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">User</a></li>
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+   -->
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="mb-4">
+        <mat-card class="card-body text-center">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+            alt="avatar"
+            class="rounded-circle img-fluid"
+            style="width: 150px"
+          />
+          <h5 class="my-3">{{stuData.studentName}}</h5>
+          <p class="text-muted mb-1">{{stuData.courseName}}</p>
+          <p class="text-muted mb-4">{{stuData.departmentName}}</p>
+          <div class="d-flex justify-content-center mb-2">
+            <a href=""
+              ><img
+                src="../../../../assets/icons/icons8-github.svg"
+                alt=""
+                srcset=""
+                class="me-4"
+            /></a>
+            <a href=""
+              ><img
+                src="../../../../assets/icons/icons8-linkedin-2.svg"
+                alt=""
+                srcset=""
+            /></a>
+          </div>
+        </mat-card>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card mb-4">
-          <div class="card-body text-center">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-              class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3">John Smith</h5>
-            <p class="text-muted mb-1">M.Sc.(I.T) - Sem : 10</p>
-            <p class="text-muted mb-4">Department Of ICT V.N.S.G.U.</p>
-            <div class="d-flex justify-content-center mb-2">
-              <a href=""><img src="../../../../assets/icons/icons8-github.svg" alt="" srcset="" class="me-4"></a>
-              <a href=""><img src="../../../../assets/icons/icons8-linkedin-2.svg" alt="" srcset=""></a>
+    <div class="col-lg-8">
+      <div class="mb-4">
+        <mat-card class="card-body p-5">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mt-1">Full Name</p>
+            </div>
+            <div class="col-sm-9">
+              <input
+                class="text-muted mb-0 w-100 form-control"
+                [(ngModel)]="stuData.studentName"
+                name="studentName"
+                [readOnly]="!IsEditable" #name="ngModel" required/>
+                <div class="error" *ngIf="(name.touched||name.dirty) && name.invalid"
+            style="color: red; font-size:12px" >
+            Name Is Required.</div>
             </div>
           </div>
-        </div>
-
-      </div>
-      <div class="col-lg-8">
-        <div class="card mb-4">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Full Name</p>
-              </div>
-              <div class="col-sm-9">
-                <input class="text-muted mb-0 w-50" value="Bhatt Jaimin" [readOnly]="!IsEditable">
-              </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mt-1">Email</p>
             </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Email</p>
-              </div>
-              <div class="col-sm-9">
-                <input class="text-muted mb-0 w-50" value="example@example.com" [readOnly]="!IsEditable">
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Phone</p>
-              </div>
-              <div class="col-sm-9">
-                <input class="text-muted mb-0 w-50" value="9054520603" [readOnly]="!IsEditable">
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Course</p>
-              </div>
-              <div class="col-sm-9">
-                <select class="text-muted mb-0 w-50" value="M.Sc(I.T)" [disabled]="!IsEditable">
-                  <option value=""></option>
-                </select>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Address</p>
-              </div>
-              <div class="col-sm-9">
-                <input class="text-muted mb-0 w-100" value="104 Pratishtha Row-House Dindoli Kharavasa Road, Surat."
-                  [readOnly]="!IsEditable">
-              </div>
+            <div class="col-sm-9">
+              <input
+                class="text-muted mb-0 w-100 form-control"
+                [(ngModel)]="stuData.email"
+                name="email"
+                [readOnly]="!IsEditable"
+                #email="ngModel" required
+              />
+              <div class="error" *ngIf="(email.touched||email.dirty) && email.invalid"
+              style="color: red; font-size:12px" >
+              Email Is Required.</div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card mb-4 mb-md-0">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-3">
-                    <button class="--btn-outlined-primary" (click)="OnEditRequest()">{{btnName}}</button>
-                  </div>
-                  <div class="col-4">
-                    <button class="--btn-filled-green" (click)="openDialog()">Change Password</button>
-                  </div>
-                </div>
-              </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mt-1">Phone</p>
+            </div>
+            <div class="col-sm-9">
+              <input
+                class="text-muted mb-0 w-100 form-control"
+                [(ngModel)]="stuData.contactNo"
+                name="contactNo"
+                [readOnly]="!IsEditable"
+                #phone="ngModel" required
+              />
+              <div class="error" *ngIf="(phone.touched||phone.dirty) && phone.invalid"
+              style="color: red; font-size:12px" >
+              phone Is Required.</div>
             </div>
           </div>
-        </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mt-1">Course</p>
+            </div>
+            <div class="col-sm-9">
+              <select
+                class="text-muted mb-0 w-100 form-control"
+                [(ngModel)]="stuData.courseId"
+                name="departmentName"
+                [disabled]="!IsEditable"
+                #course="ngModel" required
+              >
+                <option *ngFor="let item of courseList" value="{{item.courseId}}">{{item.courseName}}</option>
+              </select>
+              <div class="error" *ngIf="(course.touched||course.dirty) && course.invalid"
+              style="color: red; font-size:12px" >
+              Course Is Required.</div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mt-1"> Profile Picture</p>
+            </div>
+            <div class="col-sm-9">
+              <input
+              type="file"
+              [(ngModel)]="stuData.photo"
+                name="photo"
+                class="text-muted mb-0 w-100 form-control"
+                [readOnly]="!IsEditable"
+              />
+            </div>
+          </div>
+          <div class="mt-3 flex-row d-flex justify-content-center">
+            <div>
+              <button
+                class="submit-btn btn mx-3 px-4"
+                (click)="OnEditRequest()"
+              >
+                {{ btnName }}
+              </button>
+            </div>
+            <div *ngIf="IsEditable">
+              <button
+                class="btn-success btn mx-3 px-4"
+                [disabled]="!(name.valid && email.valid && phone.valid && course.valid)"
+                (click)="handleEdit()"
+              >
+                Save changes
+              </button>
+            </div>
+            <div *ngIf="!IsEditable">
+              <button class="btn btn-danger mx-3" (click)="openDialog()">
+                Change Password
+              </button>
+            </div>
+          </div>
+        </mat-card>
       </div>
     </div>
   </div>
-</section>
+</div>
