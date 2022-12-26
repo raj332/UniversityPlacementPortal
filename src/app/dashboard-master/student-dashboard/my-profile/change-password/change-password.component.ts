@@ -11,7 +11,8 @@ export class ChangePasswordComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public stuData: any, private services : StudentApisService ,private dialRef :MatDialogRef <ChangePasswordComponent>) { 
   }
   IsAlert = false;
-
+  errorMsg!: string;
+  validMsg!: string;
   lable = "Current Password";
   OTP = '';
   ngOnInit(): void {
@@ -55,6 +56,20 @@ handlePassChange(){
     alert(" Current password is wrong !")
   }
   
+}
+onconfirmPassword(pass: string, confirmpass: string) {
+
+  if (!this.confirmPassword) {
+    this.errorMsg = '';
+  }
+  else if (pass != confirmpass) {
+    this.validMsg = '';
+    this.errorMsg="Doesn't Match With Yor Password!"
+  }
+  else {
+    this.errorMsg = '';
+    this.validMsg = 'Password Matched!';
+  }
 }
 
 }

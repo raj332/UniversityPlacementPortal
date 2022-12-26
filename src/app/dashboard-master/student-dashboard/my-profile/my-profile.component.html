@@ -56,8 +56,10 @@
                 class="text-muted mb-0 w-100 form-control"
                 [(ngModel)]="stuData.studentName"
                 name="studentName"
-                [readOnly]="!IsEditable"
-              />
+                [readOnly]="!IsEditable" #name="ngModel" required/>
+                <div class="error" *ngIf="(name.touched||name.dirty) && name.invalid"
+            style="color: red; font-size:12px" >
+            Name Is Required.</div>
             </div>
           </div>
           <hr />
@@ -71,7 +73,11 @@
                 [(ngModel)]="stuData.email"
                 name="email"
                 [readOnly]="!IsEditable"
+                #email="ngModel" required
               />
+              <div class="error" *ngIf="(email.touched||email.dirty) && email.invalid"
+              style="color: red; font-size:12px" >
+              Email Is Required.</div>
             </div>
           </div>
           <hr />
@@ -85,7 +91,11 @@
                 [(ngModel)]="stuData.contactNo"
                 name="contactNo"
                 [readOnly]="!IsEditable"
+                #phone="ngModel" required
               />
+              <div class="error" *ngIf="(phone.touched||phone.dirty) && phone.invalid"
+              style="color: red; font-size:12px" >
+              phone Is Required.</div>
             </div>
           </div>
           <hr />
@@ -98,10 +108,14 @@
                 class="text-muted mb-0 w-100 form-control"
                 [(ngModel)]="stuData.courseId"
                 name="departmentName"
-                [disabled]="!IsEditable" 
+                [disabled]="!IsEditable"
+                #course="ngModel" required
               >
                 <option *ngFor="let item of courseList" value="{{item.courseId}}">{{item.courseName}}</option>
               </select>
+              <div class="error" *ngIf="(course.touched||course.dirty) && course.invalid"
+              style="color: red; font-size:12px" >
+              Course Is Required.</div>
             </div>
           </div>
           <hr />
@@ -131,6 +145,7 @@
             <div *ngIf="IsEditable">
               <button
                 class="btn-success btn mx-3 px-4"
+                [disabled]="!(name.valid && email.valid && phone.valid && course.valid)"
                 (click)="handleEdit()"
               >
                 Save changes

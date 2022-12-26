@@ -1,16 +1,25 @@
 <mat-dialog-content>
   <div class="col-md-6 form-group">
     <label for="company">Company Name</label>
-    <input type="text" class="form-control" id="company" name="company" [(ngModel)]="companyName">
+    <input type="text" class="form-control" id="company" name="company" [(ngModel)]="companyName" #company="ngModel" required>
+    <div class="error" *ngIf="(company.touched||company.dirty) && company.invalid"
+    style="color: red; font-size:12px">
+    Company Name Is Required.</div>
   </div>
   <div class="row d-flex ">
     <div class="col-md-6 form-group my-3">
       <label for="startdate">Start Date</label>
-      <input type="date" class="form-control" id="startdate" name="startdate" [(ngModel)]="startDate">
+      <input type="date" class="form-control" id="startdate" name="startdate" [(ngModel)]="startDate" #startdate="ngModel" required>
+      <div class="error" *ngIf="(startdate.touched||startdate.dirty) && startdate.invalid"
+      style="color: red; font-size:12px">
+      Start Date Is Required.</div>
     </div>
     <div class="col-md-6 form-group my-3">
       <label for="enddate">End Date</label>
-      <input type="date" class="form-control" id="enddate" name="enddate" [(ngModel)]="endDate">
+      <input type="date" class="form-control" id="enddate" min="{{startDate | date:'yyyy-MM-dd'}}" name="enddate" [(ngModel)]="endDate" #enddate="ngModel" required>
+      <div class="error" *ngIf="(enddate.touched||enddate.dirty) && enddate.invalid"
+      style="color: red; font-size:12px">
+      End Date Is Required.</div>
     </div>
     <div class="col-md-12 form-group my-3">
       <label for="">Add Skills</label>
@@ -32,5 +41,5 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button class="--width-20 btn btn-warning my-2" mat-button mat-dialog-close (click)="AddExperience()">Add</button>
+  <button class="--width-20 btn btn-warning my-2" mat-button mat-dialog-close [disabled]="!(company.valid && startdate.valid && enddate.valid)" (click)="AddExperience()">Add</button>
 </mat-dialog-actions>

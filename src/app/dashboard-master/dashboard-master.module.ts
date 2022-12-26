@@ -20,9 +20,9 @@ import { ShortlistedApplicationComponent } from './company-dashboard/shortlisted
 import { SelectedApplicationComponent } from './company-dashboard/selected-application/selected-application.component';
 import { CompanyStatasticsComponent } from './company-dashboard/company-statastics/company-statastics.component';
 import { ViewJobOfferComponent } from './student-dashboard/view-openings/view-job-offer/view-job-offer.component';
+import { ChangePasswordComponent } from './student-dashboard/my-profile/change-password/change-password.component';
 import { StudentSheduledPptlistComponent } from './student-dashboard/student-sheduled-pptlist/student-sheduled-pptlist.component';
 import { MyProfileComponent } from './student-dashboard/my-profile/my-profile.component';
-import { ChangePasswordComponent } from './student-dashboard/my-profile/change-password/change-password.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { AllOffersComponent } from './company-dashboard/all-offers/all-offers.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
@@ -53,6 +53,7 @@ import { ChangePasswordComponent as ChangePasswordComponent1 } from './company-d
     SelectedApplicationComponent,
     CompanyStatasticsComponent,
     ViewJobOfferComponent,
+    ChangePasswordComponent,
     StudentSheduledPptlistComponent,
     MyProfileComponent,
     MyProfileComponent1,

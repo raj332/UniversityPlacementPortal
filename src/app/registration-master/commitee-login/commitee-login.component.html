@@ -4,15 +4,21 @@
        
         <div class="col-md-12">
           <label for="spid" class="form-label --text-Primary">SPID</label>
-          <input type="number" class="form-control" id="spid" name="spid" [(ngModel)]="spid">
+          <input type="number" class="form-control" id="spid" name="spid" [(ngModel)]="spid" #SPID="ngModel" required pattern="[0-9]{10}"> 
+          <div class="error" *ngIf="(SPID.touched || SPID.dirty) && SPID.invalid" style="color: red; font-size:12px" >
+          SPID is Required.</div>
+          <div class="error" *ngIf="(SPID.errors?.['pattern'])" style="color: red; font-size:12px" >Spid Should be of 10 digits ! Invalid Format</div>
         </div>
         <div class="col-md-12">
           <label for="password" class="form-label --text-Primary">Password</label>
-          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" #Password="ngModel" required>
+          <div class="error" *ngIf="(Password.touched||Password.dirty) && Password.invalid"
+          style="color: red; font-size:12px" >
+          Password Is Required.</div>
         </div>
        
         <div class="col-12 d-flex justify-content-center">
-          <button type="submit" class="btn btn-primary --text-Primary">Login</button>
+          <button type="submit" class="btn btn-primary --text-Primary" [disabled]="!(SPID.valid && Password.valid)">Login</button>
         </div>
      
       </form>

@@ -3,20 +3,27 @@
     <div class="mb-4">
       <div class=" mb-4">
         <label>Final CTC</label>
-        <input  id="ctn" type="number" name="finalCtc" class="form-control" [(ngModel)]="finalCtc" />
-       
+        <input  id="ctn" type="number" name="finalCtc" class="form-control" [(ngModel)]="finalCtc" #FinalCTC="ngModel" required/>
+        <div class="error" *ngIf="(FinalCTC.touched||FinalCTC.dirty) && FinalCTC.invalid"
+        style="color: red; font-size:12px">
+        Final CTC Is Required.</div>
       </div>
       <div>
         <div class="mb-4">
           <label>Training Months</label>
-          <input id="months" type="number"  name="trainingMonths" class="form-control" [(ngModel)]="trainingMonths" />
+          <input id="months" type="number"  name="trainingMonths" class="form-control" [(ngModel)]="trainingMonths" #Training="ngModel" required/>
+          <div class="error" *ngIf="(Training.touched||Training.dirty) && Training.invalid"
+          style="color: red; font-size:12px">
+          Training Is Required.</div>
         
         </div>
   
         <div class=" mb-4">
           <label>Stipend</label>
-          <input  id="stipend" type="number" name="stipend" [(ngModel)]="stipend" class="form-control" />
-       
+          <input  id="stipend" type="number" name="stipend" [(ngModel)]="stipend" class="form-control" #Stipend="ngModel" required/>
+          <div class="error" *ngIf="(Stipend.touched||Stipend.dirty) && Stipend.invalid"
+          style="color: red; font-size:12px">
+          Stipend Is Required.</div>
         </div>
   
       </div>

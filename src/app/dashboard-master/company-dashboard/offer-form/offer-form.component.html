@@ -7,21 +7,33 @@
     <div class="row">
       <div class="col-md-6">
         <label for="position" class="form-label --text-Primary">Position</label>
-        <input type="text" class="form-control" id="position" name="position" [(ngModel)]="position">
+        <input type="text" class="form-control" id="position" name="position" [(ngModel)]="position" #newPosition="ngModel" required>
+        <div class="error" *ngIf="(newPosition.touched||newPosition.dirty) && newPosition.invalid"
+          style="color: red; font-size:12px">
+          Position Is Required.</div>
       </div>
       <div class="col-md-6">
         <label for="technology" class="form-label --text-Primary">Technology</label>
-        <input type="text" class="form-control" id="technology" name="technology" [(ngModel)]="technology">
+        <input type="text" class="form-control" id="technology" name="technology" [(ngModel)]="technology" #Technology="ngModel" required>
+        <div class="error" *ngIf="(Technology.touched||Technology.dirty) && Technology.invalid"
+        style="color: red; font-size:12px">
+        Technology Is Required.</div>
       </div>
     </div>
    
     <div class="col-md-12" >
       <label for="jobDescription" class="form-label --text-Primary">Description</label>
-      <textarea  class="form-control" id="jobDescription" rows="6" name="jobDescription" [(ngModel)]="jobDescription"></textarea>
+      <textarea  class="form-control" id="jobDescription" rows="6" name="jobDescription" [(ngModel)]="jobDescription" #Description="ngModel" required></textarea>
+      <div class="error" *ngIf="(Description.touched||Description.dirty) && Description.invalid"
+      style="color: red; font-size:12px">
+      Description Is Required.</div>
     </div>
     <div class="col-md-12">
       <label for="openings" class="form-label --text-Primary">No of Openings</label>
-      <input type="text" class="form-control" id="openings" name="openings" [(ngModel)]="openings">
+      <input type="text" class="form-control" id="openings" name="openings" [(ngModel)]="openings" #Openings="ngModel" required>
+      <div class="error" *ngIf="(Openings.touched||Openings.dirty) && Openings.invalid"
+      style="color: red; font-size:12px">
+      Openings Is Required.</div>
     </div>
 
     <label for="openings" class="form-label --text-Primary">Criterias</label>
@@ -34,11 +46,17 @@
     <div class="row">
       <div class="col-md-6">
         <label for="minctc" class="form-label --text-Primary">Minimum CTC</label>
-        <input type="text" class="form-control" id="minctc" name="minCTC" [(ngModel)]="minCTC">
+        <input type="text" class="form-control" id="minctc" name="minCTC" [(ngModel)]="minCTC" #minctc="ngModel" required>
+        <div class="error" *ngIf="(minctc.touched||minctc.dirty) && minctc.invalid"
+        style="color: red; font-size:12px">
+        Minimum ctc Is Required.</div>
       </div>
       <div class="col-md-6">
         <label for="maxctc" class="form-label --text-Primary">Maximum CTC</label>
-        <input type="text" class="form-control" id="maxctc" name="maxCTC" [(ngModel)]="maxCTC">
+        <input type="text" class="form-control" id="maxctc" name="maxCTC" [(ngModel)]="maxCTC" #maxctc="ngModel" required min="{{minCTC}}">
+        <div class="error" *ngIf="(maxctc.touched||maxctc.dirty) && maxctc.invalid"
+        style="color: red; font-size:12px">
+        Maximum ctc Is Required.</div>
       </div>
     </div>
    

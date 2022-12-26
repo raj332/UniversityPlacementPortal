@@ -4,43 +4,67 @@
         <form class=" g-3 d-flex flex-column align-item-center mt-1 w-100" (ngSubmit)="handleSubmit()">
           <div class="col-md-12">
             <label for="companyname" class="mt-2 --text-Primary">Company name</label>
-            <input type="text" class="form-control" id="companyname" name="companyName" [(ngModel)]="companyName">
+            <input type="text" class="form-control" id="companyname" name="companyName" [(ngModel)]="companyName" #name="ngModel" required>
+            <div class="error" *ngIf="(name.touched||name.dirty) && name.invalid"
+          style="color: red; font-size:12px">
+          Comapny Name Is Required.</div>
           </div>
           <div class="col-md-12">
             <label for="address" class="mt-2 --text-Primary">Address</label>
-            <textarea class="form-control" id="address" name="companyAddress" [(ngModel)]="companyAddress"></textarea>
+            <textarea class="form-control" id="address" name="companyAddress" [(ngModel)]="companyAddress" #address="ngModel" required></textarea>
+            <div class="error" *ngIf="(address.touched||address.dirty) && address.invalid"
+          style="color: red; font-size:12px">
+          Address Is Required.</div>
           </div>
           <div class="col-md-12">
             <label for="contactNo" class="mt-2 --text-Primary">Contact Number</label>
-            <input type="text" class="form-control" id="contactNo" name="companyContactNo" [(ngModel)]="companyContactNo">
+            <input type="text" class="form-control" id="contactNo" name="companyContactNo" [(ngModel)]="companyContactNo" #Contact="ngModel" required>
+            <div class="error" *ngIf="(Contact.touched||Contact.dirty) && Contact.invalid"
+            style="color: red; font-size:12px">
+            Contact Is Required.</div>
           </div>
           <div class="col-md-12">
             <label for="Email" class="mt-2 --text-Primary">Email</label>
-            <input type="email" class="form-control" id="Email" name="companyEmail" [(ngModel)]="companyEmail">
+            <input type="email" class="form-control" id="Email" name="companyEmail" [(ngModel)]="companyEmail" #email="ngModel" required pattern="^([a-zA-Z]{1,15})+([@[a-zA-Z]{1,15}.com])$">
+            <div class="error" *ngIf="(email.touched||email.dirty) && email.invalid"
+            style="color: red; font-size:12px">
+            Email Is Required.</div>
+            <div class="error" *ngIf="email.errors?.['pattern']" style="color: red; font-size:12px" >Invalid Email Id Format!</div>
           </div>
           <div class="row">
             <div class="col-md-6">
               <label for="password" class="mt-2 --text-Primary">Password</label>
-              <input type="password" class="form-control" id="password" name="comapnyPassword" [(ngModel)]="companyPassword">
+              <input type="password" class="form-control" id="password" name="comapnyPassword" [(ngModel)]="companyPassword" #pass="ngModel" required>
+              <div class="error" *ngIf="(pass.touched||pass.dirty) && pass.invalid"
+              style="color: red; font-size:12px">password Is Required.</div>
             </div>
             <div class="col-md-6">
               <label for="password" class="mt-2 --text-Primary">Confirm Password</label>
-              <input type="password" class="form-control" id="password2" name="confirmPassword" [(ngModel)]="confirmPassword">
+              <input type="password" class="form-control" id="password2" name="confirmPassword" (keyup)="onconfirmPassword(companyPassword,confirmPassword)" [(ngModel)]="confirmPassword" #confirmpass="ngModel" required>
+            
+            <div class="error" *ngIf="(confirmpass.touched||confirmpass.dirty) && confirmpass.invalid"
+              style="color: red; font-size:12px">Please Confirm Your Password</div>
+            <div *ngIf="errorMsg" style="color: red; font-size:12px">{{errorMsg}}</div>
+            <div *ngIf="validMsg" style="color: green; font-size:12px">{{validMsg}}</div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
               <label for="website" class="mt-2 --text-Primary">Website</label>
-              <input type="text" class="form-control" id="website" name="comapnyWebsite" [(ngModel)]="companyWebsite">
+              <input type="text" class="form-control" id="website" name="comapnyWebsite" [(ngModel)]="companyWebsite" #website="ngModel" required>
+              <div class="error" *ngIf="(website.touched||website.dirty) && website.invalid"
+              style="color: red; font-size:12px">Website Is Required.</div>
             </div>
             <div class="col-md-6">
               <label for="domain" class="mt-2 --text-Primary">Company Domain</label>
-              <input type="text" class="form-control" id="domain" name="companyDomain" [(ngModel)]="companyDomain">
+              <input type="text" class="form-control" id="domain" name="companyDomain" [(ngModel)]="companyDomain" #Domain="ngModel" required>
+              <div class="error" *ngIf="(Domain.touched||Domain.dirty) && Domain.invalid"
+              style="color: red; font-size:12px">Domain Is Required.</div>
             </div>
           </div>
        
           <div class="col-12 my-3 d-flex justify-content-around">
-            <button type="submit" class="btn my-2 p-1 btn-primary --text-Primary">Register</button>
+            <button type="submit" class="btn my-2 p-1 btn-primary --text-Primary" [disabled]="!( name.valid && address.valid && Contact.valid && email.valid && pass.valid && confirmpass.valid && website.valid && Domain.valid)">Register</button>
           </div>
           <div class="registration-link text-center" routerLink="/auth/login/company" *ngIf="!isCommitee">
            Already Have an account ? Login here !
