@@ -15,7 +15,8 @@ export class CompanyRegistrationComponent implements OnInit {
   companyPassword!:String;
   companyEmail!: String;
   confirmPassword !:string;
-
+  errorMsg!: string;
+  validMsg!: string;
   isCommitee =false;
   constructor(private services:CompanyApisService , private router: Router) {
     console.log(this.router.url)
@@ -40,5 +41,20 @@ export class CompanyRegistrationComponent implements OnInit {
     this.services.registerCompany(company).subscribe((data)=>{
       this.router.navigate(['auth/login/company'])
     })
+  }
+
+  onconfirmPassword(pass: String, confirmpass: String) {
+
+    if (!this.confirmPassword) {
+      this.errorMsg = '';
+    }
+    else if (pass != confirmpass) {
+      this.validMsg = '';
+      this.errorMsg="Doesn't Match With Yor Password!"
+    }
+    else {
+      this.errorMsg = '';
+      this.validMsg = 'Password Matched!';
+    }
   }
 }

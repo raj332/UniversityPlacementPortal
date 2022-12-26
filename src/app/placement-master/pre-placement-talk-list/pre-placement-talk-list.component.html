@@ -25,13 +25,17 @@
       <!-- Weight Column -->
       <ng-container matColumnDef="Date">
         <th mat-header-cell *matHeaderCellDef> Date </th>
-        <td mat-cell *matCellDef="let element"> <input type="date" name="element.date" [(ngModel)]="element.date"> </td>
+        <td mat-cell *matCellDef="let element"> <input type="date" name="element.date" [(ngModel)]="element.date" min="{{todayDate | date:'yyyy-MM-dd'}}" #Date="ngModel" required> <div class="error" *ngIf="(Date.touched||Date.dirty) && Date.invalid"
+          style="color: red; font-size:8px" >
+          Venue Is Required.</div>  </td>
       </ng-container>
   
       <!-- Symbol Column -->
       <ng-container matColumnDef="Venue">
         <th mat-header-cell *matHeaderCellDef> Venue </th>
-        <td mat-cell *matCellDef="let element"><input type="text" name="element.venue" [(ngModel)]="element.venue">  </td>
+        <td mat-cell *matCellDef="let element"><input type="text" name="element.venue" [(ngModel)]="element.venue" #Venue="ngModel" required><div class="error" *ngIf="(Venue.touched||Venue.dirty) && Venue.invalid"
+          style="color: red; font-size:8px" >
+          Venue Is Required.</div>  </td>
       </ng-container>
   
       <ng-container matColumnDef="Min Ctc">

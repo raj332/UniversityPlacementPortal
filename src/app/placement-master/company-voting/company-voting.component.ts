@@ -33,6 +33,7 @@ export class CompanyVotingComponent implements OnInit {
   endDate!:Date;
   tempList: any = [];
   show = false;
+  currentDate:any = new Date();
   constructor(
     private services: CompanyApisService,
     private commonService: CommonApisService,
@@ -41,6 +42,7 @@ export class CompanyVotingComponent implements OnInit {
   Status = 'Voting';
 
   ngOnInit() {
+    console.log(this.currentDate)
     this.services.getCompanylist().subscribe((data: any) => {
       this.tempList = data;
       //       this.dataSource.data = data;

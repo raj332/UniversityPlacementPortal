@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-6 form-group my-3">
       <label for="enddate">End Date</label>
-      <input type="date" class="form-control" id="enddate" name="enddate" [(ngModel)]="endDate" #enddate="ngModel" required>
+      <input type="date" class="form-control" id="enddate" min="{{startDate | date:'yyyy-MM-dd'}}" name="enddate" [(ngModel)]="endDate" #enddate="ngModel" required>
       <div class="error" *ngIf="(enddate.touched||enddate.dirty) && enddate.invalid"
       style="color: red; font-size:12px">
       End Date Is Required.</div>

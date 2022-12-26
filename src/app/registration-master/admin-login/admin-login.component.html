@@ -4,15 +4,23 @@
      
       <div class="col-md-12">
         <label for="email" class="form-label --text-Primary">Email</label>
-        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" #Email="ngModel" required pattern="^([a-zA-Z]{1,15})+([@vnsgu.ac.in]{12})$">
+        <div class="error" *ngIf="(Email.touched || Email.dirty) && Email.invalid"
+          style="color: red; font-size:12px" >
+          Email Is Required.</div>  
+          <div class="error" *ngIf="Email.errors?.['pattern']" style="color: red; font-size:12px" >Use @vnsgu.ac.in Email id Only !</div>
+          <div class="error" *ngIf="Email.touched && !(Email.errors?.['pattern'])" style="color: green; font-size:12px" >Valid Email Format</div>
       </div>
       <div class="col-md-12">
         <label for="password" class="form-label --text-Primary">Password</label>
-        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" #Password="ngModel" required>
+        <div class="error" *ngIf="(Password.touched||Password.dirty) && Password.invalid"
+          style="color: red; font-size:12px" >
+          Password Is Required.</div>  
       </div>
      
       <div class="col-12 d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary --text-Primary">Login</button>
+        <button type="submit" class="btn btn-primary --text-Primary" [disabled]="!(Email.valid && Password.valid)">Login</button>
       </div>
    
     </form>

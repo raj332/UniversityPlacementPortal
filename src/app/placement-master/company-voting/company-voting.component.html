@@ -25,7 +25,9 @@
       </ng-container>
       <ng-container matColumnDef="ENd Date">
         <th mat-header-cell *matHeaderCellDef>Voting End Date </th>
-        <td mat-cell *matCellDef="let element" > <input type="date" name="endDate" [(ngModel)]="endDate"> </td>
+        <td mat-cell *matCellDef="let element" > <input type="date" name="endDate" [(ngModel)]="endDate" min="{{currentDate | date:'yyyy-MM-dd'}}" #Date="ngModel" required><div class="error" *ngIf="(Date.touched||Date.dirty) && Date.invalid"
+          style="color: red; font-size:8px" >
+          Venue Is Required.</div>   </td>
       </ng-container>
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> ACTION</th>
