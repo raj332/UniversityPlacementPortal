@@ -19,31 +19,76 @@
             [width]="width2"
             [height]="height2">
          </google-chart></mat-card>
-   
+   </div>
+
+         <div class="d-flex justify-content-around flex-wrap">
 
     <div class="small-card  p-3 m-3 d-flex alignt-item-center ">
-       <div class="subtitles">
-        Total Student Placed till now
+      <div>
+         {{totalPlacedTillNow}}
+        </div>
+      <div class="subtitles">
+       Students placed 
        </div>
-       <div>
-        {{totalPlacedTillNow}}
-       </div>
+      
     </div>
     <div class="small-card  p-3 m-3 d-flex alignt-item-center ">
-        <div class="subtitles">
-         Total Registered Student this year
+      <div>
+         {{ totalRegisteredStudent}}
+      </div> 
+      <div class="subtitles">
+       Students registered this year
         </div>
-        <div>
-           {{ totalRegisteredStudent}}
-        </div>
+        
      </div>
      <div class="small-card  p-3 m-3 d-flex alignt-item-center ">
-        <div class="subtitles">
-         Total placed Student this year
-        </div>
-        <div>
+      <div>
          {{totalPlacedthisyear}}
+        </div>  
+      <div class="subtitles">
+         Students placed this year
         </div>
+        
      </div>
+     <div class="small-card  p-3 m-3 d-flex alignt-item-center ">
+      <div>
+         {{averageCTC}}
+       </div>
+      <div class="subtitles">
+       Average CTC
+      </div>
+   </div>
     </div>
+    <!-- <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+      <div class="carousel-inner">
+         <div class="carousel-item active ">
+            <div class="card">
+               <img src="..." class="card-img-top" alt="..."> 
+               <div class="card-body">
+                 <h5 class="card-title">Top Placements</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+        <div class="carousel-item " *ngFor="let item of toptenstudents">
+         <div class="card">
+           <img src="..." class="card-img-top" alt="..."> 
+            <div class="card-body">
+              <h5 class="card-title">{{item.spid}}</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+       
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Previous</span>
+       </button>
+       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="visually-hidden">Next</span>
+       </button>
+    </div> -->
 </div>

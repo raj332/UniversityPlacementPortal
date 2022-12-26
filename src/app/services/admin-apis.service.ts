@@ -21,6 +21,13 @@ compantWisePlacementChart(){
   return this.http.get("https://localhost:7212/api/Statestics/compantWisePlacement/")
 
 }
+getAverageCTC(){
+  return this.http.get("https://localhost:7212/api/Statestics/avgctc/")
+}
+gettopten(){
+  return this.http.get("https://localhost:7212/api/Statestics/toptenplacement")
+}
+  
   
   getYearlyPlacementChart(){
 return this.http.get("https://localhost:7212/api/Statestics/yearlyplacement");

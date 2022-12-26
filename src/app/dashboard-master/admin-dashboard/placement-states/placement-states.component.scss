@@ -1,16 +1,58 @@
+@import "../../../_styles/variables.scss";
+
 .small-card{
     width:15rem;
     height:7rem;
     background-color: white;
     justify-content: center;
-    font-size:2rem;
+    font-size:2.2rem;
     text-align: center;
+    color: $blue;
     font-weight: 800;
     box-shadow: 0px 3px 5px rgba(20, 29, 75, 0.26);
-
+border-radius: 5px;
+border-bottom: 0.4rem solid $yellow;
     flex-direction: column;
     .subtitles{
-        font-size: small;
+        font-size: medium;
+        color: grey;
     }
-    
+
 }
+.small-card:hover{
+    transform: scale(1.1);
+    transition:linear 0.2s ;
+}
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .card img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .card {
+    height: 20rem;
+    width:20rem !important;
+    margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+    border-radius: 0;
+  }
+  .carousel-inner {
+    padding: 1em;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: #e1e1e1;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @media (min-width: 768px) {
+    .card img {
+      height: 11em;
+    }
+  }

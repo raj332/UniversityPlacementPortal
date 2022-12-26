@@ -30,8 +30,9 @@ export class PlacementStatesComponent implements OnInit {
   width2 = 450;
   height2 = 300;
   columnNames2 = ['company', 'student placed'];
-
-
+ toptenstudents:any ;
+highestPlacement:any;
+averageCTC:any=0;
   totalPlacedTillNow:any;
   totalPlacedthisyear:any;
   totalRegisteredStudent:any
@@ -50,10 +51,7 @@ export class PlacementStatesComponent implements OnInit {
         apidata.forEach((element:any) => {
             this.totalCounts=this.totalCounts+ element.count;
         });
-
-            apidata.forEach((element:any)=> {
-  
-               
+            apidata.forEach((element:any)=> {       
               let x = [element.name, (element.count/this.totalCounts)*100];
                this.data2.push(x)
             });
@@ -67,6 +65,12 @@ export class PlacementStatesComponent implements OnInit {
     })
     this.services.getTotalRegisteredStudent().subscribe((data)=>{
       this.totalRegisteredStudent=data;
+    })
+    this.services.getAverageCTC().subscribe((data:any)=>{
+      this.averageCTC = data;
+    })
+    this.services.gettopten().subscribe((data:any)=>{
+      this.toptenstudents = data;
     })
     // this.services
     //   .getCurrentYearApplicationRatio(localStorage.getItem('companyId'))

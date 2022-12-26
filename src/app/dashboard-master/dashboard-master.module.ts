@@ -14,7 +14,6 @@ import { ViewOpeningsComponent } from './student-dashboard/view-openings/view-op
 import { CheckStatusComponent } from './student-dashboard/check-status/check-status.component';
 import { CompanyListComponent } from './commitee-dashboard/company-list/company-list.component';
 import { SheduledPPTListComponent } from './commitee-dashboard/sheduled-pptlist/sheduled-pptlist.component';
-import { CommiteeProfileComponent } from './commitee-dashboard/commitee-profile/commitee-profile.component';
 import { ViewJobProfileComponent } from './company-dashboard/view-application/view-job-profile/view-job-profile.component';
 import { ViewApplicationComponent } from './company-dashboard/view-application/view-application.component';
 import { ShortlistedApplicationComponent } from './company-dashboard/shortlisted-application/shortlisted-application.component';
@@ -48,7 +47,6 @@ import { ChangePasswordComponent as ChangePasswordComponent1 } from './company-d
     ChangePasswordComponent1,
     CompanyListComponent,
     SheduledPPTListComponent,
-    CommiteeProfileComponent,
     ViewJobProfileComponent,
     ViewApplicationComponent,
     ShortlistedApplicationComponent,

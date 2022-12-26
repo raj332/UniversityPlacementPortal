@@ -15,7 +15,6 @@ import { CheckStatusComponent } from './student-dashboard/check-status/check-sta
 import { MyProfileComponent } from './student-dashboard/my-profile/my-profile.component';
 import { SheduledPPTListComponent } from './commitee-dashboard/sheduled-pptlist/sheduled-pptlist.component';
 import { CompanyListComponent } from './commitee-dashboard/company-list/company-list.component';
-import { CommiteeProfileComponent } from './commitee-dashboard/commitee-profile/commitee-profile.component';
 import { ViewApplicationComponent } from './company-dashboard/view-application/view-application.component';
 import { ViewJobProfileComponent } from './company-dashboard/view-application/view-job-profile/view-job-profile.component';
 import { ShortlistedApplicationComponent } from './company-dashboard/shortlisted-application/shortlisted-application.component';
@@ -48,13 +47,12 @@ children: [{
   path: 'commitee',
   component: CommiteeDashboardComponent,
   children: [
-    {path:'',component:CommiteeProfileComponent},
+    {path:'',component:CompanyListComponent},
     { path: 'CompanyVoting', component: CompanyVotingComponent },
     {path:'VotingResults',component:PrePlacementTalkListComponent},
     { path: 'AddCompany', component: CompanyRegistrationComponent },
     {path:'SheduledPPTList',component:SheduledPPTListComponent},
     {path:'ViewCompany',component:CompanyListComponent},
-    {path:'MyProfile',component:CommiteeProfileComponent}
   ],
 },
 {
