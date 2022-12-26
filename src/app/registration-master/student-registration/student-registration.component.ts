@@ -48,6 +48,10 @@ photo:this.photo
  }
 
   this.service.registerStudent(stu).subscribe((data:any)=>{
+    if(data.error){
+      alert(data.error);
+      
+    }
     if(data.success){
       this.registered =true;
       setTimeout(() => {

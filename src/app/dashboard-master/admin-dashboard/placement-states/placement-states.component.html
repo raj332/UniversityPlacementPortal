@@ -52,7 +52,7 @@
      </div>
      <div class="small-card  p-3 m-3 d-flex alignt-item-center ">
       <div>
-         {{averageCTC}}
+         {{averageCTC|currency:'INR':'symbol':'3.0-2'}}
        </div>
       <div class="subtitles">
        Average CTC
@@ -60,16 +60,17 @@
    </div>
     </div>
     <div class="d-flex justify-content-around flex-wrap">
-      <div class="small-card  p-3 m-3 d-flex alignt-item-center " *ngFor="let item of toptenstudents">
-         <div>
-            {{item.CTC}}
+      <div class="stu-card  p-3 m-3 d-flex alignt-item-center " *ngFor="let item of toptenstudents">
+         
+         <div class="card-main-name">
+          {{item.studentName}} </div>
+          <div class="card-main-ctc">
+            {{item.ctc|currency:'INR':'symbol':'3.0'}}
           </div>
-         <div class="subtitles">
-          {{item.studentName}}
-          <div>{{item.name}}</div>
-          <div>{{item.year}}</div>
+          <div class="subtitles">{{item.name}}</div>
+          <div class="subtitles">{{item.year}}</div>
 
-         </div>
+        
       </div>
     </div>
     <!-- <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">

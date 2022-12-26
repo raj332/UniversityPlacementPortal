@@ -4,13 +4,11 @@
         
           <div class="col-md-12">
             <label for="Email" class="form-label --text-Primary">Email</label>
-            <input type="email" class="form-control" id="Email" name="companyEmail" [(ngModel)]="companyEmail" #Email="ngModel" required pattern="^([a-zA-Z]{1,15})+([@[a-zA-Z]{1,15}.com])$">
-            <div class="error" *ngIf="(Email.touched||Email.dirty) && Email.invalid"
-          style="color: red; font-size:12px" >
-          Email Is Required.</div>
+            <input type="email" class="form-control" id="Email" name="companyEmail" [(ngModel)]="companyEmail" #Email="ngModel" required pattern="([a-zA-Z]{1,15})+@([a-zA-Z]{0,15})+.com$">
+           
           
-          <div class="error" *ngIf="Email.errors?.['pattern']" style="color: red; font-size:12px" >Invalid Email Id Format!</div>
-          \</div>
+          <div class="error" *ngIf="(Email.touched||Email.dirty) && Email.invalid && Email.errors?.['pattern']" style="color: red; font-size:12px" >Invalid Email Id Format!</div>
+          </div>
           <div class="col-md-12">
             <label for="password" class="form-label --text-Primary">Password</label>
             <input type="password" class="form-control" id="password" name="comapnyPassword" [(ngModel)]="companyPassword" #pass="ngModel" required>

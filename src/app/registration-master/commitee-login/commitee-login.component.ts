@@ -20,6 +20,10 @@ export class CommiteeLoginComponent implements OnInit {
       password:this.password
     }
     this.services.loginCommitee(user).subscribe((data:any)=>{
+      if(data.error){
+        alert(data.error);
+        return;
+      }
       console.log(data)
       localStorage.clear()
       localStorage.setItem("commiteeSpid",this.spid.toString())

@@ -25,7 +25,7 @@
           </div>
           <div class="col-md-12">
             <label for="Email" class="mt-2 --text-Primary">Email</label>
-            <input type="email" class="form-control" id="Email" name="companyEmail" [(ngModel)]="companyEmail" #email="ngModel" required pattern="^([a-zA-Z]{1,15})+([@[a-zA-Z]{1,15}.com])$">
+            <input type="email" class="form-control" id="Email" name="companyEmail" [(ngModel)]="companyEmail" #email="ngModel" required pattern="([a-zA-Z]{1,15})+@([a-zA-Z]{0,15})+.com$">
             <div class="error" *ngIf="(email.touched||email.dirty) && email.invalid"
             style="color: red; font-size:12px">
             Email Is Required.</div>
