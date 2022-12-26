@@ -24,7 +24,6 @@ import { ViewJobOfferComponent } from './student-dashboard/view-openings/view-jo
 import { ChangePasswordComponent } from './student-dashboard/my-profile/change-password/change-password.component';
 import { StudentSheduledPptlistComponent } from './student-dashboard/student-sheduled-pptlist/student-sheduled-pptlist.component';
 import { MyProfileComponent } from './student-dashboard/my-profile/my-profile.component';
-import { ChangePasswordComponent } from './student-dashboard/my-profile/change-password/change-password.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { AllOffersComponent } from './company-dashboard/all-offers/all-offers.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
